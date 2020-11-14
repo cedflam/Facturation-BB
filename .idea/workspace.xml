@@ -11,28 +11,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9f29e3dd-1aaf-468e-9a1c-10b205ea4b7f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/migrations/Version20201114114204.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Entity/Advance.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Entity/Company.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Entity/Customer.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Entity/Description.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Entity/Estimate.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Entity/Invoice.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repository/AdvanceRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repository/CompanyRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repository/CustomerRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repository/DescriptionRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repository/EstimateRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repository/InvoiceRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/Admin/CompanyCrudController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/Admin/CustomerCrudController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/Admin/DashboardController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/partials/header.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/partials/header.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/home/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/index.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +59,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1605344901130</updated>
-      <workItem from="1605344902208" duration="10151000" />
+      <workItem from="1605344902208" duration="13491000" />
     </task>
     <servers />
   </component>
@@ -98,6 +85,10 @@
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
     <state x="483" y="222" key="#CLI_Interpreters/0.0.1792.1120@0.0.1792.1120" timestamp="1605345539023" />
+    <state x="360" y="222" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1605360621740">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state x="360" y="222" key="#com.intellij.execution.impl.EditConfigurationsDialog/1792.0.1920.1080/0.0.1792.1120@0.0.1792.1120" timestamp="1605360621740" />
     <state x="397" y="199" key="SettingsEditor" timestamp="1605346994441">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
