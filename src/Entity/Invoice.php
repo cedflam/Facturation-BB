@@ -39,10 +39,7 @@ class Invoice
      */
     private $totalTtc;
 
-    /**
-     * @ORM\Column(type="integer")
-     */
-    private $state;
+
 
     /**
      * @ORM\Column(type="integer")
@@ -74,6 +71,11 @@ class Invoice
      * @ORM\JoinColumn(nullable=false)
      */
     private $estimate;
+
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $state;
 
 
 
@@ -136,17 +138,7 @@ class Invoice
         return $this;
     }
 
-    public function getState(): ?int
-    {
-        return $this->state;
-    }
 
-    public function setState(int $state): self
-    {
-        $this->state = $state;
-
-        return $this;
-    }
 
     public function getTypeInvoice(): ?int
     {
@@ -252,6 +244,18 @@ class Invoice
     public function setEstimate(Estimate $estimate): self
     {
         $this->estimate = $estimate;
+
+        return $this;
+    }
+
+    public function getState(): ?bool
+    {
+        return $this->state;
+    }
+
+    public function setState(bool $state): self
+    {
+        $this->state = $state;
 
         return $this;
     }

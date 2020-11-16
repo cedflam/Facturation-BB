@@ -76,6 +76,11 @@ class Customer
         $this->invoices = new ArrayCollection();
     }
 
+    public function __toString()
+    {
+        return $this->getFirstname().' '.$this->getLastname();
+    }
+
     public function getId(): ?int
     {
         return $this->id;

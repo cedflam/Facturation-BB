@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Mes devis {% endblock %}
+
+{% block body %}
+
+    <div class="container-fluid estimate" style=" background-image: url({{ asset('img/bg-masthead.jpg') }});">
+        <div class="container">
+            <h2 class="text-white mt-5">Mes devis</h2>
+            <div class="container" style="padding-bottom: 500px;">
+                <table class="table">
+                    <thead class="bg-dark text-white">
+                    <tr>
+                        <th scope="col">Ref</th>
+                        <th scope="col">Client</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Total HT</th>
+                        <th scope="col">Total TTC</th>
+                        <th scope="col" class="text-center">Voir</th>
+                        <th scope="col" class="text-center">Générer PDF</th>
+                    </tr>
+                    </thead>
+                    <tbody class="bg-light">
+                    {% for estimate in estimates %}
+                        <tr>
+                            <th scope="row">{{ estimate.reference }}</th>
+                            <td>{{ estimate.customer.firstname }} {{ estimate.customer.lastname }}</td>
+                            <td>{{ estimate.createdAt | date('d/m/Y') }}</td>
+                            <td>{{ estimate.totalHt | number_format(2, '.', ',') }} €</td>
+                            <td>{{ estimate.totalTtc | number_format(2, '.', ',') }} €</td>
+                            <td class="text-center"><a href="{{ path('estimate_show', {'id': estimate.id }) }}"
+                                                       class="btn btn-sm btn-secondary"><i class="fas fa-eye"></i></a>
+                            </td>
+                            <td class="text-center"><a href="" class="btn btn-sm btn-secondary"><i
+                                            class="fas fa-file-pdf"></i></a></td>
+                        </tr>
+                    {% endfor %}
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

@@ -43,14 +43,19 @@ class Description
     private $totalTtc;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Estimate::class, inversedBy="descriptions")
+     * @ORM\ManyToOne(targetEntity=Estimate::class, inversedBy="descriptions", cascade={"persist", "remove"})
      */
     private $estimate;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Invoice::class, inversedBy="descriptions")
+     * @ORM\ManyToOne(targetEntity=Invoice::class, inversedBy="descriptions", cascade={"persist", "remove"})
      */
     private $invoice;
+
+    /**
+     * @ORM\Column(type="float")
+     */
+    private $totalHt;
 
     public function getId(): ?int
     {
@@ -137,6 +142,18 @@ class Description
     public function setInvoice(?Invoice $invoice): self
     {
         $this->invoice = $invoice;
+
+        return $this;
+    }
+
+    public function getTotalHt(): ?float
+    {
+        return $this->totalHt;
+    }
+
+    public function setTotalHt(float $totalHt): self
+    {
+        $this->totalHt = $totalHt;
 
         return $this;
     }

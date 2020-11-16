@@ -3,61 +3,71 @@
 namespace App\Entity;
 
 use App\Repository\EstimateRepository;
+use DateTimeInterface;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity(repositoryClass=EstimateRepository::class)
+ * @ORM\HasLifecycleCallbacks()
  */
 class Estimate
 {
+    const EN_COURS = 0;
+    const ACCEPTE = 1;
+    const REFUSE = 2;
+    const ARCHIVE = 3;
+
     /**
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
      */
-    private $id;
+    private ?int $id;
 
     /**
      * @ORM\Column(type="datetime")
+     *
      */
-    private $createdAt;
+    private ?DateTimeInterface $createdAt;
 
-    /**
-     * @ORM\Column(type="integer")
-     */
-    private $state;
+
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $reference;
+    private ?string $reference;
 
     /**
      * @ORM\Column(type="float")
      */
-    private $totalHt;
+    private ?float $totalHt;
 
     /**
      * @ORM\Column(type="float")
      */
-    private $totalTtc;
+    private ?float $totalTtc;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Customer::class, inversedBy="estimates")
+     * @ORM\ManyToOne(targetEntity=Customer::class, inversedBy="estimates", cascade={"persist", "remove"})
      */
-    private $customer;
+    private ?Customer $customer;
 
     /**
-     * @ORM\OneToMany(targetEntity=Description::class, mappedBy="estimate")
+     * @ORM\OneToMany(targetEntity=Description::class, mappedBy="estimate", cascade={"persist", "remove"})
      */
     private $descriptions;
 
     /**
      * @ORM\OneToOne(targetEntity=Invoice::class, mappedBy="estimate", cascade={"persist", "remove"})
      */
-    private $invoice;
+    private ?Invoice $invoice;
+
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $state;
 
     public function __construct()
     {
@@ -69,29 +79,23 @@ class Estimate
         return $this->id;
     }
 
-    public function getCreatedAt(): ?\DateTimeInterface
+    public function getCreatedAt(): ?DateTimeInterface
     {
         return $this->createdAt;
     }
 
-    public function setCreatedAt(\DateTimeInterface $createdAt): self
+    /**
+     * @ORM\PrePersist()
+     * @return $this
+     */
+    public function setCreatedAt(): self
     {
-        $this->createdAt = $createdAt;
+        $this->createdAt = new \DateTime();
 
         return $this;
     }
 
-    public function getState(): ?int
-    {
-        return $this->state;
-    }
 
-    public function setState(int $state): self
-    {
-        $this->state = $state;
-
-        return $this;
-    }
 
     public function getReference(): ?string
     {
@@ -187,4 +191,18 @@ class Estimate
 
         return $this;
     }
+
+    public function getState(): ?bool
+    {
+        return $this->state;
+    }
+
+    public function setState(bool $state): self
+    {
+        $this->state = $state;
+
+        return $this;
+    }
+
+
 }

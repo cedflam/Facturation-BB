@@ -54,9 +54,12 @@ html {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
-article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
+
+article, aside, figcaption, footer, figure, header, hgroup, main, nav, section {
   display: block;
 }
+
+
 
 body {
   margin: 0;
