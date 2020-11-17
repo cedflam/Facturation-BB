@@ -11,29 +11,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9f29e3dd-1aaf-468e-9a1c-10b205ea4b7f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/migrations/Version20201116115640.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/add-estimate.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/Admin/EstimateCrudController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Form/AdvanceType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Form/DescriptionType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Form/EstimateType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/estimate/estimate_list.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/estimate/estimate_show.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/packages/knp_snappy.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/translation.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/translation.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/twig.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/twig.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/estimate.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/estimate.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/DashboardController 2.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/DashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/DashboardController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/EstimateController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/EstimateController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Customer.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Customer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Description.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Description.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Estimate.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Estimate.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Invoice.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Invoice.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/estimate/estimate_list.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/estimate/estimate_list.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/estimate/estimate_show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/estimate/estimate_show.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/estimate/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/estimate/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/partials/footer.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/partials/footer.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/partials/header.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/partials/header.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -76,7 +64,7 @@
       <updated>1605344901130</updated>
       <workItem from="1605344902208" duration="17955000" />
       <workItem from="1605368116246" duration="83000" />
-      <workItem from="1605429025663" duration="38602000" />
+      <workItem from="1605429025663" duration="58746000" />
     </task>
     <servers />
   </component>
@@ -103,10 +91,10 @@
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
     <state x="483" y="222" key="#CLI_Interpreters/0.0.1792.1120@0.0.1792.1120" timestamp="1605345539023" />
-    <state x="360" y="222" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1605520648760">
+    <state x="360" y="222" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1605597781872">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state x="360" y="222" key="#com.intellij.execution.impl.EditConfigurationsDialog/-65.-1080.1920.1080/0.0.1792.1120@0.0.1792.1120" timestamp="1605520648760" />
+    <state x="360" y="222" key="#com.intellij.execution.impl.EditConfigurationsDialog/-65.-1080.1920.1080/0.0.1792.1120@0.0.1792.1120" timestamp="1605597781872" />
     <state x="360" y="222" key="#com.intellij.execution.impl.EditConfigurationsDialog/1792.0.1920.1080/0.0.1792.1120@0.0.1792.1120" timestamp="1605360621740" />
     <state x="397" y="199" key="SettingsEditor" timestamp="1605346994441">
       <screen x="0" y="0" width="1792" height="1120" />

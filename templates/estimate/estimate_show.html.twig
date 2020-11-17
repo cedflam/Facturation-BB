@@ -1,47 +1,120 @@
-{% extends 'base.html.twig' %}
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+          integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 
-{% block title %} Devis de ... {% endblock %}
-
+</head>
+<body>
 {% block body %}
 
-    <div class="container-fluid estimate" style=" background-image: url({{ asset('img/bg-masthead.jpg') }});">
-        <div class="container">
-            <h2 class="text-white mt-5">Devis de {{ estimate.customer.firstname }} {{ estimate.customer.lastname }}</h2>
-            <div class="container pb-5">
-                <table class="table ">
-                    <thead class="bg-secondary text-white">
+    <div class="container-fluid " style="font-family: Arial,serif  ">
+        <div class="container ">
+            <h3 class="text-right mt-3">Devis n° {{ estimate.reference }}</h3>
+            <p class="mt-5 ml-5">
+                {{ company.name }} <br>
+                {{ company.address }} <br>
+                {{ company.postCode }} {{ company.city }} <br>
+                Email : {{ company.email }} <br>
+                Téléphone : {{ company.phone }}
+            </p>
+
+            <p class="mr-5 mb-5 mt-5" style="margin-left: 550px;">
+                {{ customer.firstname }} {{ customer.lastname }} <br>
+                {{ customer.address }} <br>
+                {{ customer.postCode }} {{ customer.city }}
+            </p>
+
+            <p class=" ml-5  mt-5"> {{ company.city }}, {{ estimate.createdAt | date('d-M-Y à H:m:s') }}</p>
+
+            <div class="container">
+                <table class="table table-striped ">
+                    <thead class="bg-light">
                     <tr>
-                        <th scope="col">Prestations</th>
-                        <th scope="col">PU (HT)</th>
-                        <th scope="col">Quantité</th>
-                        <th scope="col">TVA</th>
-                        <th scope="col">Total HT</th>
-                        <th scope="col">Total TTC</th>
+                        <th class="text-center" scope="col">Prestations</th>
+                        <th class="text-center" scope="col">PU (HT €)</th>
+                        <th class="text-center" scope="col">Quantité</th>
+                        <th class="text-center" scope="col">TVA (%)</th>
+                        <th class="text-center" scope="col">Total HT (€)</th>
+                        <th class="text-center" scope="col">Total TTC (€)</th>
                     </tr>
                     </thead>
                     <tbody class="bg-light">
                     {% for description in estimate.descriptions %}
                         <tr>
-                            <td>{{ description.prestation }}</td>
-                            <td>{{ description.unitPrice | number_format(2, '.', ',') }} €</td>
-                            <td>{{ description.quantity }}</td>
-                            <td>{{ description.tva }}</td>
-                            <td>{{ description.totalHt | number_format(2, '.', ',') }} €</td>
-                            <td>{{ description.totalTtc | number_format(2, '.', ',') }} €</td>
+                            <td class=" text-justify">{{ description.prestation }}</td>
+                            <td class="text-center">{{ description.unitPrice | number_format(2, '.', ',') }}€ </td>
+                            <td class="text-center">{{ description.quantity }}</td>
+                            <td class="text-center">{{ description.tva }}% </td>
+                            <td class="text-center">{{ description.totalHt | number_format(2, '.', ',') }}€ </td>
+                            <td class="text-center">{{ description.totalTtc | number_format(2, '.', ',') }}€ </td>
                         </tr>
                     {% endfor %}
                     </tbody>
                 </table>
-
-                    <div class="col-md-3 bg-light ml-auto p-3 mb-1">
-                        Total HT : {{ estimate.totalHt | number_format(2, '.', ',') }} €
+                <hr>
+                <div class="container" style="">
+                    <div style="width:30%" class="float-right">
+                        <p class="text-center"> Total HT :
+                            <span>{{ estimate.totalHt | number_format(2, '.', ',') }}€</span>
+                        </p>
+                        <hr class="border-secondary">
+                        <p class="text-center"> Total TTC :
+                            <span class="text-left">{{ estimate.totalTtc | number_format(2, '.', ',') }}€</span>
+                        </p>
                     </div>
 
-                    <div class="col-md-3 bg-light ml-auto p-3 ">
-                       Total TTC : {{ estimate.totalTtc | number_format(2, '.', ',') }} €
-                    </div>
-                <a href="" class="mt-3 btn btn-info btn-block">Générer PDF </a>
+                    <p style="font-size: 12px;">
+                        {{ company.mention1 }} Lorem ipsum dolor sit amet, consectetur adipisicing elit. At aut dolor
+                        eos esse facilis incidunt libero praesentium quo sed vitae. <br>
+                        {{ company.mention2 }} Lorem ipsum dolor sit amet, consectetur adipisicing elit. At aut dolor
+                        eos esse facilis incidunt libero praesentium quo sed vitae.<br>
+                        {{ company.mention3 }} Lorem ipsum dolor sit amet, consectetur adipisicing elit. At aut dolor
+                        eos esse facilis incidunt libero praesentium quo sed vitae.<br>
+                        {{ company.mention4 }} Lorem ipsum dolor sit amet, consectetur adipisicing elit. At aut dolor
+                        eos esse facilis incidunt libero praesentium quo sed vitae.<br>
+                        {{ company.mention5 }} Lorem ipsum dolor sit amet, consectetur adipisicing elit. At aut dolor
+                        eos esse facilis incidunt libero praesentium quo sed vitae.<br>
+                    </p>
+                </div>
+
+                <div class="container text-center" style=" margin-top:100px;  margin-bottom: 150px">
+                    <p class="text-center float-left" style="margin-left: 150px; ">
+                        Signature de l'entreprise
+                    </p>
+                    <p class="text-center " >
+                        Signature du client
+                    </p>
+                </div>
+
+                <div style="margin-top: 300px; font-size: 12px">
+                    <hr>
+                    <p class="text-center" >
+                        {{ company.name }} <br>
+                        {{ company.address }} <br
+                        {{ company.postCode }} {{ company.city }} <br>
+                        {{ company.rcs }} <br>
+                        SIRET : {{ company.siret }} <br>
+                        Téléphone : {{ company.phone }} - Email: {{ company.email}}
+
+                    </p>
+                </div>
+
             </div>
+
+
         </div>
+
     </div>
+
+
 {% endblock %}
+</body>
+</html>
+
+

@@ -16,7 +16,7 @@
 
 {# Je personnalise les champs du prototype #}
 {% block _estimate_descriptions_entry_widget %}
-    <div class="form-group bg-secondary rounded p-3 description" id="{{ id }}">
+    <div class="form-group bg-secondary rounded p-3 pb-5 description" id="{{ id }}">
         <div class="row">
             <div class="col-md-12">
                 {{ form_widget(form.prestation, {'attr': {'class': 'prestation'}}) }}
@@ -30,19 +30,18 @@
             <div class="col-md-1 mt-2 ">
                 {{ form_widget(form.tva, {'attr': {'class': 'tva'}}) }}
             </div>
+            <div class="col-md-2 mt-2">
+                <button type="button" class="btn btn-info btn-block calcul" data-target="{{ id }}">Calculer</button>
+            </div>
             <div class="col-md-3 mt-2 ">
                 {{ form_widget(form.totalHt, {'attr': {'class': 'totalHt'}}) }}
             </div>
             <div class="col-md-3 mt-2 ">
                 {{ form_widget(form.totalTtc, {'attr': {'class': 'totalTtc'}}) }}
             </div>
-
-            <div class="col-md-2 mt-2">
-                <button type="button" class="btn btn-info btn-block calcul" data-target="{{ id }}">Calculer</button>
-            </div>
         </div>
-        <div class="mt-2">
-            <button type="button" class="btn btn-primary btn-sm btn-block  delete" data-target="{{ id }}">Supprimer
+        <div class="mt-2 col-md-12">
+            <button type="button" class="btn btn-primary float-right  btn-sm delete" data-target="{{ id }}">Supprimer
             </button>
         </div>
     </div>

@@ -28,16 +28,22 @@
                             <td>{{ estimate.createdAt | date('d/m/Y') }}</td>
                             <td>{{ estimate.totalHt | number_format(2, '.', ',') }} €</td>
                             <td>{{ estimate.totalTtc | number_format(2, '.', ',') }} €</td>
-                            <td class="text-center"><a href="{{ path('estimate_show', {'id': estimate.id }) }}"
-                                                       class="btn btn-sm btn-secondary"><i class="fas fa-eye"></i></a>
+                            <td class="text-center" >
+                                <a href="{{ path('estimate_show', {'id': estimate.id }) }}" class="btn btn-sm text-white " style="background: #f4623a">
+                                    <i class="fas fa-eye"></i>
+                                </a>
                             </td>
-                            <td class="text-center"><a href="" class="btn btn-sm btn-secondary"><i
-                                            class="fas fa-file-pdf"></i></a></td>
+                            <td class="text-center">
+                                <a href="{{ path('estimate_generate_pdf', {'id': estimate.id}) }}" class="btn btn-sm text-white" style="background: #f4623a">
+                                    <i class="fas fa-file-pdf"></i>
+                                </a>
+                            </td>
                         </tr>
                     {% endfor %}
 
                     </tbody>
                 </table>
+                <a class="btn text-white" href="{{ path('estimate_new') }}" style="background: #f4623a">Nouveau devis</a>
             </div>
         </div>
     </div>
