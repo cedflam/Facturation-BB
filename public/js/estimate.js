@@ -2,7 +2,7 @@ jQuery(document).ready(function () {
     /**
      * Permet d'ajouter et de supprimer une prestation
      */
-    let index = 0;
+    let index = $('.description').length;
     $('.add_prestation').on('click', function () {
         index++;
         let div = $('#estimate_descriptions');
@@ -31,14 +31,16 @@ jQuery(document).ready(function () {
         buttonCalcul.on('click', function () {
             //Je récupère les variables
             let id = $(this).data('target');
-            let unitPrice = $('#' + id + '_unitPrice').val();
-            let quantity = $('#' + id + '_quantity').val();
-            let tva = $('#' + id + '_tva').val();
+            let unitPrice = ($('#' + id + '_unitPrice').val());
+            let quantity = ($('#' + id + '_quantity').val());
+            let tva = ($('#' + id + '_tva').val());
+
             let montantHt = unitPrice * quantity;
             let montantTtc = (montantHt * tva) / 100 + montantHt;
+            console.log('id='+id, 'unitPrice='+unitPrice, 'quantity='+quantity, 'tva='+tva, 'montantHT='+montantHt, 'montantTTC='+montantTtc);
             // J'injecte la valeur dans le champ
-            $('#' + id + '_totalTtc').val(montantTtc);
-            $('#' + id + '_totalHt').val(montantHt);
+            $('#' + id + '_totalTtc').val(montantTtc.toFixed(2));
+            $('#' + id + '_totalHt').val(montantHt.toFixed(2));
 
             // Total TTC
             let totalTtc = $('.totalTtc');

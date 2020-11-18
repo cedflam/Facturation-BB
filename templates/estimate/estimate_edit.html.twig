@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Nouveau Devis{% endblock %}
+{% block title %}Modifier Devis{% endblock %}
 
 {# Previent Symfony que j'ai un theme personnalisé #}
 {% form_theme form _self %}
@@ -55,7 +55,7 @@
 {% block body %}
     <div class="container-fluid estimate" style=" background-image: url({{ asset('img/bg-masthead.jpg') }});">
         <div class="container">
-            <h2 class="text-white">Nouveau devis</h2>
+            <h2 class="text-white">Modifier un devis</h2>
             <div class="text-white">
                 {{ form_start(form) }}
                 {{ form_widget(form) }}

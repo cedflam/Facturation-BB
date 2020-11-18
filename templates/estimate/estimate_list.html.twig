@@ -17,6 +17,7 @@
                         <th scope="col">Total HT</th>
                         <th scope="col">Total TTC</th>
                         <th scope="col" class="text-center">Voir</th>
+                        <th scope="col" class="text-center">Modifier</th>
                         <th scope="col" class="text-center">Générer PDF</th>
                     </tr>
                     </thead>
@@ -31,6 +32,11 @@
                             <td class="text-center" >
                                 <a href="{{ path('estimate_show', {'id': estimate.id }) }}" class="btn btn-sm text-white " style="background: #f4623a">
                                     <i class="fas fa-eye"></i>
+                                </a>
+                            </td>
+                            <td class="text-center" >
+                                <a href="{{ path('estimate_edit', {'id': estimate.id }) }}" class="btn btn-sm text-white " style="background: #f4623a">
+                                    <i class="fas fa-pen"></i>
                                 </a>
                             </td>
                             <td class="text-center">
