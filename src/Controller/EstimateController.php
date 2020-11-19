@@ -8,6 +8,7 @@ use App\Form\EstimateType;
 use App\Repository\CompanyRepository;
 use App\Repository\CustomerRepository;
 use App\Repository\EstimateRepository;
+use App\Service\ReplaceAccentService;
 use Doctrine\ORM\EntityManagerInterface;
 use Knp\Bundle\SnappyBundle\Snappy\Response\PdfResponse;
 use Knp\Snappy\Pdf;
@@ -19,11 +20,12 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class EstimateController extends AbstractController
 {
-
+    // Propriétés
     private CustomerRepository $customerRepository;
     private EntityManagerInterface $manager;
     private EstimateRepository $estimateRepository;
     private CompanyRepository $companyRepository;
+    private ReplaceAccentService $accentService;
 
     /**
      * EstimateController constructor.
@@ -31,17 +33,20 @@ class EstimateController extends AbstractController
      * @param EntityManagerInterface $manager
      * @param EstimateRepository $estimateRepository
      * @param CompanyRepository $companyRepository
+     * @param ReplaceAccentService $accentService
      */
     public function __construct(
         CustomerRepository $customerRepository,
         EntityManagerInterface $manager,
         EstimateRepository $estimateRepository,
-        CompanyRepository $companyRepository
+        CompanyRepository $companyRepository,
+        ReplaceAccentService $accentService
     )
     {
         $this->customerRepository = $customerRepository;
         $this->estimateRepository = $estimateRepository;
         $this->companyRepository = $companyRepository;
+        $this->accentService = $accentService;
         $this->manager = $manager;
     }
 
@@ -176,8 +181,16 @@ class EstimateController extends AbstractController
             'company' => $this->companyRepository->findOneBy(['id' => $estimate->getCustomer()->getCompany()])
         ]);
 
-        return new PdfResponse($pdf->getOutputFromHtml($html), 'devis-' . $customer->getFirstname() . '-' . $customer->getLastname() . '.pdf');
+        //Je remplace les accents eventuels car non pris en charge
+        $firstname = $this->accentService->replaceAccents($customer->getFirstname());
+        $lastname = $this->accentService->replaceAccents( $customer->getLastname());
+
+        return new PdfResponse(
+            $pdf->getOutputFromHtml($html),
+            'devis-'.$lastname.'-'.$firstname.'.pdf'
+        );
     }
+
 
     /**
      * Permet de supprimer un devis

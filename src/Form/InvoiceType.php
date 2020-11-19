@@ -6,12 +6,9 @@ use App\Entity\Customer;
 use App\Entity\Invoice;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use Symfony\Component\Form\Extension\Core\Type\MoneyType;
-use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\FormBuilderInterface;
-use Symfony\Component\Form\FormEvents;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class InvoiceType extends AbstractType
@@ -24,7 +21,7 @@ class InvoiceType extends AbstractType
                 'class' => Customer::class,
                 'disabled' => true,
                 'attr' => [
-                    'class' => "customer"
+                    'class' => "customer",
                 ]
             ])
             ->add('advances', CollectionType::class, [
@@ -43,12 +40,14 @@ class InvoiceType extends AbstractType
             ])
             ->add('totalHt', MoneyType::class, [
                 'label' => 'Total devis HT',
+                'disabled' => true,
                 'attr' => [
                     'class' => 'totalHT'
                 ]
             ])
             ->add('totalTtc', MoneyType::class, [
                 'label' => 'Total devis TTC',
+                'disabled' => true,
                 'attr' => [
                     'class' => "totalTTC"
                 ]
@@ -60,13 +59,6 @@ class InvoiceType extends AbstractType
                 ]
             ])
         ;
-
-        $builder->get('customer')->addEventListener(
-            FormEvents::POST_SUBMIT,
-            function(FormEvents $event){
-
-            }
-        );
     }
 
     public function configureOptions(OptionsResolver $resolver)
