@@ -11,26 +11,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9f29e3dd-1aaf-468e-9a1c-10b205ea4b7f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/css/invoice.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/InvoiceController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Form/InvoiceType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/invoice/index.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/invoice.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/search.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20201114114204.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20201114115511.php" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/Version20201119115322.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20201116115640.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20201116122744.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20201116122921.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/EstimateController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/EstimateController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Customer.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Customer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Estimate.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Estimate.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Invoice.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Invoice.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/AdvanceType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/AdvanceType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/estimate/estimate_list.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/estimate/estimate_list.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/estimate/estimate_show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/estimate/estimate_show.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/partials/header.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/partials/header.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/invoice/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/invoice/index.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,7 +59,7 @@
       <workItem from="1605368116246" duration="83000" />
       <workItem from="1605429025663" duration="59194000" />
       <workItem from="1605688065651" duration="9943000" />
-      <workItem from="1605765557718" duration="23159000" />
+      <workItem from="1605765557718" duration="24531000" />
     </task>
     <servers />
   </component>

@@ -9,7 +9,11 @@
 
 
         <div class="container" style="padding-bottom: 300px;">
-            <h2 class="text-white mt-5">Mes devis</h2>
+            <h2 class="text-white mt-2">Mes devis</h2>
+            <div class="form-group mt-2">
+                <label for="search" class="">Rechercher</label>
+                <input name="search" type="text" class="form-control search" id="search" placeholder="Rechercher un client/devis ...">
+            </div>
               <div class="row">
             {% for estimate in estimates %}
                     <div class="col-md-4">
@@ -22,12 +26,12 @@
                                 <strong>Référence Facture :</strong> {{ estimate.invoice.reference }}
                             </div>
                             <div class="card-body" style="font-size: 14px">
-                                <strong>Date :</strong> {{ estimate.createdAt | date('d/m/Y') }} <br>
-                                <strong>Montant HT :</strong> {{ estimate.totalHt | number_format(2, '.', ',') }} € <br>
-                                <strong>Montant TTC :</strong> {{ estimate.totalTtc | number_format(2, '.', ',') }} €
+                                <strong>Date :</strong> <span class="ml-5">{{ estimate.createdAt | date('d/m/Y') }}</span> <br>
+                                <strong>Montant HT :</strong> <span class="ml-5">{{ estimate.totalHt | number_format(2, '.', ',') }} €</span> <br>
+                                <strong>Montant TTC :</strong> <span class="ml-5">{{ estimate.totalTtc | number_format(2, '.', ',') }} €</span>
                                 <br>
                                 <strong> Restant Dû
-                                    :</strong> {{ estimate.invoice.remainingCapital | number_format(2, '.', ',') }} €
+                                    :</strong> <span class="ml-5">{{ estimate.invoice.remainingCapital | number_format(2, '.', ',') }} €</span>
                                 <br>
 
                             </div>
@@ -72,9 +76,5 @@
 {% endblock %}
 
 {% block javascripts %}
-    <script>
-        $(function () {
-            $('[data-toggle="tooltip"]').tooltip()
-        })
-    </script>
+<script src="{{ asset('js/search.js') }}" ></script>
 {% endblock %}
