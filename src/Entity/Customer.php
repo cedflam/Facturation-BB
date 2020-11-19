@@ -61,12 +61,12 @@ class Customer
     private $company;
 
     /**
-     * @ORM\OneToMany(targetEntity=Estimate::class, mappedBy="customer")
+     * @ORM\OneToMany(targetEntity=Estimate::class, mappedBy="customer", cascade={"persist", "remove"})
      */
     private $estimates;
 
     /**
-     * @ORM\OneToMany(targetEntity=Invoice::class, mappedBy="customer")
+     * @ORM\OneToMany(targetEntity=Invoice::class, mappedBy="customer", cascade={"persist", "remove"})
      */
     private $invoices;
 

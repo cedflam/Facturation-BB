@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\Advance;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\MoneyType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -12,8 +13,9 @@ class AdvanceType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('amount')
-            ->add('invoice')
+            ->add('amount', MoneyType::class, [
+                'label' => "Montant de l'acompte",
+            ])
         ;
     }
 

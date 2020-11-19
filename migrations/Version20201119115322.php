@@ -10,7 +10,7 @@ use Doctrine\Migrations\AbstractMigration;
 /**
  * Auto-generated Migration: Please modify to your needs!
  */
-final class Version20201114115511 extends AbstractMigration
+final class Version20201119115322 extends AbstractMigration
 {
     public function getDescription() : string
     {
@@ -20,16 +20,16 @@ final class Version20201114115511 extends AbstractMigration
     public function up(Schema $schema) : void
     {
         // this up() migration is auto-generated, please modify it to your needs
-        $this->addSql('ALTER TABLE invoice ADD estimate_id INT NOT NULL');
+        $this->addSql('ALTER TABLE invoice DROP type_invoice');
+        $this->addSql('ALTER TABLE invoice ADD CONSTRAINT FK_906517449395C3F3 FOREIGN KEY (customer_id) REFERENCES customer (id)');
         $this->addSql('ALTER TABLE invoice ADD CONSTRAINT FK_9065174485F23082 FOREIGN KEY (estimate_id) REFERENCES estimate (id)');
-        $this->addSql('CREATE UNIQUE INDEX UNIQ_9065174485F23082 ON invoice (estimate_id)');
     }
 
     public function down(Schema $schema) : void
     {
         // this down() migration is auto-generated, please modify it to your needs
+        $this->addSql('ALTER TABLE invoice DROP FOREIGN KEY FK_906517449395C3F3');
         $this->addSql('ALTER TABLE invoice DROP FOREIGN KEY FK_9065174485F23082');
-        $this->addSql('DROP INDEX UNIQ_9065174485F23082 ON invoice');
-        $this->addSql('ALTER TABLE invoice DROP estimate_id');
+        $this->addSql('ALTER TABLE invoice ADD type_invoice INT DEFAULT NULL');
     }
 }

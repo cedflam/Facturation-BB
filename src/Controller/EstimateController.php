@@ -2,8 +2,8 @@
 
 namespace App\Controller;
 
-use App\Entity\Customer;
 use App\Entity\Estimate;
+use App\Entity\Invoice;
 use App\Form\EstimateType;
 use App\Repository\CompanyRepository;
 use App\Repository\CustomerRepository;
@@ -12,30 +12,17 @@ use Doctrine\ORM\EntityManagerInterface;
 use Knp\Bundle\SnappyBundle\Snappy\Response\PdfResponse;
 use Knp\Snappy\Pdf;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 class EstimateController extends AbstractController
 {
-    /**
-     * @var CustomerRepository
-     */
+
     private CustomerRepository $customerRepository;
-
-    /**
-     * @var EntityManagerInterface
-     */
     private EntityManagerInterface $manager;
-
-    /**
-     * @var EstimateRepository
-     */
     private EstimateRepository $estimateRepository;
-
-    /**
-     * @var CompanyRepository
-     */
     private CompanyRepository $companyRepository;
 
     /**
@@ -45,7 +32,12 @@ class EstimateController extends AbstractController
      * @param EstimateRepository $estimateRepository
      * @param CompanyRepository $companyRepository
      */
-    public function __construct(CustomerRepository $customerRepository, EntityManagerInterface $manager, EstimateRepository $estimateRepository, CompanyRepository $companyRepository )
+    public function __construct(
+        CustomerRepository $customerRepository,
+        EntityManagerInterface $manager,
+        EstimateRepository $estimateRepository,
+        CompanyRepository $companyRepository
+    )
     {
         $this->customerRepository = $customerRepository;
         $this->estimateRepository = $estimateRepository;
@@ -90,25 +82,42 @@ class EstimateController extends AbstractController
      */
     public function addEstimate(Request $request): Response
     {
+
         $estimate = new Estimate();
+        $invoice = new Invoice();
         $form = $this->createForm(EstimateType::class, $estimate);
         $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()){
+        if ($form->isSubmitted() && $form->isValid()) {
 
+            // Je récupère la date du jour pour l'intégrer à la référence
+            $date = new \DateTime();
             // Je lie les descriptions au devis
-            foreach ($estimate->getDescriptions() as $description){
+            foreach ($estimate->getDescriptions() as $description) {
                 $description->setEstimate($estimate);
                 $this->manager->persist($description);
             }
             // J'attribue une référence et un état au devis
-            $estimate->setReference(uniqid())
-                ->setState(false)
-            ;
+            $estimate->setReference($date->format('ymdHi'))
+                ->setState(false);
             $this->manager->persist($estimate);
+
+            // Je paramètre une nouvelle facture
+            $invoice->setEstimate($estimate)
+                    ->setCustomer($estimate->getCustomer())
+                    ->setState(Invoice::FACTURE_A_REGLER)
+                    ->setReference($date->format('ymdHi'))
+                    ->setTotalAdvance(0)
+                    ->setTotalHt($estimate->getTotalHt())
+                    ->setTotalTtc($estimate->getTotalTtc())
+                    ->setRemainingCapital($estimate->getTotalTtc())
+            ;
+
+            // J'enregisre
+            $this->manager->persist($invoice);
             $this->manager->flush();
 
-            return $this->redirectToRoute('home');
+            return $this->redirectToRoute('estimate_list');
         }
         return $this->render('estimate/index.html.twig', [
             'customers' => $this->customerRepository->findAll(),
@@ -129,10 +138,10 @@ class EstimateController extends AbstractController
         $form = $this->createForm(EstimateType::class, $estimate);
         $form->handleRequest($request);
 
-        if($form->isSubmitted() && $form->isValid()){
+        if ($form->isSubmitted() && $form->isValid()) {
 
             // Je lie les descriptions au devis
-            foreach ($estimate->getDescriptions() as $description){
+            foreach ($estimate->getDescriptions() as $description) {
                 $description->setEstimate($estimate);
                 $this->manager->persist($description);
             }
@@ -142,7 +151,6 @@ class EstimateController extends AbstractController
 
             return $this->redirectToRoute('estimate_list');
         }
-
         return $this->render('estimate/estimate_edit.html.twig', [
             'customer' => $this->customerRepository->findOneBy(['id' => $estimate->getCustomer()]),
             'form' => $form->createView()
@@ -160,7 +168,7 @@ class EstimateController extends AbstractController
      */
     public function generatePdf(PDF $pdf, Estimate $estimate)
     {
-        $customer = $this->customerRepository->findOneBy(['id'=> $estimate->getCustomer()]);
+        $customer = $this->customerRepository->findOneBy(['id' => $estimate->getCustomer()]);
 
         $html = $this->renderView('estimate/estimate_show.html.twig', [
             'estimate' => $this->estimateRepository->findOneBy(['id' => $estimate]),
@@ -168,8 +176,21 @@ class EstimateController extends AbstractController
             'company' => $this->companyRepository->findOneBy(['id' => $estimate->getCustomer()->getCompany()])
         ]);
 
-        return new PdfResponse($pdf->getOutputFromHtml($html), 'devis-'.$customer->getFirstname().'-'.$customer->getLastname().'.pdf');
+        return new PdfResponse($pdf->getOutputFromHtml($html), 'devis-' . $customer->getFirstname() . '-' . $customer->getLastname() . '.pdf');
     }
 
+    /**
+     * Permet de supprimer un devis
+     *
+     * @Route ("/devis/supprimer/{id}", name="estimate_remove")
+     * @param Estimate $estimate
+     * @return RedirectResponse
+     */
+    public function estimateRemove(Estimate $estimate)
+    {
+        $this->manager->remove($estimate);
+        $this->manager->flush();
 
+        return $this->redirectToRoute('estimate_list');
+    }
 }

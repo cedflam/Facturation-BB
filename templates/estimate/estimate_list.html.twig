@@ -4,54 +4,77 @@
 
 {% block body %}
 
-    <div class="container-fluid estimate" style=" background-image: url({{ asset('img/bg-masthead.jpg') }});">
-        <div class="container">
+    <div class="container-fluid estimate pl-5 pr-5"
+         style=" background-image: url({{ asset('img/bg-masthead.jpg') }}); ">
+
+
+        <div class="container" style="padding-bottom: 300px;">
             <h2 class="text-white mt-5">Mes devis</h2>
-            <div class="container" style="padding-bottom: 500px;">
-                <table class="table">
-                    <thead class="bg-dark text-white">
-                    <tr>
-                        <th scope="col">Ref</th>
-                        <th scope="col">Client</th>
-                        <th scope="col">Date</th>
-                        <th scope="col">Total HT</th>
-                        <th scope="col">Total TTC</th>
-                        <th scope="col" class="text-center">Voir</th>
-                        <th scope="col" class="text-center">Modifier</th>
-                        <th scope="col" class="text-center">Générer PDF</th>
-                    </tr>
-                    </thead>
-                    <tbody class="bg-light">
-                    {% for estimate in estimates %}
-                        <tr>
-                            <th scope="row">{{ estimate.reference }}</th>
-                            <td>{{ estimate.customer.firstname }} {{ estimate.customer.lastname }}</td>
-                            <td>{{ estimate.createdAt | date('d/m/Y') }}</td>
-                            <td>{{ estimate.totalHt | number_format(2, '.', ',') }} €</td>
-                            <td>{{ estimate.totalTtc | number_format(2, '.', ',') }} €</td>
-                            <td class="text-center" >
-                                <a href="{{ path('estimate_show', {'id': estimate.id }) }}" class="btn btn-sm text-white " style="background: #f4623a">
+              <div class="row">
+            {% for estimate in estimates %}
+                    <div class="col-md-4">
+                        <div class="card mt-2">
+                            <div class="card-header" style="font-size: 12px">
+                                <h5>{{ estimate.customer.firstname }} {{ estimate.customer.lastname }}</h5>
+                                Tel : {{ estimate.customer.phone }} <br>
+                                <a href="mailto:{{ estimate.customer.email }}">Envoyer un email</a> <br>
+                                <strong>Référence Devis :</strong> {{ estimate.reference }} <br>
+                                <strong>Référence Facture :</strong> {{ estimate.invoice.reference }}
+                            </div>
+                            <div class="card-body" style="font-size: 14px">
+                                <strong>Date :</strong> {{ estimate.createdAt | date('d/m/Y') }} <br>
+                                <strong>Montant HT :</strong> {{ estimate.totalHt | number_format(2, '.', ',') }} € <br>
+                                <strong>Montant TTC :</strong> {{ estimate.totalTtc | number_format(2, '.', ',') }} €
+                                <br>
+                                <strong> Restant Dû
+                                    :</strong> {{ estimate.invoice.remainingCapital | number_format(2, '.', ',') }} €
+                                <br>
+
+                            </div>
+                            <div class="card-footer">
+                                <a href="{{ path('estimate_show', {'id': estimate.id }) }}"
+                                   class="btn btn-sm text-white " data-toggle="tooltip" data-placement="top"
+                                   title="Voir le devis" style="background: #f4623a">
                                     <i class="fas fa-eye"></i>
                                 </a>
-                            </td>
-                            <td class="text-center" >
-                                <a href="{{ path('estimate_edit', {'id': estimate.id }) }}" class="btn btn-sm text-white " style="background: #f4623a">
-                                    <i class="fas fa-pen"></i>
-                                </a>
-                            </td>
-                            <td class="text-center">
-                                <a href="{{ path('estimate_generate_pdf', {'id': estimate.id}) }}" class="btn btn-sm text-white" style="background: #f4623a">
+                                <a href="{{ path('estimate_generate_pdf', {'id': estimate.id}) }}"
+                                   class="btn btn-sm text-white" data-toggle="tooltip" data-placement="top"
+                                   title="Générer le devis au format PDF" style="background: #f4623a">
                                     <i class="fas fa-file-pdf"></i>
                                 </a>
-                            </td>
-                        </tr>
-                    {% endfor %}
+                                <a href="{{ path('invoice_select', {'id': estimate.invoice.id }) }}"
+                                   class="btn btn-sm text-white " data-toggle="tooltip" data-placement="top"
+                                   title="Facturer ce client " style="background: #f4623a">
+                                    <i class="fas fa-file-invoice"></i>
+                                </a>
+                                <a href="{{ path('estimate_edit', {'id': estimate.id }) }}"
+                                   class="btn btn-sm text-white " data-toggle="tooltip" data-placement="top"
+                                   title="Modifer ce devis" style="background: #f4623a">
+                                    <i class="fas fa-pen"></i>
+                                </a>
+                                <a href="{{ path('estimate_remove', {'id': estimate.id }) }}"
+                                   class="btn btn-sm text-white " data-toggle="tooltip" data-placement="top"
+                                   title="Supprimer ce devis" style="background: #f4623a">
+                                    <i class="fas fa-trash"></i>
+                                </a>
+                                <a class="btn btn-sm  text-white" data-toggle="tooltip" data-placement="top"
+                                   title="Nouveau devis" href="{{ path('estimate_new') }}" style="background: #f4623a">
+                                    <i class="fas fa-plus"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
 
-                    </tbody>
-                </table>
-                <a class="btn text-white" href="{{ path('estimate_new') }}" style="background: #f4623a">Nouveau devis</a>
-            </div>
+            {% endfor %}
+              </div>
         </div>
-    </div>
 
+{% endblock %}
+
+{% block javascripts %}
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
 {% endblock %}

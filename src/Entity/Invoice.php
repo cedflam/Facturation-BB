@@ -6,12 +6,19 @@ use App\Repository\InvoiceRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Faker\Provider\DateTime;
 
 /**
  * @ORM\Entity(repositoryClass=InvoiceRepository::class)
+ * @ORM\HasLifecycleCallbacks()
  */
 class Invoice
 {
+    const FACTURE_A_REGLER = false;
+    const FACTURE_REGLEE = true;
+    const FACTURE_ACOMPTE = 'acompte';
+    const FACTURE_FINALE = 'finale';
+
     /**
      * @ORM\Id
      * @ORM\GeneratedValue
@@ -20,7 +27,7 @@ class Invoice
     private $id;
 
     /**
-     * @ORM\Column(type="datetime")
+     * @ORM\Column(type="datetime", nullable=true)
      */
     private $createdAt;
 
@@ -40,29 +47,23 @@ class Invoice
     private $totalTtc;
 
 
-
-    /**
-     * @ORM\Column(type="integer")
-     */
-    private $typeInvoice;
-
     /**
      * @ORM\Column(type="string", length=255)
      */
     private $reference;
 
     /**
-     * @ORM\OneToMany(targetEntity=Description::class, mappedBy="invoice")
+     * @ORM\OneToMany(targetEntity=Description::class, mappedBy="invoice", cascade={"persist", "remove"})
      */
     private $descriptions;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Customer::class, inversedBy="invoices")
+     * @ORM\ManyToOne(targetEntity=Customer::class, inversedBy="invoices", cascade={"persist", "remove"})
      */
     private $customer;
 
     /**
-     * @ORM\OneToMany(targetEntity=Advance::class, mappedBy="invoice")
+     * @ORM\OneToMany(targetEntity=Advance::class, mappedBy="invoice", cascade={"persist", "remove"})
      */
     private $advances;
 
@@ -77,6 +78,16 @@ class Invoice
      */
     private $state;
 
+    /**
+     * @ORM\Column(type="float")
+     */
+    private $remainingCapital;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $typeInvoice;
+
 
 
     public function __construct()
@@ -84,6 +95,7 @@ class Invoice
         $this->descriptions = new ArrayCollection();
         $this->advances = new ArrayCollection();
     }
+
 
     public function getId(): ?int
     {
@@ -95,9 +107,13 @@ class Invoice
         return $this->createdAt;
     }
 
-    public function setCreatedAt(\DateTimeInterface $createdAt): self
+    /**
+     * @ORM\PrePersist()
+     * @return $this
+     */
+    public function setCreatedAt(): self
     {
-        $this->createdAt = $createdAt;
+        $this->createdAt = new \DateTime();
 
         return $this;
     }
@@ -138,19 +154,6 @@ class Invoice
         return $this;
     }
 
-
-
-    public function getTypeInvoice(): ?int
-    {
-        return $this->typeInvoice;
-    }
-
-    public function setTypeInvoice(int $typeInvoice): self
-    {
-        $this->typeInvoice = $typeInvoice;
-
-        return $this;
-    }
 
     public function getReference(): ?string
     {
@@ -256,6 +259,30 @@ class Invoice
     public function setState(bool $state): self
     {
         $this->state = $state;
+
+        return $this;
+    }
+
+    public function getRemainingCapital(): ?float
+    {
+        return $this->remainingCapital;
+    }
+
+    public function setRemainingCapital(float $remainingCapital): self
+    {
+        $this->remainingCapital = $remainingCapital;
+
+        return $this;
+    }
+
+    public function getTypeInvoice(): ?string
+    {
+        return $this->typeInvoice;
+    }
+
+    public function setTypeInvoice(?string $typeInvoice): self
+    {
+        $this->typeInvoice = $typeInvoice;
 
         return $this;
     }

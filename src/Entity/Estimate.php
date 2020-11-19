@@ -14,11 +14,6 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Estimate
 {
-    const EN_COURS = 0;
-    const ACCEPTE = 1;
-    const REFUSE = 2;
-    const ARCHIVE = 3;
-
     /**
      * @ORM\Id
      * @ORM\GeneratedValue
@@ -31,8 +26,6 @@ class Estimate
      *
      */
     private ?DateTimeInterface $createdAt;
-
-
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -94,8 +87,6 @@ class Estimate
 
         return $this;
     }
-
-
 
     public function getReference(): ?string
     {

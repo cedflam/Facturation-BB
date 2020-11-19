@@ -1,0 +1,119 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Facturation{% endblock %}
+
+{# Prevint symfony que j'ai un thème personnalisé #}
+{% form_theme form _self %}
+
+ {# Je personalise la présentation du prototype #}
+{% block _invoice_advances_widget %}
+    {{ form_widget(form) }}
+    <button type="button" class="add_advance btn btn-sm btn-warning mt-3"
+            data-collection-holder-class="advances">
+        Ajouter acompte
+    </button>
+    <button type="button" class="calcul btn btn-sm btn-info mt-3 hidden">Calculer</button>
+{% endblock %}
+
+ {# Je personnalise les champs du prototype #}
+{% block _invoice_advances_entry_widget %}
+    <div class="row acompte" id="{{ id }}">
+        <div class=" col-md-6">
+            {{ form_widget(form.amount, {'attr': {'class': 'amount'}}) }}
+        </div>
+        <div class="col-md-6">
+            <button type="button" class="btn btn-primary delete mt-1" data-target="{{ id }}">
+                Supprimer
+            </button>
+        </div>
+
+    </div>
+
+{% endblock %}
+
+{% block _invoice_advances_entry_row %}
+    {{ form_widget(form) }}
+{% endblock %}
+
+{% block body %}
+    <div class="container-fluid estimate" style=" background-image: url({{ asset('img/bg-masthead.jpg') }});">
+        <div class="container text-white">
+            <h2 class="text-white">Facturation</h2>
+
+            {{ form_start(form) }}
+            {{ form_widget(form) }}
+
+            <input type="submit" class="btn btn-sm btn-secondary" value="Enregistrer" style="margin-bottom: 300px;" >
+            <a href="" class="btn btn-sm btn-info text-white" style="margin-bottom: 300px;"><i class="fas fa-file-pdf text-white"></i> Afficher la facture (PDF)</a>
+            {{ form_end(form) }}
+            <div class="text-white">
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    <script>
+        jQuery(document).ready(function () {
+            /**
+             * Permet d'ajouter et de supprimer une prestation
+             */
+            let index = $('.acompte').length;
+            $('.add_advance').on('click', function () {
+                index++;
+                let div = $('#invoice_advances');
+                //Je récupère le prototype des entrées
+                let tmpl = div.data('prototype').replace(/__name__/g, index);
+                //j'injecte le code dans la div
+                div.append(tmpl);
+
+                // J'initialise les functions
+                handleDeleteButton();
+                calculFields();
+
+                $('.calcul').removeClass('hidden');
+
+            });
+
+            // Gestion du bouton supprimer
+            function handleDeleteButton() {
+                //Permet de supprimer une Prestation
+                let buttonDelete = $('.delete');
+                buttonDelete.on('click', function () {
+                    $('.calcul').removeClass('hidden');
+                    let id = $(this).data('target');
+                    $('#' + id).remove();
+                });
+            }
+
+            function calculFields() {
+                //J'effectue le calcul
+                $('.calcul').on('click', function () {
+
+                    let totalTTC = $('.totalTTC').val();
+                    let restantDu = $('.remainingCapital').val();
+
+                    // Je boucle sur les montants
+                    let amounts = $('.amount');
+                    let totalAmount = 0;
+                    amounts.each(function () {
+                        totalAmount = totalAmount + (+$(this).val());
+                        restantDu = totalTTC - totalAmount;
+                        console.log(totalAmount)
+                        $('.remainingCapital').val(restantDu.toFixed(2));
+                        $('.totalAdvance').val(totalAmount.toFixed(2));
+                    });
+
+                    // Je cache le bouton une fois le calcul effectué
+                    $('.calcul').addClass('hidden');
+                });
+            }
+
+
+            handleDeleteButton();
+            calculFields();
+
+
+        });
+    </script>
+{% endblock %}
