@@ -2,9 +2,16 @@
 
 namespace App\Controller;
 
+use App\Entity\Estimate;
 use App\Entity\Invoice;
 use App\Form\InvoiceType;
+use App\Repository\CompanyRepository;
+use App\Repository\CustomerRepository;
+use App\Repository\InvoiceRepository;
+use App\Service\ReplaceAccentService;
 use Doctrine\ORM\EntityManagerInterface;
+use Knp\Bundle\SnappyBundle\Snappy\Response\PdfResponse;
+use Knp\Snappy\Pdf;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -12,18 +19,53 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class InvoiceController extends AbstractController
 {
+    // Prorpriétés
     private EntityManagerInterface $manager;
+    private ReplaceAccentService $accentService;
+    private InvoiceRepository $invoiceRepository;
+    private CustomerRepository $customerRepository;
+    private CompanyRepository $companyRepository;
 
     /**
      * InvoiceController constructor.
      * @param EntityManagerInterface $manager
+     * @param ReplaceAccentService $accentService
+     * @param InvoiceRepository $invoiceRepository
+     * @param CustomerRepository $customerRepository
+     * @param CompanyRepository $companyRepository
      */
-    public function __construct(EntityManagerInterface $manager)
+    public function __construct(
+        EntityManagerInterface $manager,
+        ReplaceAccentService $accentService,
+        InvoiceRepository $invoiceRepository,
+        CustomerRepository $customerRepository,
+        CompanyRepository $companyRepository
+    )
     {
         $this->manager = $manager;
+        $this->accentService = $accentService;
+        $this->invoiceRepository = $invoiceRepository;
+        $this->customerRepository = $customerRepository;
+        $this->companyRepository = $companyRepository;
     }
 
     /**
+     * @Route ("/facture/consulter/{id}", name="invoice_show")
+     * @param Invoice $invoice
+     * @return Response
+     */
+    public function showInvoice(Invoice $invoice)
+    {
+        return $this->render('invoice/invoice_show.html.twig', [
+            'invoice' => $this->invoiceRepository->findOneBy(['id' => $invoice]),
+            'customer' => $this->customerRepository->findOneBy(['id' => $invoice->getCustomer()]),
+            'company' => $this->companyRepository->findOneBy(['id' => $invoice->getCustomer()->getCompany()])
+        ]);
+    }
+
+    /**
+     * Permet de facturer  un client
+     *
      * @Route("/factures/selection/{id}", name="invoice_select")
      * @param Request $request
      * @param Invoice $invoice
@@ -39,24 +81,25 @@ class InvoiceController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             //J'attribue les acomptes à la facture en cours
             foreach ($invoice->getAdvances() as $advance) {
-                $advance->setInvoice($invoice);
+                // Je lie l'acompte à la facture
+                $advance->setInvoice($invoice)
+                        ->setContent("Facture d'acompte sur le devis n° ".$advance->getInvoice()->getEstimate()->getReference())
+                ;
+                // J'atribue une date au nouvel acompte
+                if (!$advance->getCreatedAt()) {
+                    $advance->setCreatedAt(new \DateTime());
+                }
                 $this->manager->persist($advance);
             }
             // J'atribue une nouvelle référence à la facture
             $date = new \DateTime();
             $invoice->setReference($date->format('ymdHi'));
             // Je change la date de la facture
-            $invoice->setCreatedAt();
-            // Je change le status à payé si le crd est = 0
-            if ($invoice->getRemainingCapital() == 0) {
-                $invoice->setState(Invoice::FACTURE_REGLEE)
-                        ->setTypeInvoice(Invoice::FACTURE_FINALE);
-            }else{
-                $invoice->setTypeInvoice(Invoice::FACTURE_ACOMPTE);
-            }
+            $invoice->setCreatedAt($date);
+
             // Je passe le devis en accepté
             $estimate = $invoice->getEstimate();
-            $estimate->setState(true);
+            $estimate->setState(Estimate::DEVIS_ACCEPTE);
 
             // J'enregistre
             $this->manager->persist($estimate);
@@ -69,5 +112,33 @@ class InvoiceController extends AbstractController
         return $this->render('invoice/index.html.twig', [
             'form' => $form->createView()
         ]);
+    }
+
+    /**
+     * Permet de générer une facture d'acompte au format pdf
+     *
+     * @Route("/facture/generer/pdf/{id}", name="invoice_generate_pdf")
+     *
+     * @param Pdf $pdf
+     * @param Invoice $invoice
+     * @return PdfResponse
+     */
+    public function invoiceGenerateAdvancePdf(PDF $pdf, Invoice $invoice)
+    {
+        $customer = $this->customerRepository->findOneBy(['id' => $invoice->getCustomer()]);
+        $html = $this->renderView('invoice/invoice_show.html.twig', [
+            'invoice' => $this->invoiceRepository->findOneBy(['id' => $invoice]),
+            'customer' => $customer,
+            'company' => $this->companyRepository->findOneBy(['id' => $invoice->getCustomer()->getCompany()])
+        ]);
+
+        //Je remplace les accents eventuels car non pris en charge
+        $firstname = $this->accentService->replaceAccents($customer->getFirstname());
+        $lastname = $this->accentService->replaceAccents($customer->getLastname());
+
+        return new PdfResponse(
+            $pdf->getOutputFromHtml($html),
+            'facture-acompte-' . $lastname . '-' . $firstname . '.pdf'
+        );
     }
 }

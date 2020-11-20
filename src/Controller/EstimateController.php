@@ -63,6 +63,18 @@ class EstimateController extends AbstractController
     }
 
     /**
+     * Afiche la liste des devis archivés
+     *
+     * @Route ("/devis/mes-devis/archives", name="estimate_archives_list")
+     */
+    public function listArchiveEstimates()
+    {
+        return $this->render('estimate/estimate_archives.html.twig', [
+            'estimates' => $this->estimateRepository->findAll()
+        ]);
+    }
+
+    /**
      * Permet d'afficher un aperçu d'un devis
      *
      * @Route("/devis/consulter/{id}", name="estimate_show")
@@ -116,6 +128,7 @@ class EstimateController extends AbstractController
                     ->setTotalHt($estimate->getTotalHt())
                     ->setTotalTtc($estimate->getTotalTtc())
                     ->setRemainingCapital($estimate->getTotalTtc())
+                    ->setCreatedAt(new \DateTime())
             ;
 
             // J'enregisre

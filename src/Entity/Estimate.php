@@ -14,6 +14,8 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Estimate
 {
+    const DEVIS_EN_COURS = false;
+    const DEVIS_ACCEPTE = true;
     /**
      * @ORM\Id
      * @ORM\GeneratedValue

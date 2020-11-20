@@ -22,7 +22,7 @@
             {{ form_widget(form.amount, {'attr': {'class': 'amount'}}) }}
         </div>
         <div class="col-md-6">
-            <button type="button" class="btn btn-primary delete mt-1" data-target="{{ id }}">
+            <button type="button" class="btn btn-primary delete mt-1 mb-1" data-target="{{ id }}">
                 Supprimer
             </button>
         </div>
@@ -42,7 +42,6 @@
             {{ form_widget(form) }}
 
             <input type="submit" class="btn btn-sm btn-secondary" value="Enregistrer" style="margin-bottom: 300px;" >
-            <a href="" class="btn btn-sm btn-info text-white" style="margin-bottom: 300px;"><i class="fas fa-file-pdf text-white"></i> Afficher la facture (PDF)</a>
             {{ form_end(form) }}
             <div class="text-white">
             </div>

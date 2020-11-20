@@ -6,11 +6,11 @@ use App\Repository\InvoiceRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
-use Faker\Provider\DateTime;
+
 
 /**
  * @ORM\Entity(repositoryClass=InvoiceRepository::class)
- * @ORM\HasLifecycleCallbacks()
+ *
  */
 class Invoice
 {
@@ -64,6 +64,7 @@ class Invoice
 
     /**
      * @ORM\OneToMany(targetEntity=Advance::class, mappedBy="invoice", cascade={"persist", "remove"})
+     * @ORM\OrderBy({"createdAt"="ASC"})
      */
     private $advances;
 
@@ -107,13 +108,9 @@ class Invoice
         return $this->createdAt;
     }
 
-    /**
-     * @ORM\PrePersist()
-     * @return $this
-     */
-    public function setCreatedAt(): self
+    public function setCreatedAt(\DateTimeInterface $createdAt): self
     {
-        $this->createdAt = new \DateTime();
+        $this->createdAt = $createdAt;
 
         return $this;
     }

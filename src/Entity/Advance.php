@@ -5,8 +5,10 @@ namespace App\Entity;
 use App\Repository\AdvanceRepository;
 use Doctrine\ORM\Mapping as ORM;
 
+
 /**
  * @ORM\Entity(repositoryClass=AdvanceRepository::class)
+ *
  */
 class Advance
 {
@@ -26,6 +28,17 @@ class Advance
      * @ORM\ManyToOne(targetEntity=Invoice::class, inversedBy="advances")
      */
     private $invoice;
+
+    /**
+     * @ORM\Column(type="datetime")
+     *
+     */
+    private $createdAt;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $content;
 
     public function getId(): ?int
     {
@@ -52,6 +65,30 @@ class Advance
     public function setInvoice(?Invoice $invoice): self
     {
         $this->invoice = $invoice;
+
+        return $this;
+    }
+
+    public function getCreatedAt(): ?\DateTimeInterface
+    {
+        return $this->createdAt;
+    }
+
+    public function setCreatedAt(\DateTimeInterface $createdAt): self
+    {
+        $this->createdAt = $createdAt;
+
+        return $this;
+    }
+
+    public function getContent(): ?string
+    {
+        return $this->content;
+    }
+
+    public function setContent(string $content): self
+    {
+        $this->content = $content;
 
         return $this;
     }
