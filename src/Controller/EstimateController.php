@@ -53,7 +53,7 @@ class EstimateController extends AbstractController
     /**
      * Afiche la liste des devis
      *
-     * @Route ("/devis/Mes-Devis", name="estimate_list")
+     * @Route ("/devis/mes-devis-en-cours", name="estimate_list")
      */
     public function listEstimates()
     {
@@ -65,7 +65,7 @@ class EstimateController extends AbstractController
     /**
      * Afiche la liste des devis archivés
      *
-     * @Route ("/devis/mes-devis/archives", name="estimate_archives_list")
+     * @Route ("/devis/mes-devis-archives", name="estimate_archives_list")
      */
     public function listArchiveEstimates()
     {
@@ -77,7 +77,7 @@ class EstimateController extends AbstractController
     /**
      * Permet d'afficher un aperçu d'un devis
      *
-     * @Route("/devis/consulter/{id}", name="estimate_show")
+     * @Route("/devis/aperçu/{id}", name="estimate_show")
      * @param Estimate $estimate
      * @return Response
      */
@@ -93,7 +93,7 @@ class EstimateController extends AbstractController
     /**
      * Permet de créer un nouveau devis
      *
-     * @Route("/devis/nouveau", name="estimate_new")
+     * @Route("/devis/nouveau-devis", name="estimate_new")
      * @param Request $request
      * @return Response
      */
@@ -109,10 +109,15 @@ class EstimateController extends AbstractController
 
             // Je récupère la date du jour pour l'intégrer à la référence
             $date = new \DateTime();
-            // Je lie les descriptions au devis
+            // Je lie les descriptions au devis et à la facture
             foreach ($estimate->getDescriptions() as $description) {
+                // Je lie les descriptions au devis
                 $description->setEstimate($estimate);
+                // Je lie les descriiptions à la facture
+                $description->setInvoice($invoice);
+
                 $this->manager->persist($description);
+
             }
             // J'attribue une référence et un état au devis
             $estimate->setReference($date->format('ymdHi'))

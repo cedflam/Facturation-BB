@@ -4,14 +4,16 @@
 
 {% block body %}
 
-    <div class="container-fluid estimate pl-5 pr-5"
-         style=" background-image: url({{ asset('img/bg-masthead.jpg') }}); ">
-        <div class="container" style="padding-bottom: 300px;">
-            <h2 class="text-white mt-2">Mes devis / factures en cours</h2>
-            <div class="form-group mt-2">
-                <label for="search" class="">Rechercher</label>
-                <input name="search" type="text" class="form-control search" id="search" placeholder="Rechercher un client/devis ...">
+    <div class="container-fluid estimate pl-5 pr-5 bg-dark"
+         {#style=" background-image: url({{ asset('img/bg-masthead.jpg') }}); "#}>
+        <div class="container " style="padding-bottom: 300px;">
+            <div class="row mt-5">
+                <div class="form-group mt-2  col-md-8">
+                    <h3 class="text-white mt-2">Mes devis / factures en cours</h3>
+                     <input name="search" type="text" class="form-control search mt-4" id="search" placeholder="Rechercher un client/devis ...">
+                </div>
             </div>
+
             <div class="row">
             {% for estimate in estimates %}
                 {% if estimate.invoice.state == false %}
@@ -40,7 +42,6 @@
                                 <strong> Restant Dû
                                     :</strong> <span class="">{{ estimate.invoice.remainingCapital | number_format(2, '.', ',') }}€</span>
                                 <br>
-
                             </div>
                             <div class="card-footer" >
                                 <a href="{{ path('estimate_show', {'id': estimate.id }) }}"
@@ -82,15 +83,13 @@
                                    title="Supprimer ce devis/facture" >
                                     <i class="fas fa-trash"></i>
                                 </a>
-
                             </div>
                         </div>
                     </div>
                     {% endif %}
             {% endfor %}
-              </div>
         </div>
-
+    </div>
 {% endblock %}
 
 {% block javascripts %}

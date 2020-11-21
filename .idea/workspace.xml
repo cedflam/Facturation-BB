@@ -11,33 +11,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9f29e3dd-1aaf-468e-9a1c-10b205ea4b7f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/migrations/.Version20201119115322.php.icloud" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/migrations/.Version20201119115423.php.icloud" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/migrations/.Version20201120075753.php.icloud" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/estimate/estimate_archives.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/invoice/invoice_show.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/partials/invoice/_invoice_advance_pdf_model.hml.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/partials/invoice/_invoice_final_pdf_model.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/migrations/Version20201119115322.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/migrations/Version20201119115423.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/migrations/Version20201120075753.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/translation.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/translation.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20201119115322.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20201119115423.php" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/Version20201120124755.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/estimate.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/estimate.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/CompanyCrudController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/CompanyCrudController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/DashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/DashboardController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/.Version20201119115322.php.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/.Version20201119115423.php.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/.Version20201120075753.php.icloud" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/EstimateController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/EstimateController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/InvoiceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/InvoiceController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Advance.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Advance.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Estimate.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Estimate.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Invoice.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Invoice.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/AdvanceType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/AdvanceType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/InvoiceType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/InvoiceType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/estimate/estimate_archives.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/estimate/estimate_archives.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/estimate/estimate_edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/estimate/estimate_edit.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/estimate/estimate_list.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/estimate/estimate_list.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/estimate/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/estimate/index.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/invoice/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/invoice/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/partials/footer.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/partials/footer.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/partials/header.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/partials/header.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/partials/invoice/_invoice_final_pdf_model.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/partials/invoice/_invoice_final_pdf_model.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,6 +76,7 @@
       <workItem from="1605765557718" duration="24832000" />
       <workItem from="1605797435964" duration="9087000" />
       <workItem from="1605855475217" duration="19770000" />
+      <workItem from="1605902446659" duration="5227000" />
     </task>
     <servers />
   </component>
@@ -142,21 +130,5 @@
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
     <state x="561" y="251" width="670" height="676" key="search.everywhere.popup/1792.0.1920.1080/0.0.1792.1120@0.0.1792.1120" timestamp="1605349938170" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/src/Entity/Invoice.php</url>
-          <line>4</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/templates/estimate/index.html.twig</url>
-          <line>40</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

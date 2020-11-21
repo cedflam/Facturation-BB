@@ -18,7 +18,7 @@
  {# Je personnalise les champs du prototype #}
 {% block _invoice_advances_entry_widget %}
     <div class="row acompte" id="{{ id }}">
-        <div class=" col-md-6">
+        <div class=" col-md-6 mt-1">
             {{ form_widget(form.amount, {'attr': {'class': 'amount'}}) }}
         </div>
         <div class="col-md-6">
@@ -34,9 +34,9 @@
 {% endblock %}
 
 {% block body %}
-    <div class="container-fluid estimate" style=" background-image: url({{ asset('img/bg-masthead.jpg') }});">
+    <div class="container-fluid estimate bg-dark " {#style=" background-image: url({{ asset('img/bg-masthead.jpg') }});"#}>
         <div class="container text-white">
-            <h2 class="text-white">Facturation</h2>
+            <h2 class="text-white ">Facturation</h2>
 
             {{ form_start(form) }}
             {{ form_widget(form) }}
