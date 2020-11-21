@@ -11,20 +11,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9f29e3dd-1aaf-468e-9a1c-10b205ea4b7f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/migrations/Version20201119115322.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/migrations/Version20201119115423.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/migrations/Version20201120075753.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/.Version20201119115322.php.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/.Version20201119115423.php.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/.Version20201120075753.php.icloud" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/EstimateController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/EstimateController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/estimate/estimate_archives.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/estimate/estimate_archives.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/estimate/estimate_edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/estimate/estimate_edit.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/estimate/estimate_list.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/estimate/estimate_list.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/estimate/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/estimate/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/invoice/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/invoice/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/partials/invoice/_invoice_final_pdf_model.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/partials/invoice/_invoice_final_pdf_model.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/CompanyCrudController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/CompanyCrudController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/CustomerCrudController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/CustomerCrudController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,7 +65,7 @@
       <workItem from="1605765557718" duration="24832000" />
       <workItem from="1605797435964" duration="9087000" />
       <workItem from="1605855475217" duration="19770000" />
-      <workItem from="1605902446659" duration="5227000" />
+      <workItem from="1605902446659" duration="7655000" />
     </task>
     <servers />
   </component>
@@ -108,19 +97,19 @@
     </state>
     <state x="360" y="222" key="#com.intellij.execution.impl.EditConfigurationsDialog/-65.-1080.1920.1080/0.0.1792.1120@0.0.1792.1120" timestamp="1605786348061" />
     <state x="360" y="222" key="#com.intellij.execution.impl.EditConfigurationsDialog/1792.0.1920.1080/0.0.1792.1120@0.0.1792.1120" timestamp="1605360621740" />
-    <state x="634" y="319" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1605868436564">
+    <state x="634" y="319" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1605949277321">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state x="634" y="319" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/-65.-1080.1920.1080/0.0.1792.1120@0.0.1792.1120" timestamp="1605868436564" />
+    <state x="634" y="319" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/-65.-1080.1920.1080/0.0.1792.1120@0.0.1792.1120" timestamp="1605949277321" />
     <state x="397" y="199" key="SettingsEditor" timestamp="1605346994441">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
     <state x="397" y="199" key="SettingsEditor/0.0.1792.1120@0.0.1792.1120" timestamp="1605345539962" />
     <state x="397" y="199" key="SettingsEditor/1792.0.1920.1080/0.0.1792.1120@0.0.1792.1120" timestamp="1605346994441" />
-    <state x="692" y="477" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1605779647311">
+    <state x="692" y="477" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1605947851824">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state x="692" y="477" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/-65.-1080.1920.1080/0.0.1792.1120@0.0.1792.1120" timestamp="1605779647311" />
+    <state x="692" y="477" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/-65.-1080.1920.1080/0.0.1792.1120@0.0.1792.1120" timestamp="1605947851824" />
     <state x="692" y="477" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/1792.0.1920.1080/0.0.1792.1120@0.0.1792.1120" timestamp="1605348979047" />
     <state x="598" y="168" width="595" height="783" key="find.popup" timestamp="1605802549237">
       <screen x="0" y="0" width="1792" height="1120" />
