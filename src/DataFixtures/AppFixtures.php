@@ -6,10 +6,17 @@ use App\Entity\Company;
 use App\Entity\Customer;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
-use Faker;
+use Faker;use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 class AppFixtures extends Fixture
 {
+    private UserPasswordEncoderInterface $encoder;
+
+    public function __construct(UserPasswordEncoderInterface $encoder)
+    {
+        $this->encoder = $encoder;
+    }
+
     public function load(ObjectManager $manager)
     {
 
@@ -26,6 +33,7 @@ class AppFixtures extends Fixture
                 ->setPhone($faker->e164PhoneNumber)
                 ->setSiret('362 521 879 00034')
                 ->setRcs('RCS PARIS B 517 403 572')
+                ->setPassword($this->encoder->encodePassword($company, 'password'))
         ;
         $manager->persist($company);
 

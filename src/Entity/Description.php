@@ -7,6 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity(repositoryClass=DescriptionRepository::class)
+ * @ORM\HasLifecycleCallbacks
  */
 class Description
 {
@@ -14,13 +15,26 @@ class Description
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
+     *
      */
     private $id;
 
     /**
-     * @ORM\Column(type="text")
+     * @return mixed
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+    /**
+     * @ORM\Column(type="string", length=255)
      */
     private $prestation;
+
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    private $createdAt;
 
     /**
      * @ORM\Column(type="float")
@@ -40,27 +54,22 @@ class Description
     /**
      * @ORM\Column(type="float")
      */
-    private $totalTtc;
-
-    /**
-     * @ORM\ManyToOne(targetEntity=Estimate::class, inversedBy="descriptions", cascade={"persist", "remove"})
-     */
-    private $estimate;
-
-    /**
-     * @ORM\ManyToOne(targetEntity=Invoice::class, inversedBy="descriptions", cascade={"persist", "remove"})
-     */
-    private $invoice;
+    private $totalHt;
 
     /**
      * @ORM\Column(type="float")
      */
-    private $totalHt;
+    private $totalTtc;
 
-    public function getId(): ?int
-    {
-        return $this->id;
-    }
+    /**
+     * @ORM\ManyToOne(targetEntity=Estimate::class, inversedBy="descriptions")
+     */
+    private $estimate;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=Invoice::class, inversedBy="descriptions", cascade={"remove"})
+     */
+    private $invoice;
 
     public function getPrestation(): ?string
     {
@@ -70,6 +79,22 @@ class Description
     public function setPrestation(string $prestation): self
     {
         $this->prestation = $prestation;
+
+        return $this;
+    }
+
+    public function getCreatedAt(): ?\DateTimeInterface
+    {
+        return $this->createdAt;
+    }
+
+    /**
+     * @return $this
+     * @ORM\PrePersist()
+     */
+    public function setCreatedAt()
+    {
+        $this->createdAt = new \DateTime();
 
         return $this;
     }
@@ -110,6 +135,18 @@ class Description
         return $this;
     }
 
+    public function getTotalHt(): ?float
+    {
+        return $this->totalHt;
+    }
+
+    public function setTotalHt(float $totalHt): self
+    {
+        $this->totalHt = $totalHt;
+
+        return $this;
+    }
+
     public function getTotalTtc(): ?float
     {
         return $this->totalTtc;
@@ -142,18 +179,6 @@ class Description
     public function setInvoice(?Invoice $invoice): self
     {
         $this->invoice = $invoice;
-
-        return $this;
-    }
-
-    public function getTotalHt(): ?float
-    {
-        return $this->totalHt;
-    }
-
-    public function setTotalHt(float $totalHt): self
-    {
-        $this->totalHt = $totalHt;
 
         return $this;
     }

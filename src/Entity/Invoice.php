@@ -16,6 +16,7 @@ class Invoice
 {
     const FACTURE_A_REGLER = false;
     const FACTURE_REGLEE = true;
+    const FACTURE_ATTENTE = 'attente';
     const FACTURE_ACOMPTE = 'acompte';
     const FACTURE_FINALE = 'finale';
 
@@ -27,16 +28,6 @@ class Invoice
     private $id;
 
     /**
-     * @ORM\Column(type="datetime", nullable=true)
-     */
-    private $createdAt;
-
-    /**
-     * @ORM\Column(type="float")
-     */
-    private $totalAdvance;
-
-    /**
      * @ORM\Column(type="float")
      */
     private $totalHt;
@@ -46,6 +37,25 @@ class Invoice
      */
     private $totalTtc;
 
+    /**
+     * @ORM\Column(type="float", nullable=true)
+     */
+    private $totalAdvance;
+
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $state;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $typeInvoice;
+
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    private $createdAt;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -53,20 +63,14 @@ class Invoice
     private $reference;
 
     /**
-     * @ORM\OneToMany(targetEntity=Description::class, mappedBy="invoice", cascade={"persist", "remove"})
+     * @ORM\Column(type="float")
      */
-    private $descriptions;
+    private $remainingCapital;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Customer::class, inversedBy="invoices", cascade={"persist", "remove"})
+     * @ORM\ManyToOne(targetEntity=Customer::class, inversedBy="invoices")
      */
     private $customer;
-
-    /**
-     * @ORM\OneToMany(targetEntity=Advance::class, mappedBy="invoice", cascade={"persist", "remove"})
-     * @ORM\OrderBy({"createdAt"="ASC"})
-     */
-    private $advances;
 
     /**
      * @ORM\OneToOne(targetEntity=Estimate::class, inversedBy="invoice", cascade={"persist", "remove"})
@@ -75,21 +79,14 @@ class Invoice
     private $estimate;
 
     /**
-     * @ORM\Column(type="boolean")
+     * @ORM\OneToMany(targetEntity=Description::class, mappedBy="invoice")
      */
-    private $state;
+    private $descriptions;
 
     /**
-     * @ORM\Column(type="float")
+     * @ORM\OneToMany(targetEntity=Advance::class, mappedBy="invoice", cascade={"remove"})
      */
-    private $remainingCapital;
-
-    /**
-     * @ORM\Column(type="string", length=255, nullable=true)
-     */
-    private $typeInvoice;
-
-
+    private $advances;
 
     public function __construct()
     {
@@ -98,33 +95,9 @@ class Invoice
     }
 
 
-    public function getId(): ?int
+    public function getId()
     {
         return $this->id;
-    }
-
-    public function getCreatedAt(): ?\DateTimeInterface
-    {
-        return $this->createdAt;
-    }
-
-    public function setCreatedAt(\DateTimeInterface $createdAt): self
-    {
-        $this->createdAt = $createdAt;
-
-        return $this;
-    }
-
-    public function getTotalAdvance(): ?float
-    {
-        return $this->totalAdvance;
-    }
-
-    public function setTotalAdvance(float $totalAdvance): self
-    {
-        $this->totalAdvance = $totalAdvance;
-
-        return $this;
     }
 
     public function getTotalHt(): ?float
@@ -151,6 +124,53 @@ class Invoice
         return $this;
     }
 
+    public function getTotalAdvance(): ?float
+    {
+        return $this->totalAdvance;
+    }
+
+    public function setTotalAdvance(float $totalAdvance): self
+    {
+        $this->totalAdvance = $totalAdvance;
+
+        return $this;
+    }
+
+    public function getState(): ?bool
+    {
+        return $this->state;
+    }
+
+    public function setState(bool $state): self
+    {
+        $this->state = $state;
+
+        return $this;
+    }
+
+    public function getTypeInvoice(): ?string
+    {
+        return $this->typeInvoice;
+    }
+
+    public function setTypeInvoice(string $typeInvoice): self
+    {
+        $this->typeInvoice = $typeInvoice;
+
+        return $this;
+    }
+
+    public function getCreatedAt(): ?\DateTimeInterface
+    {
+        return $this->createdAt;
+    }
+
+    public function setCreatedAt(\DateTimeInterface $createdAt): self
+    {
+        $this->createdAt = $createdAt;
+
+        return $this;
+    }
 
     public function getReference(): ?string
     {
@@ -160,6 +180,42 @@ class Invoice
     public function setReference(string $reference): self
     {
         $this->reference = $reference;
+
+        return $this;
+    }
+
+    public function getRemainingCapital(): ?float
+    {
+        return $this->remainingCapital;
+    }
+
+    public function setRemainingCapital(float $remainingCapital): self
+    {
+        $this->remainingCapital = $remainingCapital;
+
+        return $this;
+    }
+
+    public function getCustomer(): ?Customer
+    {
+        return $this->customer;
+    }
+
+    public function setCustomer(?Customer $customer): self
+    {
+        $this->customer = $customer;
+
+        return $this;
+    }
+
+    public function getEstimate(): ?Estimate
+    {
+        return $this->estimate;
+    }
+
+    public function setEstimate(Estimate $estimate): self
+    {
+        $this->estimate = $estimate;
 
         return $this;
     }
@@ -194,18 +250,6 @@ class Invoice
         return $this;
     }
 
-    public function getCustomer(): ?Customer
-    {
-        return $this->customer;
-    }
-
-    public function setCustomer(?Customer $customer): self
-    {
-        $this->customer = $customer;
-
-        return $this;
-    }
-
     /**
      * @return Collection|Advance[]
      */
@@ -236,52 +280,6 @@ class Invoice
         return $this;
     }
 
-    public function getEstimate(): ?Estimate
-    {
-        return $this->estimate;
-    }
 
-    public function setEstimate(Estimate $estimate): self
-    {
-        $this->estimate = $estimate;
-
-        return $this;
-    }
-
-    public function getState(): ?bool
-    {
-        return $this->state;
-    }
-
-    public function setState(bool $state): self
-    {
-        $this->state = $state;
-
-        return $this;
-    }
-
-    public function getRemainingCapital(): ?float
-    {
-        return $this->remainingCapital;
-    }
-
-    public function setRemainingCapital(float $remainingCapital): self
-    {
-        $this->remainingCapital = $remainingCapital;
-
-        return $this;
-    }
-
-    public function getTypeInvoice(): ?string
-    {
-        return $this->typeInvoice;
-    }
-
-    public function setTypeInvoice(?string $typeInvoice): self
-    {
-        $this->typeInvoice = $typeInvoice;
-
-        return $this;
-    }
 
 }

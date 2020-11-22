@@ -6,11 +6,14 @@ use App\Repository\CompanyRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * @ORM\Entity(repositoryClass=CompanyRepository::class)
+ * @ORM\HasLifecycleCallbacks()
  */
-class Company
+class Company implements UserInterface
 {
     /**
      * @ORM\Id
@@ -18,6 +21,22 @@ class Company
      * @ORM\Column(type="integer")
      */
     private $id;
+
+    /**
+     * @ORM\Column(type="string", length=180, unique=true)
+     */
+    private $email;
+
+    /**
+     * @ORM\Column(type="json")
+     */
+    private $roles = [];
+
+    /**
+     * @var string The hashed password
+     * @ORM\Column(type="string")
+     */
+    private $password;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -48,11 +67,6 @@ class Company
      * @ORM\Column(type="string", length=255)
      */
     private $city;
-
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $email;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -95,18 +109,93 @@ class Company
     private $mention5;
 
     /**
-     * @ORM\OneToMany(targetEntity=Customer::class, mappedBy="company", orphanRemoval=true)
+     * @ORM\OneToMany(targetEntity=Customer::class, mappedBy="company")
      */
     private $customers;
+
 
     public function __construct()
     {
         $this->customers = new ArrayCollection();
+
     }
 
     public function getId(): ?int
     {
         return $this->id;
+    }
+
+    public function getEmail(): ?string
+    {
+        return $this->email;
+    }
+
+    public function setEmail(string $email): self
+    {
+        $this->email = $email;
+
+        return $this;
+    }
+
+    /**
+     * A visual identifier that represents this user.
+     *
+     * @see UserInterface
+     */
+    public function getUsername(): string
+    {
+        return (string) $this->email;
+    }
+
+    /**
+     * @see UserInterface
+     */
+    public function getRoles(): array
+    {
+        $roles = $this->roles;
+        // guarantee every user at least has ROLE_USER
+        $roles[] = 'ROLE_USER';
+
+        return array_unique($roles);
+    }
+
+    public function setRoles(array $roles): self
+    {
+        $this->roles = $roles;
+
+        return $this;
+    }
+
+    /**
+     * @see UserInterface
+     */
+    public function getPassword(): string
+    {
+        return (string) $this->password;
+    }
+
+    public function setPassword(string $password): self
+    {
+        $this->password = $password;
+
+        return $this;
+    }
+
+    /**
+     * @see UserInterface
+     */
+    public function getSalt()
+    {
+        // not needed when using the "bcrypt" algorithm in security.yaml
+    }
+
+    /**
+     * @see UserInterface
+     */
+    public function eraseCredentials()
+    {
+        // If you store any temporary, sensitive data on the user, clear it here
+        // $this->plainPassword = null;
     }
 
     public function getName(): ?string
@@ -181,18 +270,6 @@ class Company
         return $this;
     }
 
-    public function getEmail(): ?string
-    {
-        return $this->email;
-    }
-
-    public function setEmail(string $email): self
-    {
-        $this->email = $email;
-
-        return $this;
-    }
-
     public function getPhone(): ?string
     {
         return $this->phone;
@@ -234,7 +311,7 @@ class Company
         return $this->mention1;
     }
 
-    public function setMention1(?string $mention1): self
+    public function setMention1(string $mention1): self
     {
         $this->mention1 = $mention1;
 
@@ -246,7 +323,7 @@ class Company
         return $this->mention2;
     }
 
-    public function setMention2(?string $mention2): self
+    public function setMention2(string $mention2): self
     {
         $this->mention2 = $mention2;
 
@@ -258,7 +335,7 @@ class Company
         return $this->mention3;
     }
 
-    public function setMention3(?string $mention3): self
+    public function setMention3(string $mention3): self
     {
         $this->mention3 = $mention3;
 

@@ -23,7 +23,6 @@ class CompanyCrudController extends AbstractCrudController
           ->setEntityLabelInSingular('Entreprise')
           ->setEntityLabelInPlural('Entreprises')
           ->setPageTitle('index', 'Liste des %entity_label_plural%')
-
           ;
   }
 

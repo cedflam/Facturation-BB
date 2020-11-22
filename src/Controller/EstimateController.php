@@ -51,18 +51,6 @@ class EstimateController extends AbstractController
     }
 
     /**
-     * Afiche la liste des devis
-     *
-     * @Route ("/devis/mes-devis-en-cours", name="estimate_list")
-     */
-    public function listEstimates()
-    {
-        return $this->render('estimate/estimate_list.html.twig', [
-            'estimates' => $this->estimateRepository->findAll()
-        ]);
-    }
-
-    /**
      * Afiche la liste des devis archivés
      *
      * @Route ("/devis/mes-devis-archives", name="estimate_archives_list")
@@ -70,6 +58,18 @@ class EstimateController extends AbstractController
     public function listArchiveEstimates()
     {
         return $this->render('estimate/estimate_archives.html.twig', [
+            'estimates' => $this->estimateRepository->findAll()
+        ]);
+    }
+
+    /**
+     * Afiche la liste des devis archivés
+     *
+     * @Route ("/devis/mes-devis-en-cours", name="estimate_waiting_list")
+     */
+    public function listWaitingEstimates()
+    {
+        return $this->render('estimate/estimate_waiting.html.twig', [
             'estimates' => $this->estimateRepository->findAll()
         ]);
     }
@@ -121,13 +121,17 @@ class EstimateController extends AbstractController
             }
             // J'attribue une référence et un état au devis
             $estimate->setReference($date->format('ymdHi'))
-                ->setState(false);
+                     ->setState(false)
+                    ->setTotalAdvance(0)
+            ;
             $this->manager->persist($estimate);
 
             // Je paramètre une nouvelle facture
             $invoice->setEstimate($estimate)
                     ->setCustomer($estimate->getCustomer())
                     ->setState(Invoice::FACTURE_A_REGLER)
+                    ->setTypeInvoice(Invoice::FACTURE_ATTENTE)
+                    ->setCreatedAt(new \DateTime())
                     ->setReference($date->format('ymdHi'))
                     ->setTotalAdvance(0)
                     ->setTotalHt($estimate->getTotalHt())
@@ -140,7 +144,9 @@ class EstimateController extends AbstractController
             $this->manager->persist($invoice);
             $this->manager->flush();
 
-            return $this->redirectToRoute('estimate_list');
+            $this->addFlash('success', "Le devis à bien été crée !");
+
+            return $this->redirectToRoute('invoice_list');
         }
         return $this->render('estimate/index.html.twig', [
             'customers' => $this->customerRepository->findAll(),
@@ -165,7 +171,11 @@ class EstimateController extends AbstractController
 
             // Je lie les descriptions au devis
             foreach ($estimate->getDescriptions() as $description) {
+                // Je lie la description au devis
                 $description->setEstimate($estimate);
+                // Je lie la description à la facture
+                $description->setInvoice($description);
+
                 $this->manager->persist($description);
             }
 
@@ -222,6 +232,6 @@ class EstimateController extends AbstractController
         $this->manager->remove($estimate);
         $this->manager->flush();
 
-        return $this->redirectToRoute('estimate_list');
+        return $this->redirectToRoute('invoice_list');
     }
 }

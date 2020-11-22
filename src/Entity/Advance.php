@@ -20,18 +20,20 @@ class Advance
     private $id;
 
     /**
-     * @ORM\Column(type="float", nullable=true)
+     * @return mixed
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * @ORM\Column(type="float")
      */
     private $amount;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Invoice::class, inversedBy="advances")
-     */
-    private $invoice;
-
-    /**
      * @ORM\Column(type="datetime")
-     *
      */
     private $createdAt;
 
@@ -40,31 +42,19 @@ class Advance
      */
     private $content;
 
-    public function getId(): ?int
-    {
-        return $this->id;
-    }
+    /**
+     * @ORM\ManyToOne(targetEntity=Invoice::class, inversedBy="advances")
+     */
+    private $invoice;
 
     public function getAmount(): ?float
     {
         return $this->amount;
     }
 
-    public function setAmount(?float $amount): self
+    public function setAmount(float $amount): self
     {
         $this->amount = $amount;
-
-        return $this;
-    }
-
-    public function getInvoice(): ?Invoice
-    {
-        return $this->invoice;
-    }
-
-    public function setInvoice(?Invoice $invoice): self
-    {
-        $this->invoice = $invoice;
 
         return $this;
     }
@@ -89,6 +79,18 @@ class Advance
     public function setContent(string $content): self
     {
         $this->content = $content;
+
+        return $this;
+    }
+
+    public function getInvoice(): ?Invoice
+    {
+        return $this->invoice;
+    }
+
+    public function setInvoice(?Invoice $invoice): self
+    {
+        $this->invoice = $invoice;
 
         return $this;
     }

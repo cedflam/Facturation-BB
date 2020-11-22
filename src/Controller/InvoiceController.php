@@ -7,6 +7,7 @@ use App\Entity\Invoice;
 use App\Form\InvoiceType;
 use App\Repository\CompanyRepository;
 use App\Repository\CustomerRepository;
+use App\Repository\EstimateRepository;
 use App\Repository\InvoiceRepository;
 use App\Service\ReplaceAccentService;
 use Doctrine\ORM\EntityManagerInterface;
@@ -25,6 +26,7 @@ class InvoiceController extends AbstractController
     private InvoiceRepository $invoiceRepository;
     private CustomerRepository $customerRepository;
     private CompanyRepository $companyRepository;
+    private EstimateRepository $estimateRepository;
 
     /**
      * InvoiceController constructor.
@@ -33,13 +35,15 @@ class InvoiceController extends AbstractController
      * @param InvoiceRepository $invoiceRepository
      * @param CustomerRepository $customerRepository
      * @param CompanyRepository $companyRepository
+     * @param EstimateRepository $estimateRepository
      */
     public function __construct(
         EntityManagerInterface $manager,
         ReplaceAccentService $accentService,
         InvoiceRepository $invoiceRepository,
         CustomerRepository $customerRepository,
-        CompanyRepository $companyRepository
+        CompanyRepository $companyRepository,
+        EstimateRepository $estimateRepository
     )
     {
         $this->manager = $manager;
@@ -47,6 +51,7 @@ class InvoiceController extends AbstractController
         $this->invoiceRepository = $invoiceRepository;
         $this->customerRepository = $customerRepository;
         $this->companyRepository = $companyRepository;
+        $this->estimateRepository = $estimateRepository;
     }
 
     /**
@@ -60,6 +65,18 @@ class InvoiceController extends AbstractController
             'invoice' => $this->invoiceRepository->findOneBy(['id' => $invoice]),
             'customer' => $this->customerRepository->findOneBy(['id' => $invoice->getCustomer()]),
             'company' => $this->companyRepository->findOneBy(['id' => $invoice->getCustomer()->getCompany()])
+        ]);
+    }
+
+    /**
+     * Afiche la liste des factures
+     *
+     * @Route ("/factures/mes-factures-en-cours", name="invoice_list")
+     */
+    public function listEstimates()
+    {
+        return $this->render('invoice/invoice_list.html.twig', [
+            'estimates' => $this->estimateRepository->findAll()
         ]);
     }
 
@@ -106,7 +123,7 @@ class InvoiceController extends AbstractController
             $this->manager->persist($invoice);
             $this->manager->flush();
 
-            return $this->redirectToRoute('estimate_list');
+            return $this->redirectToRoute('invoice_list');
         }
 
         return $this->render('invoice/index.html.twig', [

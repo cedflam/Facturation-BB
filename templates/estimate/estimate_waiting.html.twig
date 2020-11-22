@@ -9,14 +9,14 @@
         <div class="container " style="padding-bottom: 300px;">
             <div class="row mt-5">
                 <div class="form-group mt-2  col-md-8">
-                    <h3 class="text-white mt-2">Mes devis / factures en cours</h3>
+                    <h3 class="text-white mt-2">Devis en cours</h3>
                      <input name="search" type="text" class="form-control search mt-4" id="search" placeholder="Rechercher un client/devis ...">
                 </div>
             </div>
 
             <div class="row">
             {% for estimate in estimates %}
-                {% if estimate.invoice.state == false %}
+                {% if estimate.invoice.state == false and estimate.invoice.advances | length <= 0 and estimate.invoice.typeInvoice == 'attente' %}
                     <div class="col-md-6 col-lg-4">
                         <div class="card mt-2">
                             <div class="card-header" style="font-size: 12px">

@@ -28,6 +28,7 @@ class InvoiceType extends AbstractType
             ->add('typeInvoice', ChoiceType::class, [
                 'label' => "Etat de la facture",
                 'choices' => [
+                    'Facture en attente' => 'attente',
                     'Facture finale' => 'finale',
                     "Facture d'acompte" => 'acompte'
                 ],

@@ -16,90 +16,72 @@ class Estimate
 {
     const DEVIS_EN_COURS = false;
     const DEVIS_ACCEPTE = true;
+
     /**
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
      */
-    private ?int $id;
+    private $id;
 
     /**
-     * @ORM\Column(type="datetime")
-     *
+     * @return mixed
      */
-    private ?DateTimeInterface $createdAt;
-
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private ?string $reference;
-
-    /**
-     * @ORM\Column(type="float")
-     */
-    private ?float $totalHt;
-
-    /**
-     * @ORM\Column(type="float")
-     */
-    private ?float $totalTtc;
-
-    /**
-     * @ORM\ManyToOne(targetEntity=Customer::class, inversedBy="estimates", cascade={"persist", "remove"})
-     */
-    private ?Customer $customer;
-
-    /**
-     * @ORM\OneToMany(targetEntity=Description::class, mappedBy="estimate", cascade={"persist", "remove"})
-     */
-    private $descriptions;
-
-    /**
-     * @ORM\OneToOne(targetEntity=Invoice::class, mappedBy="estimate", cascade={"persist", "remove"})
-     */
-    private ?Invoice $invoice;
-
-    /**
-     * @ORM\Column(type="boolean")
-     */
-    private $state;
-
-    public function __construct()
-    {
-        $this->descriptions = new ArrayCollection();
-    }
-
-    public function getId(): ?int
+    public function getId()
     {
         return $this->id;
     }
 
-    public function getCreatedAt(): ?DateTimeInterface
-    {
-        return $this->createdAt;
-    }
 
     /**
-     * @ORM\PrePersist()
-     * @return $this
+     * @ORM\Column(type="float")
      */
-    public function setCreatedAt(): self
+    private $totalHt;
+
+    /**
+     * @ORM\Column(type="float")
+     */
+    private $totalTtc;
+
+    /**
+     * @ORM\Column(type="float")
+     */
+    private $totalAdvance;
+
+    /**
+     * @ORM\Column(type="boolean")
+     *
+     */
+    private $state;
+
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    private $createdAt;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $reference;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=Customer::class, inversedBy="estimates")
+     */
+    private $customer;
+
+    /**
+     * @ORM\OneToOne(targetEntity=Invoice::class, mappedBy="estimate", cascade={"persist", "remove"})
+     */
+    private $invoice;
+
+    /**
+     * @ORM\OneToMany(targetEntity=Description::class, mappedBy="estimate")
+     */
+    private $descriptions;
+
+    public function __construct()
     {
-        $this->createdAt = new \DateTime();
-
-        return $this;
-    }
-
-    public function getReference(): ?string
-    {
-        return $this->reference;
-    }
-
-    public function setReference(string $reference): self
-    {
-        $this->reference = $reference;
-
-        return $this;
+        $this->descriptions = new ArrayCollection();
     }
 
     public function getTotalHt(): ?float
@@ -126,6 +108,58 @@ class Estimate
         return $this;
     }
 
+    public function getTotalAdvance(): ?float
+    {
+        return $this->totalAdvance;
+    }
+
+    public function setTotalAdvance(float $totalAdvance): self
+    {
+        $this->totalAdvance = $totalAdvance;
+
+        return $this;
+    }
+
+    public function getState(): ?bool
+    {
+        return $this->state;
+    }
+
+    public function setState(bool $state): self
+    {
+        $this->state = $state;
+
+        return $this;
+    }
+
+    public function getCreatedAt(): ?\DateTimeInterface
+    {
+        return $this->createdAt;
+    }
+
+    /**
+     * @return $this
+     * @ORM\PrePersist()
+     */
+    public function setCreatedAt()
+    {
+        $this->createdAt = new \DateTime();
+
+        return $this;
+    }
+
+    public function getReference(): ?string
+    {
+        return $this->reference;
+    }
+
+    public function setReference(string $reference): self
+    {
+        $this->reference = $reference;
+
+        return $this;
+    }
+
     public function getCustomer(): ?Customer
     {
         return $this->customer;
@@ -134,6 +168,23 @@ class Estimate
     public function setCustomer(?Customer $customer): self
     {
         $this->customer = $customer;
+
+        return $this;
+    }
+
+    public function getInvoice(): ?Invoice
+    {
+        return $this->invoice;
+    }
+
+    public function setInvoice(Invoice $invoice): self
+    {
+        $this->invoice = $invoice;
+
+        // set the owning side of the relation if necessary
+        if ($invoice->getEstimate() !== $this) {
+            $invoice->setEstimate($this);
+        }
 
         return $this;
     }
@@ -164,35 +215,6 @@ class Estimate
                 $description->setEstimate(null);
             }
         }
-
-        return $this;
-    }
-
-    public function getInvoice(): ?Invoice
-    {
-        return $this->invoice;
-    }
-
-    public function setInvoice(Invoice $invoice): self
-    {
-        $this->invoice = $invoice;
-
-        // set the owning side of the relation if necessary
-        if ($invoice->getEstimate() !== $this) {
-            $invoice->setEstimate($this);
-        }
-
-        return $this;
-    }
-
-    public function getState(): ?bool
-    {
-        return $this->state;
-    }
-
-    public function setState(bool $state): self
-    {
-        $this->state = $state;
 
         return $this;
     }

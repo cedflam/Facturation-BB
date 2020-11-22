@@ -11,9 +11,33 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9f29e3dd-1aaf-468e-9a1c-10b205ea4b7f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/migrations/Version20201121104443.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/EventSubscriber/EasyAdminSubscriber.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/estimate/estimate_waiting.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/invoice/invoice_list.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20201119115322.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20201119115423.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20201120075753.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20201120124755.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/Admin/CompanyCrudController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/CompanyCrudController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/CustomerCrudController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/CustomerCrudController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/EstimateController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/EstimateController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/InvoiceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/InvoiceController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Advance.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Advance.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Company.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Company.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Customer.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Customer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Description.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Description.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Estimate.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Estimate.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Invoice.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Invoice.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/InvoiceType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/InvoiceType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/CompanyRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/CompanyRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/estimate/estimate_archives.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/estimate/estimate_archives.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/estimate/estimate_list.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/home/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/partials/header.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/partials/header.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/partials/invoice/_invoice_advance_pdf_model.hml.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/partials/invoice/_invoice_advance_pdf_model.hml.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +66,8 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="Errors" />
+    <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -65,7 +90,9 @@
       <workItem from="1605765557718" duration="24832000" />
       <workItem from="1605797435964" duration="9087000" />
       <workItem from="1605855475217" duration="19770000" />
-      <workItem from="1605902446659" duration="7655000" />
+      <workItem from="1605902446659" duration="13623000" />
+      <workItem from="1605956291293" duration="887000" />
+      <workItem from="1605957190047" duration="13334000" />
     </task>
     <servers />
   </component>
@@ -92,20 +119,34 @@
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
     <state x="483" y="222" key="#CLI_Interpreters/0.0.1792.1120@0.0.1792.1120" timestamp="1605345539023" />
-    <state x="360" y="222" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1605786348061">
+    <state x="360" y="222" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1605962900132">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state x="360" y="222" key="#com.intellij.execution.impl.EditConfigurationsDialog/-65.-1080.1920.1080/0.0.1792.1120@0.0.1792.1120" timestamp="1605786348061" />
+    <state x="360" y="222" key="#com.intellij.execution.impl.EditConfigurationsDialog/-65.-1080.1920.1080/0.0.1792.1120@0.0.1792.1120" timestamp="1605962900132" />
     <state x="360" y="222" key="#com.intellij.execution.impl.EditConfigurationsDialog/1792.0.1920.1080/0.0.1792.1120@0.0.1792.1120" timestamp="1605360621740" />
+    <state x="693" y="280" key="#com.intellij.ide.util.MemberChooser" timestamp="1606032608985">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state x="693" y="280" key="#com.intellij.ide.util.MemberChooser/-65.-1080.1920.1080/0.0.1792.1120@0.0.1792.1120" timestamp="1606032608985" />
+    <state x="521" y="102" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1606031249767">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state x="521" y="102" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/-65.-1080.1920.1080/0.0.1792.1120@0.0.1792.1120" timestamp="1606031249767" />
     <state x="634" y="319" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1605949277321">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
     <state x="634" y="319" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/-65.-1080.1920.1080/0.0.1792.1120@0.0.1792.1120" timestamp="1605949277321" />
-    <state x="397" y="199" key="SettingsEditor" timestamp="1605346994441">
+    <state x="397" y="199" key="SettingsEditor" timestamp="1605957466868">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
+    <state x="397" y="199" key="SettingsEditor/-65.-1055.1920.1055/0.0.1792.1120@0.0.1792.1120" timestamp="1605957371557" />
+    <state x="397" y="199" key="SettingsEditor/-65.-1080.1920.1080/0.0.1792.1120@0.0.1792.1120" timestamp="1605957466868" />
     <state x="397" y="199" key="SettingsEditor/0.0.1792.1120@0.0.1792.1120" timestamp="1605345539962" />
     <state x="397" y="199" key="SettingsEditor/1792.0.1920.1080/0.0.1792.1120@0.0.1792.1120" timestamp="1605346994441" />
+    <state x="100" y="100" width="1592" height="920" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1605955294868">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state x="100" y="100" width="1592" height="920" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/-65.-1080.1920.1080/0.0.1792.1120@0.0.1792.1120" timestamp="1605955294868" />
     <state x="692" y="477" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1605947851824">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
@@ -115,9 +156,26 @@
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
     <state x="598" y="168" width="595" height="783" key="find.popup/-65.-1080.1920.1080/0.0.1792.1120@0.0.1792.1120" timestamp="1605802549237" />
-    <state x="561" y="251" width="670" height="676" key="search.everywhere.popup" timestamp="1605349938170">
+    <state x="561" y="251" width="670" height="676" key="search.everywhere.popup" timestamp="1606030926797">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
+    <state x="561" y="251" width="670" height="676" key="search.everywhere.popup/-65.-1080.1920.1080/0.0.1792.1120@0.0.1792.1120" timestamp="1606030926797" />
     <state x="561" y="251" width="670" height="676" key="search.everywhere.popup/1792.0.1920.1080/0.0.1792.1120@0.0.1792.1120" timestamp="1605349938170" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/src/Entity/Customer.php</url>
+          <line>4</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/src/DataFixtures/AppFixtures.php</url>
+          <line>4</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

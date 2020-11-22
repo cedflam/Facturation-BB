@@ -20,6 +20,14 @@ class Customer
     private $id;
 
     /**
+     * @return mixed
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
      * @ORM\Column(type="string", length=255)
      */
     private $firstname;
@@ -56,17 +64,16 @@ class Customer
 
     /**
      * @ORM\ManyToOne(targetEntity=Company::class, inversedBy="customers")
-     * @ORM\JoinColumn(nullable=false)
      */
     private $company;
 
     /**
-     * @ORM\OneToMany(targetEntity=Estimate::class, mappedBy="customer", cascade={"persist", "remove"})
+     * @ORM\OneToMany(targetEntity=Estimate::class, mappedBy="customer")
      */
     private $estimates;
 
     /**
-     * @ORM\OneToMany(targetEntity=Invoice::class, mappedBy="customer", cascade={"persist", "remove"})
+     * @ORM\OneToMany(targetEntity=Invoice::class, mappedBy="customer")
      */
     private $invoices;
 
@@ -79,11 +86,6 @@ class Customer
     public function __toString()
     {
         return $this->getFirstname().' '.$this->getLastname();
-    }
-
-    public function getId(): ?int
-    {
-        return $this->id;
     }
 
     public function getFirstname(): ?string
