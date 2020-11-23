@@ -17,6 +17,11 @@ class AdvanceType extends AbstractType
             ->add('amount', MoneyType::class, [
                 'label' => "Montant de l'acompte",
             ])
+            ->add('meansPayment', TextType::class, [
+                'attr' => [
+                    'placeholder' => "Moyen de paiement (chq n° 123) "
+                ]
+            ])
         ;
     }
 

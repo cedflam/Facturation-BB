@@ -35,7 +35,7 @@ class EasyAdminSubscriber implements EventSubscriberInterface
     }
 
     /**
-     * Permet d'encoder le mot de passe dans le changement d'admin
+     * Permet d'encoder le mot de passe pès le changement dans l'admin
      *
      * @param BeforeEntityUpdatedEvent $event
      */
@@ -48,6 +48,5 @@ class EasyAdminSubscriber implements EventSubscriberInterface
         }
         $encodedPassword = $this->encoder->encodePassword($entity, $entity->getPassword());
         $entity->setPassword($encodedPassword);
-
     }
 }

@@ -122,7 +122,8 @@ class EstimateController extends AbstractController
             // J'attribue une référence et un état au devis
             $estimate->setReference($date->format('ymdHi'))
                      ->setState(false)
-                    ->setTotalAdvance(0)
+                     ->setTotalAdvance(0)
+                    ->setArchive(false)
             ;
             $this->manager->persist($estimate);
 
@@ -131,7 +132,7 @@ class EstimateController extends AbstractController
                     ->setCustomer($estimate->getCustomer())
                     ->setState(Invoice::FACTURE_A_REGLER)
                     ->setTypeInvoice(Invoice::FACTURE_ATTENTE)
-                    ->setCreatedAt(new \DateTime())
+                    ->setCreatedAt($estimate->getCreatedAt())
                     ->setReference($date->format('ymdHi'))
                     ->setTotalAdvance(0)
                     ->setTotalHt($estimate->getTotalHt())
@@ -144,9 +145,9 @@ class EstimateController extends AbstractController
             $this->manager->persist($invoice);
             $this->manager->flush();
 
-            $this->addFlash('success', "Le devis à bien été crée !");
+            $this->addFlash('Bravo !', "Le devis a bien été crée !");
 
-            return $this->redirectToRoute('invoice_list');
+            return $this->redirectToRoute('estimate_waiting_list');
         }
         return $this->render('estimate/index.html.twig', [
             'customers' => $this->customerRepository->findAll(),
@@ -174,7 +175,7 @@ class EstimateController extends AbstractController
                 // Je lie la description au devis
                 $description->setEstimate($estimate);
                 // Je lie la description à la facture
-                $description->setInvoice($description);
+                $description->setInvoice($estimate->getInvoice());
 
                 $this->manager->persist($description);
             }
@@ -182,7 +183,9 @@ class EstimateController extends AbstractController
             $this->manager->persist($estimate);
             $this->manager->flush();
 
-            return $this->redirectToRoute('estimate_list');
+            $this->addFlash('Super !', 'Le devis a bien été modifié.');
+
+            return $this->redirectToRoute('invoice_list');
         }
         return $this->render('estimate/estimate_edit.html.twig', [
             'customer' => $this->customerRepository->findOneBy(['id' => $estimate->getCustomer()]),
@@ -219,6 +222,30 @@ class EstimateController extends AbstractController
         );
     }
 
+    /**
+     * Permet de passer un devis en status archivé
+     *
+     * @Route("/devis/archivage/{id}", name="estimate_is_archived" )
+     * @param Estimate $estimate
+     * @return RedirectResponse
+     */
+    public function isArchived(Estimate $estimate)
+    {
+        if ($estimate->getArchive() === true){
+            $estimate->setArchive(false);
+            $this->addFlash('Opération terminée', 'Votre devis est maintenant disponible !');
+            $this->manager->persist($estimate);
+            $this->manager->flush();
+            return $this->redirectToRoute('estimate_archives_list');
+
+        }else{
+            $estimate->setArchive(true);
+            $this->addFlash('Opération terminée', 'Votre devis est archivé !');
+            $this->manager->persist($estimate);
+            $this->manager->flush();
+            return $this->redirectToRoute('estimate_waiting_list');
+        }
+    }
 
     /**
      * Permet de supprimer un devis
@@ -231,7 +258,7 @@ class EstimateController extends AbstractController
     {
         $this->manager->remove($estimate);
         $this->manager->flush();
-
-        return $this->redirectToRoute('invoice_list');
+        $this->addFlash('Opération Terminée', 'Le devis a bien été supprimé !');
+        return $this->redirectToRoute('estimate_waiting_list');
     }
 }

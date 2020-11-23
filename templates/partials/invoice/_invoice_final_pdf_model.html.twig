@@ -25,8 +25,8 @@
                 <th class="text-center" scope="col">Prestations</th>
                 <th class="text-center" scope="col">PU (HT €)</th>
                 <th class="text-center" scope="col">Quantité</th>
-                <th class="text-center" scope="col">TVA (%)</th>
-                <th class="text-center" scope="col">Total HT (€)</th>
+               {# <th class="text-center" scope="col">TVA (%)</th>#}
+              {#  <th class="text-center" scope="col">Total HT (€)</th>#}
                 <th class="text-center" scope="col">Total TTC (€)</th>
             </tr>
             </thead>
@@ -36,8 +36,8 @@
                     <td class=" text-justify">{{ description.prestation }}</td>
                     <td class="text-center">{{ description.unitPrice | number_format(2, '.', ',') }}€</td>
                     <td class="text-center">{{ description.quantity }}</td>
-                    <td class="text-center">{{ description.tva }}%</td>
-                    <td class="text-center">{{ description.totalHt | number_format(2, '.', ',') }}€</td>
+                  {#  <td class="text-center">{{ description.tva }}%</td>#}
+                  {#  <td class="text-center">{{ description.totalHt | number_format(2, '.', ',') }}€</td>#}
                     <td class="text-center">{{ description.totalTtc | number_format(2, '.', ',') }}€</td>
                 </tr>
             {% endfor %}
@@ -54,17 +54,20 @@
 
 
                 </small>
-                <small class="text-center">Total Devis n° {{ invoice.estimate.reference}} (HT):
+               {# <small class="text-center">Total Devis n° {{ invoice.estimate.reference}} (HT):
                     <span class="text-left">{{ invoice.estimate.totalHt | number_format(2, '.', ',') }}€ </span> <br>
 
-                </small>
+                </small>#}
                 <small class="text-center">Total Devis n° {{ invoice.estimate.reference}} (TTC):
                     <span class="text-left">{{ invoice.estimate.totalTtc | number_format(2, '.', ',') }}€ </span> <br>
 
                 </small>
                 <hr class="border-secondary">
-                <p class=""> A régler (TTC) :
-                    <span class="text-left">{{ invoice.remainingCapital | number_format(2, '.', ',') }}€</span>
+                <p class=""> Réglée ce jour :
+                    <span class="text-left">{{ invoice.remainingCapital | number_format(2, '.', ',') }}€</span> /
+                    <small class="text-center">
+                         <span> {{ invoice.meansPayment }} </span> <br>
+                    </small>
                 </p>
             </div>
 

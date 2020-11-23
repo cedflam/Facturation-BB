@@ -8,7 +8,9 @@ use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\CollectionType;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\MoneyType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -25,6 +27,13 @@ class InvoiceType extends AbstractType
                     'class' => "customer col-md-4 ",
                 ]
             ])
+            ->add('createdAt', DateType::class, [
+                'label' => "Date de la facture",
+                'widget' => 'single_text',
+                'attr' => [
+                    'class' => 'col-md-4'
+                ]
+            ])
             ->add('typeInvoice', ChoiceType::class, [
                 'label' => "Etat de la facture",
                 'choices' => [
@@ -34,6 +43,14 @@ class InvoiceType extends AbstractType
                 ],
                 'attr' => [
                     'class' => "col-md-4"
+                ]
+            ])
+            ->add('meansPayment', TextType::class, [
+                'label' => "Moyen de paiement (Facture finale uniquement)",
+                'required' => false,
+                'attr' => [
+                    'placeholder' => "Moyen de paiement (chq n° 123)",
+                    'class' => 'col-md-4'
                 ]
             ])
             ->add('state', ChoiceType::class, [

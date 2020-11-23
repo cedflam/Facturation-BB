@@ -6,21 +6,47 @@
 
     <div class="container-fluid estimate bg-dark pl-5 pr-5"
             {# style=" background-image: url({{ asset('img/bg-masthead.jpg') }}); " #}>
+
+        {% for label, messages in app.flashes %}
+            {% for message in messages %}
+                <div aria-live="polite" aria-atomic="true" style="position: absolute; min-height: 200px; min-width: 300px;">
+                    <!-- Position it -->
+                    <div style="position: absolute; top: auto; right: auto;">
+                        <div class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-delay="5000"
+                             id="message">
+                            <div class="toast-header ">
+                                <img src="{{ asset('img/bb-logo.jpg') }}" class="rounded mr-2" alt="logo"> <br>
+                                <strong class="mr-auto">{{ label }}</strong>
+                                <button type="button" class="ml-2 mb-1 close" data-dismiss="toast"
+                                        aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="toast-body text-center">
+                                {{ message }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        {% endfor %}
+
+
         <div class="container" style="padding-bottom: 300px;">
             <div class="row">
                 <div class="form-group mt-2  col-md-8">
-                    <h3 class="text-white mt-2">Factures archivées</h3>
+                    <h3 class="text-white mt-2">Devis archivés</h3>
                     <input name="search" type="text" class="form-control search mt-4" id="search"
                            placeholder="Rechercher un client/devis ...">
                 </div>
             </div>
             <div class="row">
                 {% for estimate in estimates %}
-                    {% if estimate.invoice.state == true %}
+                    {% if estimate.archive == true %}
                         <div class="col-md-4">
                             <div class="card mt-2">
                                 <div class="card-header" style="font-size: 12px">
-                                    <h3 class="text-danger text-center">Facture Réglée</h3>
+                                    <h3 class="text-danger text-center">Archivé</h3>
                                     <p class="text-center text-danger">
                                         le {{ estimate.invoice.createdAt | date('d/m/Y') }}</p>
 
@@ -31,8 +57,8 @@
                                     <strong>Référence Facture :</strong> {{ estimate.invoice.reference }}
                                 </div>
                                 <div class="card-body" style="font-size: 14px">
-                                    <strong>Date facture :</strong> <span
-                                            class="ml-5">{{ estimate.invoice.createdAt | date('d/m/Y') }}</span> <br>
+                                    <strong>Date devis :</strong> <span
+                                            class="ml-5">{{ estimate.createdAt | date('d/m/Y') }}</span> <br>
                                     <hr>
                                     <strong>Montant HT :</strong> <span
                                             class="ml-5">{{ estimate.totalHt | number_format(2, '.', ',') }} €</span>
@@ -51,23 +77,31 @@
                                 </div>
                                 <div class="card-footer">
 
-                                    <a href="{{ path('invoice_select', {'id': estimate.invoice.id }) }}"
-                                       class="btn btn-sm text-white mt-1" data-toggle="tooltip" data-placement="top"
-                                       title="Facturer ce client " style="background: #f4623a">
-                                        <i class="fas fa-file-invoice"></i>
-                                    </a>
-                                    <a href="{{ path('invoice_show', {'id': estimate.invoice.id }) }}"
-                                       class="btn btn-sm text-white mt-1" data-toggle="tooltip" data-placement="top"
-                                       title="Voir la facture" style="background: #f4623a">
-                                        <i class="fas fa-eye"></i>
-                                    </a>
-                                    <a href="{{ path('invoice_generate_pdf', {'id':estimate.invoice.id}) }}"
+                                    <a href="{{ path('estimate_show', {'id': estimate.id }) }}"
                                        class="btn btn-sm btn-info text-white mt-1" data-toggle="tooltip"
                                        data-placement="top"
-                                       title="Editer la dernière facture au format PDF" style="background: #f4623a">
+                                       title="Voir le devis">
+                                        <i class="fas fa-eye"></i>
+                                    </a>
+                                    <a href="{{ path('estimate_generate_pdf', {'id': estimate.id}) }}"
+                                       class="btn btn-sm btn-info text-white mt-1" data-toggle="tooltip"
+                                       data-placement="top"
+                                       title="Générer le devis au format PDF">
                                         <i class="fas fa-file-pdf"></i>
                                     </a>
+                                    <a href="{{ path('estimate_edit', {'id': estimate.id }) }}"
+                                       class="btn btn-sm btn-info text-white mt-1" data-toggle="tooltip"
+                                       data-placement="top"
+                                       title="Modifer ce devis">
+                                        <i class="fas fa-pen"></i>
+                                    </a>
                                     |
+                                    <a href="{{ path('estimate_is_archived', {'id':estimate.id}) }}"
+                                       class="btn btn-sm btn-danger text-white mt-1" data-toggle="tooltip"
+                                       data-placement="top"
+                                       title="Enlever ce devis des archives" >
+                                        <i class="fas fa-archive"></i>
+                                    </a>
                                     <a href="{{ path('estimate_remove', {'id': estimate.id }) }}"
                                        class="btn btn-sm btn-danger text-white mt-1"
                                        onclick="return confirm('Vous êtes sur le point de supprimer le devis de {{ estimate.customer.firstname }} {{ estimate.customer.lastname }} Confirmez-vous ?')"
@@ -87,4 +121,11 @@
 
 {% block javascripts %}
     <script src="{{ asset('js/search.js') }}"></script>
+    <script>
+        $(document).ready(function () {
+            let message = $('#message');
+            message.toast('show');
+            message.toast('delay');
+        });
+    </script>
 {% endblock %}

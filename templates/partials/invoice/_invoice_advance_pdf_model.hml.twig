@@ -17,7 +17,7 @@
         {{ customer.postCode }} {{ customer.city }}
     </p>
 
-    <p class=" ml-5  mt-5"> {{ company.city }}, {{ invoice.createdAt | date('d-M-Y à H:m:s') }}</p>
+    <p class=" ml-5  mt-5"> {{ company.city }}, {{ invoice.createdAt | date('d-M-Y') }}</p>
 
     <div class="container">
         <table class="table table-striped ">
@@ -38,28 +38,29 @@
 
         <div class="container mb-5" style="">
             <div style="width:30%" class="float-right">
-                <small class="text-center"> Total Devis HT :
+                {#<small class="text-center"> Total Devis HT :
                     <span>{{ invoice.totalHt | number_format(2, '.', ',') }}€</span>
-                </small> <br>
+                </small> <br>#}
                 <small class="text-center"> Total Devis TTC :
                     <span>{{ invoice.totalTtc | number_format(2, '.', ',') }}€</span>
                 </small>
                 <hr>
-                <small><u>Après règlement de cette facture :</u></small> <br>
-
+                <small><u>Récapitulatif après règlement :</u></small> <br>
                 <small class="text-center"> Total acompte(s) TTC :
                     <span>{{ invoice.totalAdvance | number_format(2, '.', ',') }}€</span> <br>
-
-
                 </small>
                 <small class="text-center"> Restant dû :
                     <span class="text-left">{{ invoice.remainingCapital | number_format(2, '.', ',') }}€</span> <br>
-
                 </small>
                 <hr class="border-secondary">
-                <p class="text-center">A régler :
-                    <span class="text-left">{{ invoice.advances | last.amount | number_format(2, '.', ',') }}€</span>
+                <p class="text-center">Réglée ce jour :
+                    <span class="text-left">{{ invoice.advances | last.amount | number_format(2, '.', ',') }}€</span> /
+
+                    <small class="text-center">
+                        <span> {{ invoice.advances | last.meansPayment }} </span> <br>
+                    </small>
                 </p>
+
 
             </div>
             <p style="font-size: 12px;">
@@ -101,7 +102,7 @@
             Il n'y a pas d'acompte enregistré ! Voulez-vous éditer une facture finale ? <br>
             Pour cela, allez dans "Facturer client" et modifiez le champ "Etat de la facture"
         </p>
-        <a href="{{ path('estimate_list') }}" class="btn btn-warning">Retour aux devis</a>
+        <a href="{{ path('invoice_list') }}" class="btn btn-warning">Retour aux factures...</a>
     </div>
 </div>
 {% endif %}

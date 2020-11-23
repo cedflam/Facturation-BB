@@ -5,6 +5,7 @@ namespace App\Controller\Admin;
 use App\Entity\Customer;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
+use EasyCorp\Bundle\EasyAdminBundle\Field\NumberField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 
 class CustomerCrudController extends AbstractCrudController
@@ -34,7 +35,7 @@ class CustomerCrudController extends AbstractCrudController
             TextField::new('city', 'Ville'),
             TextField::new('email', 'Email'),
             TextField::new('phone', 'Téléphone'),
-
+            
         ];
     }
 }

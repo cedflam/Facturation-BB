@@ -9,6 +9,9 @@ $('document').ready(function () {
         });
     });
 
+    /**
+     * Permet d'afficher des infos bulles
+     */
     $(function () {
         $('[data-toggle="tooltip"]').tooltip()
     })

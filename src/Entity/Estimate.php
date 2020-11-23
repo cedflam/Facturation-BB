@@ -10,7 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity(repositoryClass=EstimateRepository::class)
- * @ORM\HasLifecycleCallbacks()
+ *
  */
 class Estimate
 {
@@ -79,6 +79,11 @@ class Estimate
      */
     private $descriptions;
 
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $archive;
+
     public function __construct()
     {
         $this->descriptions = new ArrayCollection();
@@ -137,16 +142,13 @@ class Estimate
         return $this->createdAt;
     }
 
-    /**
-     * @return $this
-     * @ORM\PrePersist()
-     */
-    public function setCreatedAt()
-    {
-        $this->createdAt = new \DateTime();
 
-        return $this;
+    public function setCreatedAt($createdAt): void
+    {
+        $this->createdAt = $createdAt;
     }
+
+
 
     public function getReference(): ?string
     {
@@ -215,6 +217,18 @@ class Estimate
                 $description->setEstimate(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getArchive(): ?bool
+    {
+        return $this->archive;
+    }
+
+    public function setArchive(bool $archive): self
+    {
+        $this->archive = $archive;
 
         return $this;
     }

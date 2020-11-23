@@ -88,6 +88,11 @@ class Invoice
      */
     private $advances;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $meansPayment;
+
     public function __construct()
     {
         $this->descriptions = new ArrayCollection();
@@ -276,6 +281,18 @@ class Invoice
                 $advance->setInvoice(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getMeansPayment(): ?string
+    {
+        return $this->meansPayment;
+    }
+
+    public function setMeansPayment(?string $meansPayment): self
+    {
+        $this->meansPayment = $meansPayment;
 
         return $this;
     }

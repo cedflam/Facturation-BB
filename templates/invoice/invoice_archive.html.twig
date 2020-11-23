@@ -1,0 +1,91 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Mes devis Archivés {% endblock %}
+
+{% block body %}
+
+    <div class="container-fluid estimate bg-dark pl-5 pr-5"
+            {# style=" background-image: url({{ asset('img/bg-masthead.jpg') }}); " #}>
+
+        <div class="container" style="padding-bottom: 300px;">
+            <div class="row">
+                <div class="form-group mt-2  col-md-8">
+                    <h3 class="text-white mt-2">Factures archivées</h3>
+                    <input name="search" type="text" class="form-control search mt-4" id="search"
+                           placeholder="Rechercher un client/devis ...">
+                </div>
+            </div>
+            <div class="row">
+                {% for invoice in invoices %}
+                    {% if invoice.state == true %}
+                        <div class="col-md-4">
+                            <div class="card mt-2">
+                                <div class="card-header" style="font-size: 12px">
+                                    <h3 class="text-danger text-center">Facture Réglée</h3>
+                                    <p class="text-center text-danger">
+                                        le {{ invoice.createdAt | date('d/m/Y') }}</p>
+
+                                    <h5>{{ invoice.customer.firstname }} {{ invoice.customer.lastname }}</h5>
+                                    Tel : {{ invoice.customer.phone }} <br>
+                                    <a href="mailto:{{ invoice.customer.email }}">Envoyer un email</a> <br>
+                                    <strong>Référence Devis :</strong> {{ invoice.estimate.reference }} <br>
+                                    <strong>Référence Facture :</strong> {{ invoice.reference }}
+                                </div>
+                                <div class="card-body" style="font-size: 14px">
+                                    <strong>Date facture :</strong> <span
+                                            class="ml-5">{{ invoice.createdAt | date('d/m/Y') }}</span> <br>
+                                    <hr>
+                                    <strong>Montant HT :</strong> <span
+                                            class="ml-5">{{ invoice.estimate.totalHt | number_format(2, '.', ',') }} €</span>
+                                    <br>
+                                    <strong>Montant TTC :</strong> <span
+                                            class="ml-5">{{ invoice.estimate.totalTtc | number_format(2, '.', ',') }} €</span>
+                                    <br>
+                                    <strong>Total acompte(s) TTC :</strong> <span
+                                            class="ml-2">{{ invoice.totalAdvance | number_format(2, '.', ',') }} €</span>
+                                    <br>
+                                    <strong> Montant soldé
+                                        :</strong> <span
+                                            class="ml-5">{{ invoice.remainingCapital | number_format(2, '.', ',') }} €</span>
+                                    <br>
+
+                                </div>
+                                <div class="card-footer">
+
+                                    <a href="{{ path('invoice_select', {'id': invoice.id }) }}"
+                                       class="btn btn-sm text-white mt-1" data-toggle="tooltip" data-placement="top"
+                                       title="Facturer ce client " style="background: #f4623a">
+                                        <i class="fas fa-file-invoice"></i>
+                                    </a>
+                                    <a href="{{ path('invoice_show', {'id': invoice.id }) }}"
+                                       class="btn btn-sm text-white mt-1" data-toggle="tooltip" data-placement="top"
+                                       title="Voir la facture" style="background: #f4623a">
+                                        <i class="fas fa-eye"></i>
+                                    </a>
+                                    <a href="{{ path('invoice_generate_pdf', {'id':invoice.id}) }}"
+                                       class="btn btn-sm btn-info text-white mt-1" data-toggle="tooltip"
+                                       data-placement="top"
+                                       title="Editer la dernière facture au format PDF" style="background: #f4623a">
+                                        <i class="fas fa-file-pdf"></i>
+                                    </a>
+                                    |
+                                    <a href="{{ path('estimate_remove', {'id': invoice.estimate.id }) }}"
+                                       class="btn btn-sm btn-danger text-white mt-1"
+                                       onclick="return confirm('Vous êtes sur le point de supprimer le devis de {{ invoice.customer.firstname }} {{ invoice.customer.lastname }} Confirmez-vous ?')"
+                                       data-toggle="tooltip" data-placement="top"
+                                       title="Supprimer ce devis/facture">
+                                        <i class="fas fa-trash"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    <script src="{{ asset('js/search.js') }}"></script>
+{% endblock %}

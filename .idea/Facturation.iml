@@ -13,5 +13,6 @@
     <orderEntry type="library" name="jquery-easing" level="application" />
     <orderEntry type="library" name="magnific-popup.js" level="application" />
     <orderEntry type="library" name="all" level="application" />
+    <orderEntry type="library" name="loader" level="application" />
   </component>
 </module>

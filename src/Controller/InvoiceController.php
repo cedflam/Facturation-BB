@@ -81,6 +81,18 @@ class InvoiceController extends AbstractController
     }
 
     /**
+     * Afiche la liste des factures
+     *
+     * @Route ("/factures/mes-factures-archivees", name="invoice_archives_list")
+     */
+    public function listInvoiceArchives()
+    {
+        return $this->render('invoice/invoice_archive.html.twig', [
+            'invoices' => $this->invoiceRepository->findAll()
+        ]);
+    }
+
+    /**
      * Permet de facturer  un client
      *
      * @Route("/factures/selection/{id}", name="invoice_select")
@@ -104,15 +116,13 @@ class InvoiceController extends AbstractController
                 ;
                 // J'atribue une date au nouvel acompte
                 if (!$advance->getCreatedAt()) {
-                    $advance->setCreatedAt(new \DateTime());
+                    $advance->setCreatedAt($invoice->getCreatedAt());
                 }
                 $this->manager->persist($advance);
             }
             // J'atribue une nouvelle référence à la facture
             $date = new \DateTime();
             $invoice->setReference($date->format('ymdHi'));
-            // Je change la date de la facture
-            $invoice->setCreatedAt($date);
 
             // Je passe le devis en accepté
             $estimate = $invoice->getEstimate();
@@ -122,6 +132,8 @@ class InvoiceController extends AbstractController
             $this->manager->persist($estimate);
             $this->manager->persist($invoice);
             $this->manager->flush();
+
+            $this->addFlash('Opération terminée', 'La facture à bien été enregistrée !');
 
             return $this->redirectToRoute('invoice_list');
         }

@@ -16,7 +16,7 @@
         {{ customer.postCode }} {{ customer.city }}
     </p>
 
-    <p class=" ml-5  mt-5"> {{ company.city }}, {{ estimate.createdAt | date('d-M-Y à H:m:s') }}</p>
+    <p class=" ml-5  mt-5"> {{ company.city }}, {{ estimate.createdAt | date('d-M-Y') }}</p>
 
     <div class="container">
         <table class="table table-striped ">
@@ -26,7 +26,7 @@
                 <th class="text-center" scope="col">PU (HT €)</th>
                 <th class="text-center" scope="col">Quantité</th>
                 <th class="text-center" scope="col">TVA (%)</th>
-                <th class="text-center" scope="col">Total HT (€)</th>
+               {# <th class="text-center" scope="col">Total HT (€)</th>#}
                 <th class="text-center" scope="col">Total TTC (€)</th>
             </tr>
             </thead>
@@ -36,7 +36,7 @@
                     <td class=" text-justify">{{ description.prestation }}</td>
                     <td class="text-center">{{ description.unitPrice | number_format(2, '.', ',') }}€</td>
                     <td class="text-center">{{ description.quantity }}</td>
-                    <td class="text-center">{{ description.tva }}%</td>
+                  {#  <td class="text-center">{{ description.tva }}%</td>#}
                     <td class="text-center">{{ description.totalHt | number_format(2, '.', ',') }}€</td>
                     <td class="text-center">{{ description.totalTtc | number_format(2, '.', ',') }}€</td>
                 </tr>
@@ -46,13 +46,13 @@
         <hr>
         <div class="container" style="">
             <div style="width:30%" class="float-right">
-                <p class="text-center"> Total HT :
+               {# <p class="text-center"> Total HT :
                     <span>{{ estimate.totalHt | number_format(2, '.', ',') }}€</span>
-                </p>
-                <hr class="border-secondary">
+                </p> #}
                 <p class="text-center"> Total TTC :
                     <span class="text-left">{{ estimate.totalTtc | number_format(2, '.', ',') }}€</span>
                 </p>
+                <hr class="border-secondary">
             </div>
 
             <p style="font-size: 12px;">

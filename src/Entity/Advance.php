@@ -47,6 +47,11 @@ class Advance
      */
     private $invoice;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $meansPayment;
+
     public function getAmount(): ?float
     {
         return $this->amount;
@@ -91,6 +96,18 @@ class Advance
     public function setInvoice(?Invoice $invoice): self
     {
         $this->invoice = $invoice;
+
+        return $this;
+    }
+
+    public function getMeansPayment(): ?string
+    {
+        return $this->meansPayment;
+    }
+
+    public function setMeansPayment(string $meansPayment): self
+    {
+        $this->meansPayment = $meansPayment;
 
         return $this;
     }
