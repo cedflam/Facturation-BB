@@ -41,6 +41,8 @@ class DashboardController extends AbstractDashboardController
        // yield MenuItem::linkToCrud('Devis', 'fa fa-file-alt', Estimate::class );
     }
 
+
+
     /**
      * Permet de generer un pdf récapitulatif du CA de l'année
      *
@@ -58,10 +60,14 @@ class DashboardController extends AbstractDashboardController
         $dateDebut = $date->format('Y-01-01');
         $dateFin = $date->format('Y-12-31');
         $year = $date->format('Y');
-        $html = $this->renderView('admin/_model_ca_admin.html.twig', [
+        $dateDebutPrevious = date('Y-01-01', strtotime(' -1 years '));
+        $dateFinPrevious = date('Y-12-31', strtotime(' -1 years '));
+
+        $html = $this->renderView('partials/admin/_model_ca_admin.html.twig', [
             'totalAdvances' => $invoiceRepository->findAdvanceByPeriode($dateDebut, $dateFin),
             'totalFacturedRemaining' => $invoiceRepository->findTotalRemainingFacturedByPeriode($dateDebut, $dateFin),
-            'totalRemaining' => $invoiceRepository->findTotalRemainingByPeriode($dateDebut, $dateFin)
+            'totalRemaining' => $invoiceRepository->findTotalRemainingByPeriode($dateDebut, $dateFin),
+            'totalRemainingPreviousYear' => $invoiceRepository->findTotalRemainingByPreviousYear($dateDebutPrevious, $dateFinPrevious),
         ]);
 
         return new PdfResponse(

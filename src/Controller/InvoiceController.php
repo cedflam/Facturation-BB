@@ -120,6 +120,7 @@ class InvoiceController extends AbstractController
                 }
                 $this->manager->persist($advance);
             }
+
             // J'atribue une nouvelle référence à la facture
             $date = new \DateTime();
             $invoice->setReference($date->format('ymdHi'));

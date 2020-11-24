@@ -8,6 +8,7 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 
+
 /**
  * @ORM\Entity(repositoryClass=InvoiceRepository::class)
  *
@@ -24,6 +25,7 @@ class Invoice
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
+     *
      */
     private $id;
 
@@ -49,11 +51,13 @@ class Invoice
 
     /**
      * @ORM\Column(type="string", length=255)
+     *
      */
     private $typeInvoice;
 
     /**
      * @ORM\Column(type="datetime")
+     *
      */
     private $createdAt;
 
@@ -75,6 +79,8 @@ class Invoice
     /**
      * @ORM\OneToOne(targetEntity=Estimate::class, inversedBy="invoice", cascade={"persist", "remove"})
      * @ORM\JoinColumn(nullable=false)
+     *
+     *
      */
     private $estimate;
 

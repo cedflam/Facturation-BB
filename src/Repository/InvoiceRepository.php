@@ -103,6 +103,34 @@ class InvoiceRepository extends ServiceEntityRepository
         return $stmt->fetchAllAssociative();
     }
 
+    /**
+     * Total des capitaux restants dûs par momis sur l'année en cours
+     *
+     * @param $dateDebutPrevious
+     * @param $dateFinPrevious
+     * @return array
+     * @throws Exception
+     * @throws \Doctrine\DBAL\Exception
+     */
+    public function findTotalRemainingByPreviousYear($dateDebutPrevious, $dateFinPrevious): array
+    {
+        $conn = $this->getEntityManager()->getConnection();
+        $sql = '
+            SELECT SUM(remaining_capital) AS "total"
+            FROM invoice 
+            WHERE created_at 
+            BETWEEN :dateDebutPrevious AND :dateFinPrevious 
+            AND type_invoice = "acompte"
+            AND state = 0
+        ';
+
+        $stmt = $conn->prepare($sql);
+        $stmt->execute(['dateDebutPrevious' => $dateDebutPrevious, 'dateFinPrevious' => $dateFinPrevious]);
+        return $stmt->fetchAllAssociative();
+    }
+
+
+
 
     /*
     public function findOneBySomeField($value): ?Invoice

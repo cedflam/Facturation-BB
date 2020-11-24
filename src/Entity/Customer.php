@@ -69,11 +69,13 @@ class Customer
 
     /**
      * @ORM\OneToMany(targetEntity=Estimate::class, mappedBy="customer")
+     * @ORM\OrderBy({"createdAt" = "DESC"})
      */
     private $estimates;
 
     /**
      * @ORM\OneToMany(targetEntity=Invoice::class, mappedBy="customer")
+     * @ORM\OrderBy({"createdAt" = "DESC"})
      */
     private $invoices;
 

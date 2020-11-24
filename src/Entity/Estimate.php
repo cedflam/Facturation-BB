@@ -7,6 +7,7 @@ use DateTimeInterface;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\ORM\Mapping\OrderBy;
 
 /**
  * @ORM\Entity(repositoryClass=EstimateRepository::class)
@@ -21,6 +22,7 @@ class Estimate
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
+     *
      */
     private $id;
 
@@ -31,8 +33,6 @@ class Estimate
     {
         return $this->id;
     }
-
-
     /**
      * @ORM\Column(type="float")
      */
@@ -56,6 +56,8 @@ class Estimate
 
     /**
      * @ORM\Column(type="datetime")
+     *
+     *
      */
     private $createdAt;
 
@@ -71,6 +73,7 @@ class Estimate
 
     /**
      * @ORM\OneToOne(targetEntity=Invoice::class, mappedBy="estimate", cascade={"persist", "remove"})
+     *
      */
     private $invoice;
 

@@ -10,7 +10,7 @@
           integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 </head>
 <body>
-
+{% if totalAdvances | last.year is defined %}
 <h3 class="text-center">Acomptes encaissés {{ totalAdvances | last.year }}</h3>
 <table class="table table-striped">
     <thead>
@@ -31,10 +31,17 @@
     </tbody>
 </table>
 <div class="card mb-5">
-    <h4>Total restant dû : {{ totalAcomptes }}€</h4>
+    <h4>Total Acomptes Encaissés : {{ totalAcomptes }}€</h4>
 </div>
+{% else %}
+    <hr>
+    <h3>Pas de factures d'acompte encaissées sur cette période</h3>
+    <hr>
+{% endif %}
 
-<h3 class="text-center">Factures finales encaissées {{ totalFacturedRemaining | last.year }}</h3>
+{% if totalFacturedRemaining | last.year is defined %}
+<h3 class="text-center" style="margin-top: 600px;">Factures finales encaissées {{ totalFacturedRemaining | last.year }}</h3>
+
 <table class="table table-striped">
     <thead>
     <tr>
@@ -56,16 +63,24 @@
 <div class="card mb-5">
     <h4>Total factures finales : {{ totalfactures }}€</h4>
 </div>
+{% else %}
+    <hr>
+    <h3>Pas de factures finales encaissées sur cette période</h3>
+    <hr>
+{% endif %}
 
+
+{% if totalRemaining | last.year is defined %}
 <h3 class="text-center">Restant dû {{ totalRemaining | last.year }}</h3>
 <table class="table table-striped">
     <thead>
     <tr>
-        <th scope="col">Mois</th>
+        <th scope="col">Facture du mois</th>
         <th scope="col">Montant</th>
     </tr>
     </thead>
     <tbody>
+
     {% set totalRemainingYear = 0 %}
     {% for total in totalRemaining %}
         {% set totalRemainingYear = totalRemainingYear + total.total %}
@@ -77,8 +92,26 @@
     </tbody>
 </table>
 <div class="card mb-5">
-    <h4>Total restant dû : {{ totalRemainingYear }}€</h4>
+    <h4>Total restant dû (Année en cours) : {{ totalRemainingYear }}€</h4>
 </div>
+{% else %}
+    <div class="card mb-5">
+        <h4>Pas de restant dû de cette année</h4>
+    </div>
+{% endif %}
+
+{% if totalRemainingPreviousYear[0].total is defined %}
+    <div class="card mb-5">
+        <h4>Total restant dû (Année précédente) : {{ totalRemainingPreviousYear[0].total }}€</h4>
+    </div>
+{% else %}
+    <div class="card mb-5">
+        <h4>Pas de restant dû de l'année précédente</h4>
+    </div>
+{% endif %}
+
+
+
 
 </body>
 </html>
