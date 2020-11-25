@@ -18,13 +18,44 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class DashboardController extends AbstractDashboardController
 {
+    // Propriétés
+    private InvoiceRepository $invoiceRepository;
+
+    /**
+     * DashboardController constructor.
+     * @param InvoiceRepository $invoiceRepository
+     */
+    public function __construct(InvoiceRepository $invoiceRepository)
+    {
+        $this->invoiceRepository = $invoiceRepository;
+    }
 
     /**
      * @Route("/admin", name="admin")
+     * @return Response
+     * @throws Exception
+     * @throws \Doctrine\DBAL\Exception
      */
     public function index(): Response
     {
-        return parent::index();
+        $date = new \DateTime();
+        $dateDebut = $date->format('Y-01-01');
+        $dateFin = $date->format('Y-12-31');
+        $year = $date->format('Y');
+        $dateDebutPrevious = date('Y-01-01', strtotime(' -1 years '));
+        $dateFinPrevious = date('Y-12-31', strtotime(' -1 years '));
+
+        return $this->render('@EasyAdmin/welcome.html.twig', [
+
+            'dashboard_controller_filepath' => (new \ReflectionClass(static::class))->getFileName(),
+            'dashboard_controller_class' => (new \ReflectionClass(static::class))->getShortName(),
+            'totalAdvances' => $this->invoiceRepository->findAdvanceByPeriode($dateDebut, $dateFin),
+            'totalFacturedRemaining' => $this->invoiceRepository->findTotalRemainingFacturedByPeriode($dateDebut, $dateFin),
+            'totalRemaining' => $this->invoiceRepository->findTotalRemainingByPeriode($dateDebut, $dateFin),
+            'totalRemainingPreviousYear' => $this->invoiceRepository->findTotalRemainingByPreviousYear($dateDebutPrevious, $dateFinPrevious),
+
+
+        ]);
     }
 
     public function configureDashboard(): Dashboard
@@ -40,8 +71,6 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('Clients', 'fa fa-users', Customer::class);
        // yield MenuItem::linkToCrud('Devis', 'fa fa-file-alt', Estimate::class );
     }
-
-
 
     /**
      * Permet de generer un pdf récapitulatif du CA de l'année
