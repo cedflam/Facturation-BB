@@ -7,26 +7,28 @@
         {{ company.address }} <br>
         {{ company.postCode }} {{ company.city }} <br>
         Email : {{ company.email }} <br>
-        Téléphone : {{ company.phone }}
+        Téléphone : {{ company.phone }} <br>
+        {{ company.rcs }} <br>
+        SIRET : {{ company.siret }} <br>
     </p>
 
-    <p class="mr-5 mb-5 mt-5" style="margin-left: 550px;">
+    <p class="mr-5 mb-5" style="margin-left: 550px;">
         {{ customer.firstname }} {{ customer.lastname }} <br>
         {{ customer.address }} <br>
         {{ customer.postCode }} {{ customer.city }}
     </p>
 
-    <p class=" ml-5  mt-5"> {{ company.city }}, {{ invoice.createdAt | date('d-M-Y à H:m:s') }}</p>
+    <p class=" ml-5  mt-5"> {{ company.city }}, le {{ invoice.createdAt | date('d-m-Y') }}</p>
 
     <div class="container">
         <table class="table table-striped ">
             <thead class="bg-light">
             <tr>
                 <th class="text-center" scope="col">Prestations</th>
-                <th class="text-center" scope="col">PU (HT €)</th>
+                <th class="text-center" scope="col">PU (€)</th>
                 <th class="text-center" scope="col">Quantité</th>
-               {# <th class="text-center" scope="col">TVA (%)</th>#}
-              {#  <th class="text-center" scope="col">Total HT (€)</th>#}
+                {# <th class="text-center" scope="col">TVA (%)</th> #}
+                {# <th class="text-center" scope="col">Total HT (€)</th> #}
                 <th class="text-center" scope="col">Total TTC (€)</th>
             </tr>
             </thead>
@@ -36,8 +38,8 @@
                     <td class=" text-justify">{{ description.prestation }}</td>
                     <td class="text-center">{{ description.unitPrice | number_format(2, '.', ',') }}€</td>
                     <td class="text-center">{{ description.quantity }}</td>
-                  {#  <td class="text-center">{{ description.tva }}%</td>#}
-                  {#  <td class="text-center">{{ description.totalHt | number_format(2, '.', ',') }}€</td>#}
+                    {# <td class="text-center">{{ description.tva }}%</td> #}
+                    {# <td class="text-center">{{ description.totalHt | number_format(2, '.', ',') }}€</td> #}
                     <td class="text-center">{{ description.totalTtc | number_format(2, '.', ',') }}€</td>
                 </tr>
             {% endfor %}
@@ -48,25 +50,25 @@
             <div style="width:30%" class="float-right">
 
                 <small><u>Récapitulatif :</u></small> <br>
-
                 <small class="text-center"> Total acompte(s) TTC :
                     <span>{{ invoice.totalAdvance | number_format(2, '.', ',') }}€</span> <br>
 
 
                 </small>
-               {# <small class="text-center">Total Devis n° {{ invoice.estimate.reference}} (HT):
+                {# <small class="text-center">Total Devis n° {{ invoice.estimate.reference}} (HT):
                     <span class="text-left">{{ invoice.estimate.totalHt | number_format(2, '.', ',') }}€ </span> <br>
 
-                </small>#}
-                <small class="text-center">Total Devis n° {{ invoice.estimate.reference}} (TTC):
+                </small> #}
+                <small class="text-center">Total Devis n° {{ invoice.estimate.reference }} (TTC):
                     <span class="text-left">{{ invoice.estimate.totalTtc | number_format(2, '.', ',') }}€ </span> <br>
 
                 </small>
                 <hr class="border-secondary">
-                <p class=""> Réglée ce jour :
+                <h5 class="text-center">Règlement :</h5>
+                <p class="">
                     <span class="text-left">{{ invoice.remainingCapital | number_format(2, '.', ',') }}€</span> /
-                    <small class="text-center">
-                         <span> {{ invoice.meansPayment }} </span> <br>
+                    <small class="text-left">
+                        <span>{{ invoice.meansPayment }} </span> <br>
                     </small>
                 </p>
             </div>
@@ -77,27 +79,6 @@
                 {{ company.mention3 }} <br>
                 {{ company.mention4 }} <br>
                 {{ company.mention5 }} <br>
-            </p>
-        </div>
-
-        <div class="container text-center" style=" margin-top:200px;  margin-bottom: 150px">
-            <p class="text-center float-left" style="margin-left: 150px; ">
-                Signature de l'entreprise
-            </p>
-            <p class="text-center ">
-                Signature du client
-            </p>
-        </div>
-
-        <div style="margin-top: 200px; font-size: 12px">
-            <hr>
-            <p class="text-center">
-                {{ company.name }} <br>
-                {{ company.address }} <br
-                {{ company.postCode }} {{ company.city }} <br>
-                {{ company.rcs }} <br>
-                SIRET : {{ company.siret }} <br>
-                Téléphone : {{ company.phone }} - Email: {{ company.email }}
             </p>
         </div>
     </div>

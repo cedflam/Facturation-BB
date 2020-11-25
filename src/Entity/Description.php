@@ -27,7 +27,7 @@ class Description
         return $this->id;
     }
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=2000)
      */
     private $prestation;
 

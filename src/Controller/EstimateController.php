@@ -192,7 +192,7 @@ class EstimateController extends AbstractController
 
             $this->addFlash('Super !', 'Le devis a bien été modifié.');
 
-            return $this->redirectToRoute('invoice_list');
+            return $this->redirectToRoute('estimate_waiting_list');
         }
         return $this->render('estimate/estimate_edit.html.twig', [
             'customer' => $this->customerRepository->findOneBy(['id' => $estimate->getCustomer()]),

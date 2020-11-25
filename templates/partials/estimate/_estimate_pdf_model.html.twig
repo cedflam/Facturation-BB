@@ -7,7 +7,9 @@
         {{ company.address }} <br>
         {{ company.postCode }} {{ company.city }} <br>
         Email : {{ company.email }} <br>
-        Téléphone : {{ company.phone }}
+        Téléphone : {{ company.phone }} <br>
+        {{ company.rcs }} <br>
+        SIRET : {{ company.siret }} <br>
     </p>
 
     <p class="mr-5 mb-5 mt-5" style="margin-left: 550px;">
@@ -16,16 +18,16 @@
         {{ customer.postCode }} {{ customer.city }}
     </p>
 
-    <p class=" ml-5  mt-5"> {{ company.city }}, {{ estimate.createdAt | date('d-M-Y') }}</p>
+    <p class=" ml-5  mt-5"> {{ company.city }}, le {{ estimate.createdAt | date('d-m-Y') }}</p>
 
     <div class="container">
         <table class="table table-striped ">
             <thead class="bg-light">
             <tr>
                 <th class="text-center" scope="col">Prestations</th>
-                <th class="text-center" scope="col">PU (HT €)</th>
+                <th class="text-center" scope="col">PU (€)</th>
                 <th class="text-center" scope="col">Quantité</th>
-                <th class="text-center" scope="col">TVA (%)</th>
+               {# <th class="text-center" scope="col">TVA (%)</th>#}
                {# <th class="text-center" scope="col">Total HT (€)</th>#}
                 <th class="text-center" scope="col">Total TTC (€)</th>
             </tr>
@@ -37,7 +39,7 @@
                     <td class="text-center">{{ description.unitPrice | number_format(2, '.', ',') }}€</td>
                     <td class="text-center">{{ description.quantity }}</td>
                   {#  <td class="text-center">{{ description.tva }}%</td>#}
-                    <td class="text-center">{{ description.totalHt | number_format(2, '.', ',') }}€</td>
+                 {#   <td class="text-center">{{ description.totalHt | number_format(2, '.', ',') }}€</td>#}
                     <td class="text-center">{{ description.totalTtc | number_format(2, '.', ',') }}€</td>
                 </tr>
             {% endfor %}
@@ -64,25 +66,17 @@
             </p>
         </div>
 
-        <div class="container text-center" style=" margin-top:100px;  margin-bottom: 150px">
-            <p class="text-center float-left" style="margin-left: 150px; ">
-                Signature de l'entreprise
-            </p>
-            <p class="text-center ">
-                Signature du client
-            </p>
-        </div>
+        <div class="container" style=" margin-top:100px;  margin-bottom: 150px">
+            <div>
 
-        <div style="margin-top: 200px; font-size: 12px">
-            <hr>
-            <p class="text-center">
-                {{ company.name }} <br>
-                {{ company.address }} <br
-                {{ company.postCode }} {{ company.city }} <br>
-                {{ company.rcs }} <br>
-                SIRET : {{ company.siret }} <br>
-                Téléphone : {{ company.phone }} - Email: {{ company.email }}
-            </p>
+                  <span style="margin-left: 150px;">  Signature Client</span>
+                <span style="margin-left: 200px;">Signature de l'entreprise</span>
+
+
+
+
+
+            </div>
         </div>
     </div>
 </div>

@@ -269,7 +269,7 @@
                     {% else %}
                         <input type="hidden" class="total-remaining-juillet" value="0">
                     {% endif %}
-                {% elseif totalRemaining.month == 8 %}
+                {% elseif totalRemaining[0].month == 8 %}
                     {% if total.total != 0 %}
                         <input type="hidden" class="total-remaining-aout"
                                value="{{ total.total }}">
@@ -283,7 +283,7 @@
                     {% else %}
                         <input type="hidden" class="total-remaining-septembre" value="0">
                     {% endif %}
-                {% elseif totalRemaining.month == 10 %}
+                {% elseif totalRemaining[0].month == 10 %}
                     {% if total.total != 0 %}
                         <input type="hidden" class="total-remaining-octobre"
                                value="{{ total.total }}">

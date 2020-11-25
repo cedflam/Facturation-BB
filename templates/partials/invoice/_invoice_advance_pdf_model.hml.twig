@@ -8,16 +8,18 @@
         {{ company.address }} <br>
         {{ company.postCode }} {{ company.city }} <br>
         Email : {{ company.email }} <br>
-        Téléphone : {{ company.phone }}
+        Téléphone : {{ company.phone }} <br>
+        {{ company.rcs }} <br>
+        SIRET : {{ company.siret }} <br>
     </p>
 
-    <p class="mr-5 mb-5 mt-5" style="margin-left: 550px;">
+    <p class="mr-5 mb-5" style="margin-left: 550px;">
         {{ customer.firstname }} {{ customer.lastname }} <br>
         {{ customer.address }} <br>
         {{ customer.postCode }} {{ customer.city }}
     </p>
 
-    <p class=" ml-5  mt-5"> {{ company.city }}, {{ invoice.createdAt | date('d-M-Y') }}</p>
+    <p class=" ml-5  mt-5"> {{ company.city }}, le {{ invoice.createdAt | date('d-m-Y') }}</p>
 
     <div class="container">
         <table class="table table-striped ">
@@ -35,7 +37,6 @@
             </tr>
             </tbody>
         </table>
-
         <div class="container mb-5" style="">
             <div style="width:30%" class="float-right">
                 {#<small class="text-center"> Total Devis HT :
@@ -53,10 +54,10 @@
                     <span class="text-left">{{ invoice.remainingCapital | number_format(2, '.', ',') }}€</span> <br>
                 </small>
                 <hr class="border-secondary">
-                <p class="text-center">Réglée ce jour :
+                <h5 class="text-center">Règlement :</h5>
+                <p class="text-center">
                     <span class="text-left">{{ invoice.advances | last.amount | number_format(2, '.', ',') }}€</span> /
-
-                    <small class="text-center">
+                    <small class="text-left">
                         <span> {{ invoice.advances | last.meansPayment }} </span> <br>
                     </small>
                 </p>
@@ -71,28 +72,6 @@
                 {{ company.mention5 }} <br>
             </p>
         </div>
-
-        <div class="container text-center" style=" margin-top:300px;  margin-bottom: 100px">
-            <p class="text-center float-left" style="margin-left: 150px; ">
-                Signature de l'entreprise
-            </p>
-            <p class="text-center ">
-                Signature du client
-            </p>
-        </div>
-
-        <div style="margin-top: 150px; font-size: 12px">
-            <hr>
-            <p class="text-center">
-                {{ company.name }} <br>
-                {{ company.address }} <br
-                {{ company.postCode }} {{ company.city }} <br>
-                {{ company.rcs }} <br>
-                SIRET : {{ company.siret }} <br>
-                Téléphone : {{ company.phone }} - Email: {{ company.email }}
-            </p>
-        </div>
-    </div>
     {% else %}
 
 
