@@ -11,14 +11,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9f29e3dd-1aaf-468e-9a1c-10b205ea4b7f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/migrations/.Version20201121104443.php.icloud" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/migrations/.Version20201121105213.php.icloud" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/migrations/.Version20201123085811.php.icloud" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/migrations/.Version20201123094548.php.icloud" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/migrations/.Version20201123101454.php.icloud" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/EstimateController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/EstimateController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Description.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Description.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20201121104443.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20201121105213.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20201123085811.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20201123094548.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20201123101454.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/bundles/EasyAdminBundle/welcome.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/bundles/EasyAdminBundle/welcome.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/partials/admin/_model_ca_admin.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/partials/admin/_model_ca_admin.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/partials/estimate/_estimate_pdf_model.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/partials/estimate/_estimate_pdf_model.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/partials/invoice/_invoice_advance_pdf_model.hml.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/partials/invoice/_invoice_advance_pdf_model.hml.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/partials/invoice/_invoice_final_pdf_model.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/partials/invoice/_invoice_final_pdf_model.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

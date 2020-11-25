@@ -225,72 +225,71 @@
         {# Je récupère le capital restant du par mois de l'année en cours #}
         {% if totalRemaining is defined %}
             {% for total in totalRemaining %}
-
-                {% if totalRemaining[0].month == 1 %}
+                {% if total.month == 1 %}
                     {% if total.total != 0 %}
                         <input type="hidden" class="total-remaining-janvier" value="{{ total.total }}">
                     {% else %}
                         <input type="hidden" class="total-remaining-janvier" value="0">
                     {% endif %}
-                {% elseif totalRemaining[0].month == 2 %}
+                {% elseif total.month == 2 %}
                     {% if total.total != 0 %}
                         <input type="hidden" class="total-remaining-fevrier" value="{{ total.total }}">
                     {% else %}
                         <input type="hidden" class="total-remaining-fevrier" value="0">
                     {% endif %}
-                {% elseif totalRemaining[0].month == 3 %}
+                {% elseif total.month == 3 %}
                     {% if total.total != 0 %}
                         <input type="hidden" class="total-remaining-mars" value="{{ total.total }}">
                     {% else %}
                         <input type="hidden" class="total-remaining-mars" value="0">
                     {% endif %}
-                {% elseif totalRemaining[0].month == 4 %}
+                {% elseif total.month == 4 %}
                     {% if total.total != 0 %}
                         <input type="hidden" class="total-remaining-avril" value="{{ total.total }}">
                     {% else %}
                         <input type="hidden" class="total-remaining-avril" value="0">
                     {% endif %}
-                {% elseif totalRemaining[0].month == 5 %}
+                {% elseif total.month == 5 %}
                     {% if total.total != 0 %}
                         <input type="hidden" class="total-remaining-mai" value="{{ total.total }}">
                     {% else %}
                         <input type="hidden" class="total-remaining-mai" value="0">
                     {% endif %}
-                {% elseif totalRemaining[0].month == 6 %}
+                {% elseif total.month == 6 %}
                     {% if total.total != 0 %}
                         <input type="hidden" class="total-remaining-juin" value="{{ total.total }}">
                     {% else %}
                         <input type="hidden" class="total-remaining-juin" value="0">
                     {% endif %}
-                {% elseif totalRemaining[0].month == 7 %}
+                {% elseif total.month == 7 %}
                     {% if total.total != 0 %}
                         <input type="hidden" class="total-remaining-juillet"
                                value="{{ total.total }}">
                     {% else %}
                         <input type="hidden" class="total-remaining-juillet" value="0">
                     {% endif %}
-                {% elseif totalRemaining[0].month == 8 %}
+                {% elseif total.month == 8 %}
                     {% if total.total != 0 %}
                         <input type="hidden" class="total-remaining-aout"
                                value="{{ total.total }}">
                     {% else %}
                         <input type="hidden" class="total-remaining-aout" value="0">
                     {% endif %}
-                {% elseif totalRemaining[0].month == 9 %}
+                {% elseif total.month == 9 %}
                     {% if total.total != 0 %}
                         <input type="hidden" class="total-remaining-septembre"
                                value="{{ total.total }}">
                     {% else %}
                         <input type="hidden" class="total-remaining-septembre" value="0">
                     {% endif %}
-                {% elseif totalRemaining[0].month == 10 %}
+                {% elseif total.month == 10 %}
                     {% if total.total != 0 %}
                         <input type="hidden" class="total-remaining-octobre"
                                value="{{ total.total }}">
                     {% else %}
                         <input type="hidden" class="total-remaining-octobre" value="0">
                     {% endif %}
-                {% elseif totalRemaining[0].month == 11 %}
+                {% elseif total.month == 11 %}
                     {% if total.total != 0 %}
                         <input type="hidden" class="total-remaining-novembre"
                                value="{{ total.total }}">
@@ -298,7 +297,7 @@
                         <input type="hidden" class="total-remaining-novembre"
                                value="0">
                     {% endif %}
-                {% elseif totalRemaining[0].month == 12 %}
+                {% elseif total.month == 12 %}
                     {% if total.total != 0 %}
                         <input type="hidden" class="total-remaining-decembre"
                                value="{{ total.total }}">
@@ -309,7 +308,6 @@
                 {% endif %}
             {% endfor %}
         {% endif %}
-
 
         <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
         <script type="text/javascript">
