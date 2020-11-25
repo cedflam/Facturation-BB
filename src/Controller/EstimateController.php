@@ -17,7 +17,14 @@ use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 
+
+/**
+ * Class EstimateController
+ * @package App\Controller
+ * @IsGranted("ROLE_USER")
+ */
 class EstimateController extends AbstractController
 {
     // Propriétés

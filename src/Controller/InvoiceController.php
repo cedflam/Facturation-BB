@@ -13,11 +13,17 @@ use App\Service\ReplaceAccentService;
 use Doctrine\ORM\EntityManagerInterface;
 use Knp\Bundle\SnappyBundle\Snappy\Response\PdfResponse;
 use Knp\Snappy\Pdf;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
+/**
+ * Class InvoiceController
+ * @package App\Controller
+ * @IsGranted("ROLE_USER")
+ */
 class InvoiceController extends AbstractController
 {
     // Prorpriétés
@@ -55,7 +61,7 @@ class InvoiceController extends AbstractController
     }
 
     /**
-     * @Route ("/facture/consulter/{id}", name="invoice_show")
+     * @Route ("/factures/consulter/{id}", name="invoice_show")
      * @param Invoice $invoice
      * @return Response
      */

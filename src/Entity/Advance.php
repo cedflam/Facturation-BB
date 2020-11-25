@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\AdvanceRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 
 /**
@@ -29,6 +30,7 @@ class Advance
 
     /**
      * @ORM\Column(type="float")
+     * @Assert\Type("float", message="Vous devez entrer un nombre avec un '.' ex: 500.45 ")
      */
     private $amount;
 
