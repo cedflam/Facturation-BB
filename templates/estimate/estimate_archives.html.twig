@@ -102,11 +102,11 @@
                                        title="Enlever ce devis des archives" >
                                         <i class="fas fa-archive"></i>
                                     </a>
-                                    <a href="{{ path('estimate_remove', {'id': estimate.id }) }}"
+                                    <a href="{{ path('estimate_archived_remove', {'id': estimate.id }) }}"
                                        class="btn btn-sm btn-danger text-white mt-1"
                                        onclick="return confirm('Vous êtes sur le point de supprimer le devis de {{ estimate.customer.firstname }} {{ estimate.customer.lastname }} Confirmez-vous ?')"
                                        data-toggle="tooltip" data-placement="top"
-                                       title="Supprimer ce devis/facture">
+                                       title="Supprimer le devis archivé">
                                         <i class="fas fa-trash"></i>
                                     </a>
                                 </div>

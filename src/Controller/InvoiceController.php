@@ -15,6 +15,7 @@ use Knp\Bundle\SnappyBundle\Snappy\Response\PdfResponse;
 use Knp\Snappy\Pdf;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -177,4 +178,42 @@ class InvoiceController extends AbstractController
             'facture-acompte-' . $lastname . '-' . $firstname . '.pdf'
         );
     }
+
+    /**
+     * Permet de supprimer une facture archivée
+     *
+     * @Route ("/facture/archives/supprimer/{id}", name="invoice_archived_delete")
+     * @param Invoice $invoice
+     * @return RedirectResponse
+     */
+    public function invoiceArchivedDelete(Invoice $invoice)
+    {
+        $this->manager->remove($invoice);
+        $this->manager->flush();
+
+        $this->addFlash('Opération réussie', 'La facture archivée a bien été supprimée !');
+
+        return $this->redirectToRoute('invoice_archives_list');
+
+    }
+
+    /**
+     * Permet de supprimer une facture
+     *
+     * @Route ("/facture/supprimer/{id}", name="invoice_delete")
+     * @param Invoice $invoice
+     * @return RedirectResponse
+     */
+    public function invoiceDelete(Invoice $invoice)
+    {
+        $this->manager->remove($invoice);
+        $this->manager->flush();
+
+        $this->addFlash('Opération réussie', 'La facture a bien été supprimée !');
+
+        return $this->redirectToRoute('invoice_list');
+
+    }
+
+
 }

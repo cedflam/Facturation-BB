@@ -24,15 +24,13 @@ class InvoiceType extends AbstractType
                 'class' => Customer::class,
                 'disabled' => true,
                 'attr' => [
-                    'class' => "customer col-md-4 ",
+                    'class' => "customer  ",
                 ]
             ])
             ->add('createdAt', DateType::class, [
                 'label' => "Date de la facture",
                 'widget' => 'single_text',
-                'attr' => [
-                    'class' => 'col-md-4'
-                ]
+
             ])
             ->add('typeInvoice', ChoiceType::class, [
                 'label' => "Etat de la facture",
@@ -41,16 +39,15 @@ class InvoiceType extends AbstractType
                     'Facture finale' => 'finale',
                     "Facture d'acompte" => 'acompte'
                 ],
-                'attr' => [
-                    'class' => "col-md-4"
-                ]
+
             ])
             ->add('meansPayment', TextType::class, [
-                'label' => "Moyen de paiement (Facture finale uniquement)",
+                'label' => "Moyen de paiement",
                 'required' => false,
                 'attr' => [
-                    'placeholder' => "Moyen de paiement (chq n° 123)",
-                    'class' => 'col-md-4'
+                    'placeholder' => "Facture finale uniquement...",
+                    'class' => 'bg-warning'
+
                 ]
             ])
             ->add('state', ChoiceType::class, [
@@ -59,9 +56,7 @@ class InvoiceType extends AbstractType
                     'Facture finale non réglée' => false,
                     'Facture finale réglée' => true,
                 ],
-                'attr' => [
-                    'class' => "col-md-4"
-                ]
+
             ])
             ->add('advances', CollectionType::class, [
                 'label' => "Acomptes versés",
@@ -75,27 +70,27 @@ class InvoiceType extends AbstractType
             ->add('totalAdvance', MoneyType::class, [
                 'label' => 'Total des acomptes versés (TTC)',
                 'attr' => [
-                    'class' => "totalAdvance col-md-7"
+                    'class' => "totalAdvance"
                 ]
             ])
             ->add('totalHt', MoneyType::class, [
                 'label' => 'Total devis HT',
                 'disabled' => true,
                 'attr' => [
-                    'class' => 'totalHT col-md-7'
+                    'class' => 'totalHT'
                 ]
             ])
             ->add('totalTtc', MoneyType::class, [
                 'label' => 'Total devis TTC',
                 'disabled' => true,
                 'attr' => [
-                    'class' => "totalTTC col-md-7"
+                    'class' => "totalTTC "
                 ]
             ])
             ->add('remainingCapital', MoneyType::class, [
                 'label' => 'Restant dû ',
                 'attr' => [
-                    'class' => 'remainingCapital col-md-7 bg-success'
+                    'class' => 'remainingCapital'
                 ]
             ])
         ;

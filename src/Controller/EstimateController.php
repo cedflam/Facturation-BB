@@ -268,4 +268,19 @@ class EstimateController extends AbstractController
         $this->addFlash('Opération Terminée', 'Le devis a bien été supprimé !');
         return $this->redirectToRoute('estimate_waiting_list');
     }
+
+    /**
+     * Permet de supprimer un devis
+     *
+     * @Route ("/devis/archives/supprimer/{id}", name="estimate_archived_remove")
+     * @param Estimate $estimate
+     * @return RedirectResponse
+     */
+    public function estimateArchivedRemove(Estimate $estimate)
+    {
+        $this->manager->remove($estimate);
+        $this->manager->flush();
+        $this->addFlash('Opération Terminée', 'Le devis arvhivé a bien été supprimé !');
+        return $this->redirectToRoute('estimate_archives_list');
+    }
 }
