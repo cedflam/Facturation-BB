@@ -1,0 +1,74 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modifier Devis{% endblock %}
+
+{# Previent Symfony que j'ai un theme personnalisé #}
+{% form_theme form _self %}
+
+{# Je personalise la présentation du prototype #}
+{% block _estimate_descriptions_widget %}
+    {{ form_widget(form) }}
+    <button type="button" class="add_prestation btn btn-sm btn-warning"
+            data-collection-holder-class="descriptions">
+        Ajouter une prestation
+    </button>
+{% endblock %}
+
+{# Je personnalise les champs du prototype #}
+{% block _estimate_descriptions_entry_widget %}
+    <div class="form-group bg-secondary rounded p-3 pb-5 description" id="{{ id }}">
+        <div class="row">
+            <div class="col-md-12">
+                {{ form_widget(form.prestation, {'attr': {'class': 'prestation'}}) }}
+            </div>
+            <div class="col-md-2 mt-2 ">
+                {{ form_widget(form.unitPrice, {'attr': {'class': 'unitPrice'}}) }}
+            </div>
+            <div class="col-md-1 mt-2 ">
+                {{ form_widget(form.quantity, {'attr': {'class': 'quantity'}}) }}
+            </div>
+            <div class="col-md-1 mt-2 ">
+                {{ form_widget(form.tva, {'attr': {'class': 'tva'}}) }}
+            </div>
+            <div class="col-md-2 mt-2">
+                <button type="button" class="btn btn-info btn-block calcul" data-target="{{ id }}">Calculer</button>
+            </div>
+            <div class="col-md-3 mt-2 ">
+                {{ form_widget(form.totalHt, {'attr': {'class': 'totalHt'}}) }}
+            </div>
+            <div class="col-md-3 mt-2 ">
+                {{ form_widget(form.totalTtc, {'attr': {'class': 'totalTtc'}}) }}
+            </div>
+        </div>
+        <div class="mt-2 col-md-12">
+            <button type="button"
+                    class="btn btn-primary float-right  btn-sm delete"
+                    data-target="{{ id }}">
+                Supprimer
+            </button>
+        </div>
+    </div>
+{% endblock %}
+
+{# J'enlève les label, les erreurs etc... #}
+{% block _estimate_descriptions_entry_row %}
+    {{ form_widget(form) }}
+{% endblock %}
+
+{% block body %}
+    <div class="container-fluid estimate bg-dark" {#style=" background-image: url({{ asset('img/bg-masthead.jpg') }});"#}>
+        <div class="container">
+            <h2 class="text-white">Modifier un devis</h2>
+            <div class="text-white">
+                {{ form_start(form) }}
+                {{ form_widget(form) }}
+                <input type="submit" class="btn btn-sm btn-secondary" value="Enregistrer" style="margin-bottom: 300px;">
+                {{ form_end(form) }}
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    <script src="{{ asset('js/estimate.js') }}"></script>
+{% endblock %}

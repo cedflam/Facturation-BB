@@ -1,0 +1,146 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Mes devis en cours{% endblock %}
+
+{% block body %}
+
+    <div class="container-fluid estimate pl-5 pr-5 bg-dark"
+            {# style=" background-image: url({{ asset('img/bg-masthead.jpg') }}); " #}>
+
+
+        {% for label, messages in app.flashes %}
+            {% for message in messages %}
+                <div aria-live="polite" aria-atomic="true" style="position: absolute; min-height: 200px; min-width: 300px;">
+                    <!-- Position it -->
+                    <div style="position: absolute; top: auto; right: auto;">
+                        <div class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-delay="5000"
+                             id="message">
+                            <div class="toast-header ">
+                                <img src="{{ asset('img/bb-logo.jpg') }}" class="rounded mr-2" alt="logo"> <br>
+                                <strong class="mr-auto">{{ label }}</strong>
+                                <button type="button" class="ml-2 mb-1 close" data-dismiss="toast"
+                                        aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="toast-body text-center">
+                                {{ message }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        {% endfor %}
+
+
+        <div class="container " style="padding-bottom: 300px;">
+            <div class="row mt-5">
+                <div class="form-group mt-2  col-md-8">
+                    <h3 class="text-white mt-2">Devis en cours</h3>
+                    <input name="search" type="text" class="form-control search mt-4" id="search"
+                           placeholder="Rechercher un client/devis ...">
+                </div>
+            </div>
+
+            <div class="row">
+                {% for estimate in estimates %}
+                    {% if estimate.invoice.state == false
+                        and estimate.invoice.advances | length <= 0
+                        and estimate.invoice.typeInvoice == 'attente'
+                        and estimate.archive == false
+                    %}
+                        <div class="col-md-6 col-lg-4">
+                            <div class="card mt-2">
+                                <div class="card-header" style="font-size: 12px">
+                                    {% if estimate.invoice.typeInvoice == 'finale' %}
+                                        <span class="badge badge-sm badge-danger">Facture du solde émise le, {{ estimate.invoice.createdAt | date('d/m/Y') }}...</span>
+                                        <br>
+                                    {% endif %}
+                                    <h5>{{ estimate.customer.firstname }} {{ estimate.customer.lastname }}</h5>
+                                    <div style="font-size: 12px">
+                                        Tel : {{ estimate.customer.phone }} <br>
+                                        <a href="mailto:{{ estimate.customer.email }}">Envoyer un email</a> <br>
+                                        <strong>Référence Devis :</strong> {{ estimate.reference }} <br>
+                                        <strong>Référence Facture :</strong> {{ estimate.invoice.reference }}
+                                    </div>
+                                </div>
+                                <div class="card-body" style="font-size: 14px">
+                                    <strong>Date devis :</strong> <span
+                                            class=""> {{ estimate.createdAt | date('d/m/Y') }}</span> <br>
+                                    <hr>
+                                    <strong>Montant HT :</strong> <span
+                                            class=""> {{ estimate.totalHt | number_format(2, '.', ',') }}€</span> <br>
+                                    <strong>Montant TTC :</strong> <span
+                                            class=""> {{ estimate.totalTtc | number_format(2, '.', ',') }}€</span>
+                                    <br>
+                                    <strong>Total acompte(s) TTC :</strong> <span
+                                            class=""> {{ estimate.invoice.totalAdvance | number_format(2, '.', ',') }}€</span>
+                                    <br>
+
+
+                                    <strong> Restant Dû
+                                        :</strong> <span
+                                            class="">{{ estimate.invoice.remainingCapital | number_format(2, '.', ',') }}€</span>
+                                    <br>
+                                </div>
+                                <div class="card-footer">
+                                    <a href="{{ path('estimate_show', {'id': estimate.id }) }}"
+                                       class="btn btn-sm btn-info text-white mt-1" data-toggle="tooltip"
+                                       data-placement="top"
+                                       title="Voir le devis">
+                                        <i class="fas fa-eye"></i>
+                                    </a>
+                                   {# <a href="{{ path('estimate_generate_pdf', {'id': estimate.id}) }}"
+                                       class="btn btn-sm btn-info text-white mt-1" data-toggle="tooltip"
+                                       data-placement="top"
+                                       title="Générer le devis au format PDF">
+                                        <i class="fas fa-file-pdf"></i>
+                                    </a>#}
+                                    <a href="{{ path('estimate_edit', {'id': estimate.id }) }}"
+                                       class="btn btn-sm btn-info text-white mt-1" data-toggle="tooltip"
+                                       data-placement="top"
+                                       title="Modifer ce devis">
+                                        <i class="fas fa-pen"></i>
+                                    </a>
+                                    |
+                                    <a href="{{ path('invoice_select', {'id': estimate.invoice.id }) }}"
+                                       class="btn btn-sm text-white mt-1" data-toggle="tooltip" data-placement="top"
+                                       title="Facturer ce client " style="background: #f4623a">
+                                        <i class="fas fa-file-invoice"></i>
+                                    </a>
+
+                                    |
+                                    <a href="{{ path('estimate_is_archived', {'id':estimate.id}) }}"
+                                       class="btn btn-sm btn-danger text-white mt-1" data-toggle="tooltip"
+                                       data-placement="top"
+                                       title="Archiver ce devis" >
+                                        <i class="fas fa-archive"></i>
+                                    </a>
+                                    <a href="{{ path('estimate_remove', {'id': estimate.id }) }}"
+                                       class="btn btn-sm btn-danger text-white mt-1"
+                                       onclick="return confirm('Vous êtes sur le point de supprimer le devis de {{ estimate.customer.firstname }} {{ estimate.customer.lastname }} Confirmez-vous ?')"
+                                       data-toggle="tooltip" data-placement="top"
+                                       title="Supprimer ce devis en attente">
+                                        <i class="fas fa-trash"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+
+{% block javascripts %}
+    <script src="{{ asset('js/search.js') }}"></script>
+    <script>
+        $(document).ready(function () {
+            let message = $('#message');
+            message.toast('show');
+            message.toast('delay');
+        });
+    </script>
+{% endblock %}

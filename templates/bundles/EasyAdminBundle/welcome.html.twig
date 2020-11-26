@@ -1,0 +1,536 @@
+{# @var ea \EasyCorp\Bundle\EasyAdminBundle\Context\AdminContext #}
+{% extends '@EasyAdmin/page/content.html.twig' %}
+
+{% block page_title 'Bienvenue sur votre tableau de bord' %}
+
+{% block page_content %}
+    <style>
+        p {
+            max-width: 600px;
+        }
+    </style>
+
+    <div class="container">
+
+        {# Affiche le total encaissé sur l'année en cours #}
+        <div class="row">
+            <div class="col-md-6 text-center">
+                <div class="card">
+                    <div class="card-header bg-primary text-white">
+                        <h2 class="text-white">Total Encaissé</h2>
+                    </div>
+                    <div class="card-body">
+                        {% set totalEncaisse = 0 %}
+                        {% for total in totalAdvances  %}
+                            {% set totalEncaisse = totalEncaisse + total.totalAdvances %}
+                        {% endfor %}
+                        {% for totalFactured in totalFacturedRemaining %}
+                            {% set totalEncaisse = totalEncaisse + totalFactured.total %}
+                        {% endfor %}
+                        <h2 class="text-center"> {{ totalEncaisse | number_format('2', ',', ' ') }}€</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 text-center">
+                <div class="card">
+                    <div class="card-header bg-danger text-white">
+                        <h2 class="text-white">Total restant dû</h2>
+                    </div>
+                    <div class="card-body">
+                        {% set totalAcomptes = 0 %}
+                        {% for total in totalRemaining %}
+                            {% set totalAcomptes = totalAcomptes + total.total %}
+                        {% endfor %}
+                        {% set totalAcomptes = totalAcomptes + totalRemainingPreviousYear[0].total %}
+                       <h2 class="text-center"> {{ totalAcomptes | number_format('2', ',', ' ') }}€</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        {# Total des acomptes #}
+        {% if totalAdvances is defined %}
+            {% for total in totalAdvances %}
+                {# Janvier #}
+                {% if total.month == 1 %}
+                    {% if totalAdvances != 0 %}
+                        <input type="hidden" class="total-advances-janvier" value="{{ total.totalAdvances }}">
+                    {% else %}
+                        <input type="hidden" class="total-advances-janvier" value="0">
+                    {% endif %}
+                {% elseif total.month == 2 %}
+                    {% if totalAdvances != 0 %}
+                        <input type="hidden" class="total-advances-fevrier" value="{{ total.totalAdvances }}">
+                    {% else %}
+                        <input type="hidden" class="total-advances-fevrier" value="0">
+                    {% endif %}
+                {% elseif total.month == 3 %}
+                    {% if totalAdvances != 0 %}
+                        <input type="hidden" class="total-advances-mars" value="{{ total.totalAdvances }}">
+                    {% else %}
+                        <input type="hidden" class="total-advances-mars" value="0">
+                    {% endif %}
+                {% elseif total.month == 4 %}
+                    {% if totalAdvances != 0 %}
+                        <input type="hidden" class="total-advances-avril" value="{{ total.totalAdvances }}">
+                    {% else %}
+                        <input type="hidden" class="total-advances-avril" value="0">
+                    {% endif %}
+                {% elseif total.month == 5 %}
+                    {% if totalAdvances != 0 %}
+                        <input type="hidden" class="total-advances-mai" value="{{ total.totalAdvances }}">
+                    {% else %}
+                        <input type="hidden" class="total-advances-mai" value="0">
+                    {% endif %}
+                {% elseif total.month == 6 %}
+                    {% if totalAdvances != 0 %}
+                        <input type="hidden" class="total-advances-juin" value="{{ total.totalAdvances }}">
+                    {% else %}
+                        <input type="hidden" class="total-advances-juin" value="0">
+                    {% endif %}
+                {% elseif total.month == 7 %}
+                    {% if totalAdvances != 0 %}
+                        <input type="hidden" class="total-advances-juillet" value="{{ total.totalAdvances }}">
+                    {% else %}
+                        <input type="hidden" class="total-advances-juillet" value="0">
+                    {% endif %}
+                {% elseif total.month == 8 %}
+                    {% if totalAdvances != 0 %}
+                        <input type="hidden" class="total-advances-aout" value="{{ total.totalAdvances }}">
+                    {% else %}
+                        <input type="hidden" class="total-advances-aout" value="0">
+                    {% endif %}
+                {% elseif total.month == 9 %}
+                    {% if totalAdvances != 0 %}
+                        <input type="hidden" class="total-advances-septembre" value="{{ total.totalAdvances }}">
+                    {% else %}
+                        <input type="hidden" class="total-advances-septembre" value="0">
+                    {% endif %}
+                {% elseif total.month == 10 %}
+                    {% if totalAdvances != 0 %}
+                        <input type="hidden" class="total-advances-octobre" value="{{ total.totalAdvances }}">
+                    {% else %}
+                        <input type="hidden" class="total-advances-octobre" value="0">
+                    {% endif %}
+                {% elseif total.month == 11 %}
+                    {% if totalAdvances != 0 %}
+                        <input type="hidden" class="total-advances-novembre" value="{{ total.totalAdvances }}">
+                    {% else %}
+                        <input type="hidden" class="total-advances-novembre" value="0">
+                    {% endif %}
+                {% elseif total.month == 12 %}
+                    {% if totalAdvances != 0 %}
+                        <input type="hidden" class="total-advances-decembre" value="{{ total.totalAdvances }}">
+                    {% else %}
+                        <input type="hidden" class="total-advances-decembre" value="0">
+                    {% endif %}
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+
+        {# Total factures finales #}
+        {% if totalFacturedRemaining is defined %}
+            {% for totalFactured in totalFacturedRemaining %}
+                {# Janvier #}
+                {% if totalFactured.month == 1 %}
+                    {% if totalFactured.total != 0 %}
+                        <input type="hidden" class="total-factured-janvier" value="{{ totalFactured.total }}">
+                    {% else %}
+                        <input type="hidden" class="total-factured-janvier" value="0">
+                    {% endif %}
+                {% elseif totalFactured.month == 2 %}
+                    {% if totalFactured.total != 0 %}
+                        <input type="hidden" class="total-factured-fevrier" value="{{ totalFactured.total }}">
+                    {% else %}
+                        <input type="hidden" class="total-factured-fevrier" value="0">
+                    {% endif %}
+                {% elseif totalFactured.month == 3 %}
+                    {% if totalFactured.total != 0 %}
+                        <input type="hidden" class="total-factured-mars" value="{{ totalFactured.total }}">
+                    {% else %}
+                        <input type="hidden" class="total-factured-mars" value="0">
+                    {% endif %}
+                {% elseif totalFactured.month == 4 %}
+                    {% if totalFactured.total != 0 %}
+                        <input type="hidden" class="total-factured-avril" value="{{ totalFactured.total }}">
+                    {% else %}
+                        <input type="hidden" class="total-factured-avril" value="0">
+                    {% endif %}
+                {% elseif totalFactured.month == 5 %}
+                    {% if totalFactured.total != 0 %}
+                        <input type="hidden" class="total-factured-mai" value="{{ totalFactured.total }}">
+                    {% else %}
+                        <input type="hidden" class="total-factured-mai" value="0">
+                    {% endif %}
+                {% elseif totalFactured.month == 6 %}
+                    {% if totalFactured.total != 0 %}
+                        <input type="hidden" class="total-factured-juin" value="{{ totalFactured.total }}">
+                    {% else %}
+                        <input type="hidden" class="total-factured-juin" value="0">
+                    {% endif %}
+                {% elseif totalFactured.month == 7 %}
+                    {% if totalFactured.total != 0 %}
+                        <input type="hidden" class="total-factured-juillet"
+                               value="{{ totalFactured.total }}">
+                    {% else %}
+                        <input type="hidden" class="total-factured-juillet" value="0">
+                    {% endif %}
+                {% elseif totalFactured.month == 8 %}
+                    {% if totalFactured.total != 0 %}
+                        <input type="hidden" class="total-factured-aout"
+                               value="{{ totalFactured.total }}">
+                    {% else %}
+                        <input type="hidden" class="total-factured-aout" value="0">
+                    {% endif %}
+                {% elseif totalFactured.month == 9 %}
+                    {% if totalFactured.total != 0 %}
+                        <input type="hidden" class="total-factured-septembre"
+                               value="{{ totalFactured.total }}">
+                    {% else %}
+                        <input type="hidden" class="total-factured-septembre" value="0">
+                    {% endif %}
+                {% elseif totalFactured.month == 10 %}
+                    {% if totalFactured.total != 0 %}
+                        <input type="hidden" class="total-factured-octobre"
+                               value="{{ totalFactured.total }}">
+                    {% else %}
+                        <input type="hidden" class="total-factured-octobre" value="0">
+                    {% endif %}
+                {% elseif totalFactured.month == 11 %}
+                    {% if totalFactured.total != 0 %}
+                        <input type="hidden" class="total-factured-novembre"
+                               value="{{ totalFactured.total }}">
+                    {% else %}
+                        <input type="hidden" class="total-factured-novembre"
+                               value="0">
+                    {% endif %}
+                {% elseif totalFactured.month == 12 %}
+                    {% if totalFactured.total != 0 %}
+                        <input type="hidden" class="total-factured-decembre"
+                               value="{{ totalFactured.total }}">
+                    {% else %}
+                        <input type="hidden" class="total-factured-decembre"
+                               value="0">
+                    {% endif %}
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+
+        {# Je récupère le total restant du de l'année précédente #}
+        {% if totalRemainingPreviousYear[0].total is defined %}
+            <input type="hidden" class="total-previous-year" value="{{ totalRemainingPreviousYear[0].total }}">
+        {% endif %}
+
+        {# Je récupère le capital restant du par mois de l'année en cours #}
+        {% if totalRemaining is defined %}
+            {% for total in totalRemaining %}
+                {% if total.month == 1 %}
+                    {% if total.total != 0 %}
+                        <input type="hidden" class="total-remaining-janvier" value="{{ total.total }}">
+                    {% else %}
+                        <input type="hidden" class="total-remaining-janvier" value="0">
+                    {% endif %}
+                {% elseif total.month == 2 %}
+                    {% if total.total != 0 %}
+                        <input type="hidden" class="total-remaining-fevrier" value="{{ total.total }}">
+                    {% else %}
+                        <input type="hidden" class="total-remaining-fevrier" value="0">
+                    {% endif %}
+                {% elseif total.month == 3 %}
+                    {% if total.total != 0 %}
+                        <input type="hidden" class="total-remaining-mars" value="{{ total.total }}">
+                    {% else %}
+                        <input type="hidden" class="total-remaining-mars" value="0">
+                    {% endif %}
+                {% elseif total.month == 4 %}
+                    {% if total.total != 0 %}
+                        <input type="hidden" class="total-remaining-avril" value="{{ total.total }}">
+                    {% else %}
+                        <input type="hidden" class="total-remaining-avril" value="0">
+                    {% endif %}
+                {% elseif total.month == 5 %}
+                    {% if total.total != 0 %}
+                        <input type="hidden" class="total-remaining-mai" value="{{ total.total }}">
+                    {% else %}
+                        <input type="hidden" class="total-remaining-mai" value="0">
+                    {% endif %}
+                {% elseif total.month == 6 %}
+                    {% if total.total != 0 %}
+                        <input type="hidden" class="total-remaining-juin" value="{{ total.total }}">
+                    {% else %}
+                        <input type="hidden" class="total-remaining-juin" value="0">
+                    {% endif %}
+                {% elseif total.month == 7 %}
+                    {% if total.total != 0 %}
+                        <input type="hidden" class="total-remaining-juillet"
+                               value="{{ total.total }}">
+                    {% else %}
+                        <input type="hidden" class="total-remaining-juillet" value="0">
+                    {% endif %}
+                {% elseif total.month == 8 %}
+                    {% if total.total != 0 %}
+                        <input type="hidden" class="total-remaining-aout"
+                               value="{{ total.total }}">
+                    {% else %}
+                        <input type="hidden" class="total-remaining-aout" value="0">
+                    {% endif %}
+                {% elseif total.month == 9 %}
+                    {% if total.total != 0 %}
+                        <input type="hidden" class="total-remaining-septembre"
+                               value="{{ total.total }}">
+                    {% else %}
+                        <input type="hidden" class="total-remaining-septembre" value="0">
+                    {% endif %}
+                {% elseif total.month == 10 %}
+                    {% if total.total != 0 %}
+                        <input type="hidden" class="total-remaining-octobre"
+                               value="{{ total.total }}">
+                    {% else %}
+                        <input type="hidden" class="total-remaining-octobre" value="0">
+                    {% endif %}
+                {% elseif total.month == 11 %}
+                    {% if total.total != 0 %}
+                        <input type="hidden" class="total-remaining-novembre"
+                               value="{{ total.total }}">
+                    {% else %}
+                        <input type="hidden" class="total-remaining-novembre"
+                               value="0">
+                    {% endif %}
+                {% elseif total.month == 12 %}
+                    {% if total.total != 0 %}
+                        <input type="hidden" class="total-remaining-decembre"
+                               value="{{ total.total }}">
+                    {% else %}
+                        <input type="hidden" class="total-remaining-decembre"
+                               value="0">
+                    {% endif %}
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script type="text/javascript">
+            google.charts.load('current', {'packages': ['corechart']});
+            google.charts.setOnLoadCallback(drawChart);
+
+            //Je récupère les acomptes de l'année par mois
+            let advanceJanvier = (+$('.total-advances-janvier').val());
+            if (isNaN(advanceJanvier)) {
+                advanceJanvier = 0;
+            }
+            let advanceFevrier = (+$('.total-advances-fevrier').val());
+            if (isNaN(advanceFevrier)) {
+                advanceFevrier = 0;
+            }
+            let advanceMars = (+$('.total-advances-mars').val());
+            if (isNaN(advanceMars)) {
+                advanceMars = 0;
+            }
+            let advanceAvril = (+$('.total-advances-avril').val());
+            if (isNaN(advanceAvril)) {
+                advanceAvril = 0;
+            }
+            let advanceMai = (+$('.total-advances-mai').val());
+            if (isNaN(advanceMai)) {
+                advanceMai = 0;
+            }
+            let advanceJuin = (+$('.total-advances-juin').val());
+            if (isNaN(advanceJuin)) {
+                advanceJuin = 0;
+            }
+            let advanceJuillet = (+$('.total-advances-juillet').val());
+            if (isNaN(advanceJuillet)) {
+                advanceJuillet = 0;
+            }
+            let advanceAout = (+$('.total-advances-aout').val());
+            if (isNaN(advanceAout)) {
+                advanceAout = 0;
+            }
+            let advanceSeptembre = (+$('.total-advances-septembre').val());
+            if (isNaN(advanceSeptembre)) {
+                advanceSeptembre = 0;
+            }
+            let advanceOctobre = (+$('.total-advances-octobre').val());
+            if (isNaN(advanceOctobre)) {
+                advanceOctobre = 0;
+            }
+            let advanceNovembre = (+$('.total-advances-novembre').val());
+            if (isNaN(advanceNovembre)) {
+                advanceNovembre = 0;
+            }
+            let advanceDecembre = (+$('.total-advances-decembre').val());
+            if (isNaN(advanceDecembre)) {
+                advanceDecembre = 0;
+            }
+            // Je récupère les factures finale de l'année par mois
+            let facturedJanvier = (+$('.total-factured-janvier').val());
+            if (isNaN(facturedJanvier)) {
+                facturedJanvier = 0;
+            }
+            let facturedFevrier = (+$('.total-factured-fevrier').val());
+            if (isNaN(facturedFevrier)) {
+                facturedFevrier = 0;
+            }
+            let facturedMars = (+$('.total-factured-mars').val());
+            if (isNaN(facturedMars)) {
+                facturedMars = 0;
+            }
+            let facturedAvril = (+$('.total-factured-avril').val());
+            if (isNaN(facturedAvril)) {
+                facturedAvril = 0;
+            }
+            let facturedMai = (+$('.total-factured-mai').val());
+            if (isNaN(facturedMai)) {
+                facturedMai = 0;
+            }
+            let facturedJuin = (+$('.total-factured-juin').val());
+            if (isNaN(facturedJuin)) {
+                facturedJuin = 0;
+            }
+            let facturedJuillet = (+$('.total-factured-juillet').val());
+            if (isNaN(facturedJuillet)) {
+                facturedJuillet = 0;
+            }
+            let facturedAout = (+$('.total-factured-aout').val());
+            if (isNaN(facturedAout)) {
+                facturedAout = 0;
+            }
+            let facturedSeptembre = (+$('.total-factured-septembre').val());
+            if (isNaN(facturedSeptembre)) {
+                facturedSeptembre = 0;
+            }
+            let facturedOctobre = (+$('.total-factured-octobre').val());
+            if (isNaN(facturedOctobre)) {
+                facturedOctobre = 0;
+            }
+            let facturedNovembre = (+$('.total-factured-novembre').val());
+            if (isNaN(facturedNovembre)) {
+                facturedNovembre = 0;
+            }
+            let facturedDecembre = (+$('.total-factured-decembre').val());
+            if (isNaN(facturedDecembre)) {
+                facturedDecembre = 0;
+            }
+            // J'additionne le total acompte et total facturé
+            let totalJanvier = advanceJanvier + facturedJanvier;
+            let totalFevrier = advanceFevrier + facturedFevrier;
+            let totalMars = advanceMars + facturedMars;
+            let totalAvril = advanceAvril + facturedAvril;
+            let totalMai = advanceMai + facturedMai;
+            let totalJuin = advanceJuin + facturedJuin;
+            let totalJuillet = advanceJuillet + facturedJuillet;
+            let totalAout = advanceAout + facturedAout;
+            let totalSeptembre = advanceSeptembre + facturedSeptembre;
+            let totalOctobre = advanceOctobre + facturedOctobre;
+            let totalNovembre = advanceNovembre + facturedNovembre;
+            let totalDecembre = advanceDecembre + facturedDecembre;
+
+            // Je récupère le crd de l'année précédente
+            let crdPreviousYear = (+$('.total-previous-year').val());
+            if (isNaN(crdPreviousYear)) {
+                crdPreviousYear = 0;
+            }
+            // Je récupère la crd de l'année en cours
+            let crdJanvier = (+$('.total-remaining-janvier').val());
+            if (isNaN(crdJanvier)) {
+                crdJanvier = 0;
+            }
+            let crdFevrier = (+$('.total-remaining-fevrier').val());
+            if (isNaN(crdFevrier)) {
+                crdFevrier = 0;
+            }
+            let crdMars = (+$('.total-remaining-mars').val());
+            if (isNaN(crdMars)) {
+                crdMars = 0;
+            }
+            let crdAvril = (+$('.total-remaining-avril').val());
+            if (isNaN(crdAvril)) {
+                crdAvril = 0;
+            }
+            let crdMai = (+$('.total-remaining-mai').val());
+            if (isNaN(crdMai)) {
+                crdMai = 0;
+            }
+            let crdJuin = (+$('.total-remaining-juin').val());
+            if (isNaN(crdJuin)) {
+                crdJuin = 0;
+            }
+            let crdJuillet = (+$('.total-remaining-juillet').val());
+            if (isNaN(crdJuillet)) {
+                crdJuillet = 0;
+            }
+            let crdAout = (+$('.total-remaining-aout').val());
+            if (isNaN(crdAout)) {
+                crdAout = 0;
+            }
+            let crdSeptembre = (+$('.total-remaining-septembre').val());
+            if (isNaN(crdSeptembre)) {
+                crdSeptembre = 0;
+            }
+            let crdOctobre = (+$('.total-remaining-octobre').val());
+            if (isNaN(crdOctobre)) {
+                crdOctobre = 0;
+            }
+            let crdNovembre = (+$('.total-remaining-novembre').val());
+            if (isNaN(crdNovembre)) {
+                crdNovembre = 0;
+            }
+            let crdDecembre = (+$('.total-remaining-decembre').val());
+            if (isNaN(crdDecembre)) {
+                crdDecembre = 0;
+            }
+
+            let totalCrdJanvier = crdJanvier + crdPreviousYear;
+            let totalCrdFevrier = crdFevrier + crdJanvier + crdPreviousYear;
+            let totalCrdMars = crdMars + crdFevrier + crdJanvier + crdPreviousYear;
+            let totalCrdAvril = crdAvril + crdMars + crdFevrier + crdJanvier + crdPreviousYear;
+            let totalCrdMai = crdMai + crdAvril + crdMars + crdFevrier + crdJanvier + crdPreviousYear;
+            let totalCrdJuin = crdJuin + crdMai + crdAvril + crdMars + crdFevrier + crdJanvier + crdPreviousYear;
+            let totalCrdJuillet = crdJuillet + crdJuin + crdMai + crdAvril + crdMars + crdFevrier + crdJanvier + crdPreviousYear;
+            let totalCrdAout = crdAout + crdJuillet + crdJuin + crdMai + crdAvril + crdMars + crdFevrier + crdJanvier + crdPreviousYear;
+            let totalCrdSeptembre = crdSeptembre + crdAout + crdJuillet + crdJuin + crdMai + crdAvril + crdMars + crdFevrier + crdJanvier + crdPreviousYear;
+            let totalCrdOctobre = crdOctobre + crdSeptembre + crdAout + crdJuillet + crdJuin + crdMai + crdAvril + crdMars + crdFevrier + crdJanvier + crdPreviousYear;
+            let totalCrdNovembre = crdNovembre + crdOctobre + crdSeptembre + crdAout + crdJuillet + crdJuin + crdMai + crdAvril + crdMars + crdFevrier + crdJanvier + crdPreviousYear;
+            let totalCrdDecembre = crdDecembre + crdNovembre + crdOctobre + crdSeptembre + crdAout + crdJuillet + crdJuin + crdMai + crdAvril + crdMars + crdFevrier + crdJanvier + crdPreviousYear;
+
+
+            console.log(advanceJuin, facturedJuin)
+
+            function drawChart() {
+                var data = google.visualization.arrayToDataTable([
+                    ['Year', 'Encaissé', 'A encaisser'],
+                    ['Jan', totalJanvier, totalCrdJanvier],
+                    ['Fev', totalFevrier, totalCrdFevrier],
+                    ['Mar', totalMars, totalCrdMars],
+                    ['Avr', totalAvril, totalCrdAvril],
+                    ['Mai', totalMai, totalCrdMai],
+                    ['Jun', totalJuin, totalCrdJuin],
+                    ['Jui', totalJuillet, totalCrdJuillet],
+                    ['Aout', totalAout, totalCrdAout],
+                    ['Sept', totalSeptembre, totalCrdSeptembre],
+                    ['Oct', totalOctobre, totalCrdOctobre],
+                    ['Nov', totalNovembre, totalCrdNovembre],
+                    ['Dec', totalDecembre, totalCrdDecembre]
+                ]);
+
+                var options = {
+                    title: 'CA-Année en cours',
+                    hAxis: {title: 'Mois', titleTextStyle: {color: '#333'}},
+                    vAxis: {minValue: 0}
+                };
+
+                var chart = new google.visualization.AreaChart(document.getElementById('chart_div'));
+                chart.draw(data, options);
+            }
+        </script>
+        <body>
+        <div id="chart_div" style="width: 100%; height: 500px;"></div>
+        </body>
+
+        <a href="{{ path('home') }}" class="btn btn-primary">Retour au site</a>
+        <a href="{{ path('admin_generate_pdf') }}" class="btn btn-warning">Générer récapitulatif CA (pdf)</a>
+    </div>
+
+
+{% endblock %}

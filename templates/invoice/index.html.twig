@@ -1,0 +1,96 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Facturation{% endblock %}
+
+{# Prevint symfony que j'ai un thème personnalisé #}
+{% form_theme form _self %}
+
+ {# Je personalise la présentation du prototype #}
+{% block _invoice_advances_widget %}
+    {{ form_widget(form) }}
+    <button type="button" class="add_advance text-white btn btn-sm btn-info mt-3"
+            data-collection-holder-class="advances">
+        Ajouter acompte
+    </button>
+    <button type="button" class="calcul btn btn-sm btn-danger mt-3 hidden">Calculer</button>
+{% endblock %}
+
+ {# Je personnalise les champs du prototype #}
+{% block _invoice_advances_entry_widget %}
+    <div class="row acompte" id="{{ id }}">
+        <div class=" col-md-6 mt-1">
+            {{ form_widget(form.amount, {'attr': {'class': 'amount'}}) }}
+        </div>
+        <div class="col-md-3 mt-1">
+            {{ form_widget(form.meansPayment, {'attr': {'class': 'meansPayment'}}) }}
+        </div>
+        <div class="col-md-3">
+            <button type="button" class="btn btn-primary delete mt-1 mb-1" data-target="{{ id }}">
+                Supprimer
+            </button>
+        </div>
+    </div>
+{% endblock %}
+
+{% block _invoice_advances_entry_row %}
+    {{ form_widget(form) }}
+{% endblock %}
+
+{% block body %}
+    <div class="container-fluid estimate bg-dark " {#style=" background-image: url({{ asset('img/bg-masthead.jpg') }});"#}>
+        <div class="container text-white">
+            <h2 class="text-white mt-5 mb-3">Facturation</h2>
+            <hr class="border-light">
+
+            {{ form_start(form) }}
+            <div class="row">
+                <div class="col-md-6 ">
+                    {{ form_row(form.customer) }}
+                </div>
+                <div class="col-md-6">
+                    {{ form_row(form.createdAt) }}
+                </div>
+                <div class="col-md-4">
+                    {{ form_row(form.typeInvoice) }}
+                    <hr class="border-light">
+                </div>
+
+                <div class="col-md-4">
+                    {{ form_row(form.state) }}
+                    <hr class="border-light">
+                </div>
+                <div class="col-md-4">
+                    {{ form_row(form.meansPayment) }}
+                    <hr class="border-light">
+                </div>
+
+                <div class="col-md-12">
+                    {{ form_row(form.advances) }}
+                    <hr class="border-light">
+                </div>
+
+                <div class="col-md-3 ">
+                    {{ form_row(form.totalAdvance) }}
+                </div>
+                <div class="col-md-3 ">
+                    {{ form_row(form.totalHt) }}
+                </div>
+                <div class="col-md-3 ">
+                    {{ form_row(form.totalTtc) }}
+                </div>
+                <div class="col-md-3 ">
+                    {{ form_row(form.remainingCapital) }}
+                </div>
+
+            </div>
+            <hr class="border-light">
+
+            <input type="submit" class="btn  btn-info   mb-5" value="Enregistrer" >
+            {{ form_end(form) }}
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    <script src="{{ asset('js/invoice.js') }}"></script>
+{% endblock %}
