@@ -20,9 +20,9 @@
                         Cette page constitue le point de départ à la gestion de la clientèle. <br>
                         Depuis cette interface, vous avez la possibilité de gérer vos clients, devis et factures.
                     </p>
-                    <a class="btn btn-primary btn-xl js-scroll-trigger" href="{{ path('admin') }}">Espace
+                    <a class="btn btn-primary btn-xl js-scroll-trigger mb-2" href="{{ path('admin') }}">Espace
                         d'administration</a>
-                    <a class="btn btn-primary btn-xl js-scroll-trigger" href="{{ path('invoice_list') }}">Mes factures</a>
+                    <a class="btn btn-primary btn-xl js-scroll-trigger mb-2" href="{{ path('invoice_list') }}">Mes factures</a>
                 </div>
                 {% else %}
                     <div class="col-lg-8 align-self-baseline">
@@ -35,7 +35,6 @@
             </div>
         </div>
     </header>
-
 {% endblock %}
 
 
