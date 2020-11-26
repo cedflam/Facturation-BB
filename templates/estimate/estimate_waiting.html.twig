@@ -108,17 +108,7 @@
                                        title="Facturer ce client " style="background: #f4623a">
                                         <i class="fas fa-file-invoice"></i>
                                     </a>
-                                    <a href="{{ path('invoice_show', {'id': estimate.invoice.id }) }}"
-                                       class="btn btn-sm text-white mt-1" data-toggle="tooltip" data-placement="top"
-                                       title="Voir la facture" style="background: #f4623a">
-                                        <i class="fas fa-eye"></i>
-                                    </a>
-                                    <a href="{{ path('invoice_generate_pdf', {'id':estimate.invoice.id}) }}"
-                                       class="btn btn-sm btn-info text-white mt-1" data-toggle="tooltip"
-                                       data-placement="top"
-                                       title="Editer la dernière facture au format PDF" style="background: #f4623a">
-                                        <i class="fas fa-file-pdf"></i>
-                                    </a>
+
                                     |
                                     <a href="{{ path('estimate_is_archived', {'id':estimate.id}) }}"
                                        class="btn btn-sm btn-danger text-white mt-1" data-toggle="tooltip"
