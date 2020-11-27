@@ -11,44 +11,42 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9f29e3dd-1aaf-468e-9a1c-10b205ea4b7f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/js/demo/.chart-area-demo.js.icloud" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/js/demo/.chart-bar-demo.js.icloud" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/js/demo/.chart-pie-demo.js.icloud" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/js/demo/.datatables-demo.js.icloud" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/scss/navs/.._global.scss.icloud" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/scss/navs/.._sidebar.scss.icloud" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/scss/navs/.._topbar.scss.icloud" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/scss/utilities/.._animation.scss.icloud" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/scss/utilities/.._background.scss.icloud" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/scss/utilities/.._border.scss.icloud" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/scss/utilities/.._display.scss.icloud" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/scss/utilities/.._progress.scss.icloud" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/scss/utilities/.._rotate.scss.icloud" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/scss/utilities/.._text.scss.icloud" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/chart.js/.Chart.bundle.js.icloud" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/chart.js/.Chart.bundle.min.js.icloud" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/chart.js/.Chart.js.icloud" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/chart.js/.Chart.min.js.icloud" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/datatables/.dataTables.bootstrap4.css.icloud" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/datatables/.dataTables.bootstrap4.js.icloud" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/datatables/.dataTables.bootstrap4.min.css.icloud" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/datatables/.dataTables.bootstrap4.min.js.icloud" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/datatables/.jquery.dataTables.js.icloud" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/datatables/.jquery.dataTables.min.js.icloud" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/.LICENSE.txt.icloud" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/.attribution.js.icloud" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/.package.json.icloud" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/jquery-easing/.jquery.easing.compatibility.js.icloud" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/jquery-easing/.jquery.easing.js.icloud" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/jquery-easing/.jquery.easing.min.js.icloud" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/jquery/.jquery.js.icloud" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/jquery/.jquery.min.js.icloud" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/jquery/.jquery.min.map.icloud" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/jquery/.jquery.slim.js.icloud" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/jquery/.jquery.slim.min.js.icloud" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/jquery/.jquery.slim.min.map.icloud" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/bootstrap/scss/.._jumbotron.scss.icloud" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/bootstrap/scss/.._media.scss.icloud" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/bootstrap/scss/.._root.scss.icloud" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/bootstrap/scss/.._transitions.scss.icloud" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/bootstrap/scss/.._utilities.scss.icloud" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/bootstrap/scss/.bootstrap-grid.scss.icloud" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/bootstrap/scss/.bootstrap-reboot.scss.icloud" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/css/.brands.min.css.icloud" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/css/.regular.min.css.icloud" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/css/.solid.min.css.icloud" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/less/.._animated.less.icloud" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/less/.._bordered-pulled.less.icloud" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/less/.._core.less.icloud" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/less/.._fixed-width.less.icloud" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/less/.._larger.less.icloud" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/less/.._list.less.icloud" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/less/.._screen-reader.less.icloud" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/less/.._stacked.less.icloud" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/less/.fontawesome.less.icloud" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/less/.v4-shims.less.icloud" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/scss/.._animated.scss.icloud" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/scss/.._bordered-pulled.scss.icloud" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/scss/.._core.scss.icloud" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/scss/.._fixed-width.scss.icloud" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/scss/.._larger.scss.icloud" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/scss/.._list.scss.icloud" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/scss/.._screen-reader.scss.icloud" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/scss/.._stacked.scss.icloud" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/scss/.fontawesome.scss.icloud" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/scss/.v4-shims.scss.icloud" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/estimate/estimate_edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/estimate/estimate_edit.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/estimate/estimate_archives.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/estimate/estimate_archives.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/estimate/estimate_waiting.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/estimate/estimate_waiting.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/estimate/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/estimate/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/invoice/invoice_archive.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/invoice/invoice_archive.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/invoice/invoice_list.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/invoice/invoice_list.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,7 +115,7 @@
       <workItem from="1606197594496" duration="12950000" />
       <workItem from="1606377701983" duration="10975000" />
       <workItem from="1606404231175" duration="29801000" />
-      <workItem from="1606467251931" duration="8594000" />
+      <workItem from="1606467251931" duration="9025000" />
     </task>
     <servers />
   </component>
