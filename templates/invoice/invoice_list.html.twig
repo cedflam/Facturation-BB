@@ -6,29 +6,7 @@
 
     <div class="container-fluid estimate pl-5 pr-5 bg-dark"
             {# style=" background-image: url({{ asset('img/bg-masthead.jpg') }}); " #}>
-        {% for label, messages in app.flashes %}
-            {% for message in messages %}
-                <div aria-live="polite" aria-atomic="true"
-                     style="position: absolute; min-height: 200px; min-width: 300px;">
-                    <!-- Position it -->
-                    <div style="position: absolute; top: auto; right: auto;">
-                        <div class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-delay="3000"
-                             id="message">
-                            <div class="toast-header ">
-                                <img src="{{ asset('img/bb-logo.jpg') }}" class="rounded mr-2" alt="logo"> <br>
-                                <strong class="mr-auto">{{ label }}</strong>
-                                <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="toast-body">
-                                {{ message }}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            {% endfor %}
-        {% endfor %}
+
         <div class="container " style="padding-bottom: 300px;">
             <div class="row mt-5">
                 <div class="form-group mt-2  col-md-8">
@@ -37,6 +15,32 @@
                            placeholder="Rechercher un client/devis ...">
                 </div>
             </div>
+
+            {% for label, messages in app.flashes %}
+                {% for message in messages %}
+                    <div  aria-live="polite" aria-atomic="true" style=" "
+                          class="d-flex justify-content-start align-items-center"
+                    >
+                        <!-- Position it -->
+                        <div style="position: relative; top: 0; right: 0;">
+                            <div class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-delay="5000"
+                                 id="message">
+                                <div class="toast-header ">
+                                    <img src="{{ asset('img/bb-logo.jpg') }}" class="rounded mr-2" alt="logo"> <br>
+                                    <strong class="mr-auto">{{ label }}</strong>
+                                    <button type="button" class="ml-2 mb-1 close" data-dismiss="toast"
+                                            aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="toast-body text-center">
+                                    {{ message }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% endfor %}
 
             <div class="row">
                 {% for estimate in estimates %}
@@ -119,11 +123,5 @@
     {# Recherche dans la page #}
     <script src="{{ asset('js/search.js') }}"></script>
     {# Affiche les toasts #}
-    <script>
-        $(document).ready(function () {
-            let message = $('#message');
-            message.toast('show');
-            message.toast('delay');
-        });
-    </script>
+    <script src="{{ asset('js/toast-alert.js') }}"></script>
 {% endblock %}
