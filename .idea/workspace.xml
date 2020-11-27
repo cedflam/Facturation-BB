@@ -11,85 +11,374 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9f29e3dd-1aaf-468e-9a1c-10b205ea4b7f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/bootstrap/js/.bootstrap.bundle.js.icloud" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/bootstrap/js/.bootstrap.bundle.js.map.icloud" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/bootstrap/js/.bootstrap.bundle.min.js.icloud" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/bootstrap/js/.bootstrap.bundle.min.js.map.icloud" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/bootstrap/js/.bootstrap.js.icloud" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/bootstrap/js/.bootstrap.js.map.icloud" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/bootstrap/js/.bootstrap.min.js.icloud" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/bootstrap/js/.bootstrap.min.js.map.icloud" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/bootstrap/scss/.._button-group.scss.icloud" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/bootstrap/scss/.._buttons.scss.icloud" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/bootstrap/scss/.._card.scss.icloud" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/bootstrap/scss/.._carousel.scss.icloud" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/bootstrap/scss/.._custom-forms.scss.icloud" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/bootstrap/scss/.._dropdown.scss.icloud" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/bootstrap/scss/.._forms.scss.icloud" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/bootstrap/scss/.._functions.scss.icloud" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/bootstrap/scss/.._input-group.scss.icloud" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/bootstrap/scss/.._list-group.scss.icloud" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/bootstrap/scss/.._modal.scss.icloud" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/bootstrap/scss/.._navbar.scss.icloud" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/bootstrap/scss/.._popover.scss.icloud" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/bootstrap/scss/.._print.scss.icloud" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/bootstrap/scss/.._reboot.scss.icloud" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/bootstrap/scss/.._tables.scss.icloud" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/bootstrap/scss/.._tooltip.scss.icloud" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/bootstrap/scss/.._type.scss.icloud" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/bootstrap/scss/.._variables.scss.icloud" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/css/.all.css.icloud" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/css/.all.min.css.icloud" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/css/.fontawesome.css.icloud" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/css/.fontawesome.min.css.icloud" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/css/.svg-with-js.css.icloud" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/css/.svg-with-js.min.css.icloud" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/css/.v4-shims.css.icloud" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/css/.v4-shims.min.css.icloud" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/js/.all.js.icloud" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/js/.all.min.js.icloud" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/js/.brands.js.icloud" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/js/.brands.min.js.icloud" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/js/.conflict-detection.js.icloud" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/js/.conflict-detection.min.js.icloud" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/js/.fontawesome.js.icloud" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/js/.fontawesome.min.js.icloud" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/js/.regular.js.icloud" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/js/.regular.min.js.icloud" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/js/.solid.js.icloud" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/js/.solid.min.js.icloud" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/js/.v4-shims.js.icloud" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/js/.v4-shims.min.js.icloud" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/less/.._icons.less.icloud" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/less/.._shims.less.icloud" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/less/.._variables.less.icloud" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/metadata/.categories.yml.icloud" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/metadata/.icons.yml.icloud" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/metadata/.shims.yml.icloud" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/metadata/.sponsors.yml.icloud" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/scss/.._icons.scss.icloud" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/scss/.._shims.scss.icloud" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/scss/.._variables.scss.icloud" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/sprites/.brands.svg.icloud" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/sprites/.regular.svg.icloud" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/sprites/.solid.svg.icloud" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/webfonts/.fa-brands-400.eot.icloud" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/webfonts/.fa-brands-400.svg.icloud" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/webfonts/.fa-brands-400.ttf.icloud" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/webfonts/.fa-brands-400.woff.icloud" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/webfonts/.fa-brands-400.woff2.icloud" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/webfonts/.fa-regular-400.eot.icloud" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/webfonts/.fa-regular-400.svg.icloud" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/webfonts/.fa-regular-400.ttf.icloud" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/webfonts/.fa-regular-400.woff.icloud" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/webfonts/.fa-regular-400.woff2.icloud" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/webfonts/.fa-solid-900.eot.icloud" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/webfonts/.fa-solid-900.svg.icloud" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/webfonts/.fa-solid-900.ttf.icloud" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/webfonts/.fa-solid-900.woff.icloud" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/webfonts/.fa-solid-900.woff2.icloud" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/blank.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/css/sb-admin-2.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/img/undraw_posting_photo.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/js/demo/datatables-demo.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/scss/_cards.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/scss/_footer.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/scss/navs/_global.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/scss/utilities/_border.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/scss/utilities/_progress.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/bootstrap/js/bootstrap.bundle.min.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/bootstrap/js/bootstrap.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/bootstrap/scss/_functions.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/bootstrap/scss/_pagination.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/bootstrap/scss/_popover.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/bootstrap/scss/_spinners.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/bootstrap/scss/mixins/_border-radius.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/bootstrap/scss/mixins/_box-shadow.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/bootstrap/scss/mixins/_grid.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/bootstrap/scss/mixins/_nav-divider.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/bootstrap/scss/mixins/_text-truncate.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/LICENSE.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/css/v4-shims.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/js/all.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/less/_stacked.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/less/fontawesome.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/scss/_animated.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/scss/_bordered-pulled.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/scss/_screen-reader.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/scss/fontawesome.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/svgs/brands/creative-commons.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/svgs/brands/critical-role.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/svgs/brands/ello.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/svgs/brands/flipboard.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/svgs/brands/grunt.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/svgs/brands/page4.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/svgs/brands/quora.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/svgs/brands/safari.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/svgs/brands/ubuntu.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/svgs/brands/wordpress.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/svgs/brands/wpbeginner.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/svgs/solid/align-left.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/svgs/solid/angle-up.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/svgs/solid/arrow-circle-left.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/svgs/solid/arrow-right.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/svgs/solid/at.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/svgs/solid/balance-scale-right.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/svgs/solid/bell-slash.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/svgs/solid/bomb.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/svgs/solid/bone.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/svgs/solid/box-tissue.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/svgs/solid/broom.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/svgs/solid/business-time.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/svgs/solid/caret-right.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/svgs/solid/caret-square-right.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/svgs/solid/caret-up.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/svgs/solid/chart-bar.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/svgs/solid/check-circle.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/svgs/solid/chevron-right.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/svgs/solid/clipboard.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/svgs/solid/cocktail.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/svgs/solid/code.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/svgs/solid/comment-alt.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/svgs/solid/democrat.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/svgs/solid/dice-five.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/svgs/solid/dizzy.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/svgs/solid/dot-circle.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/svgs/solid/dragon.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/svgs/solid/drum-steelpan.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/svgs/solid/eye-slash.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/svgs/solid/file-alt.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/svgs/solid/file-archive.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/svgs/solid/file-csv.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/svgs/solid/file-download.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/svgs/solid/file-excel.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/svgs/solid/file-image.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/svgs/solid/file-upload.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/svgs/solid/file.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/svgs/solid/fire.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/svgs/solid/frown.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/svgs/solid/glass-martini-alt.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/svgs/solid/greater-than.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/svgs/solid/grin-stars.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/svgs/solid/grin-tongue.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/svgs/solid/hashtag.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/svgs/solid/hiking.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/svgs/solid/hockey-puck.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/svgs/solid/horse-head.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/svgs/solid/hot-tub.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/svgs/solid/hourglass.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/svgs/solid/ice-cream.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/svgs/solid/kiss-wink-heart.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/svgs/solid/kiss.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/svgs/solid/laptop-code.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/svgs/solid/less-than-equal.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/svgs/solid/link.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/svgs/solid/lock-open.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/svgs/solid/medal.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/svgs/solid/meh-blank.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/svgs/solid/microchip.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/svgs/solid/microphone-alt.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/svgs/solid/moon.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/svgs/solid/mouse-pointer.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/svgs/solid/music.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/svgs/solid/notes-medical.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/svgs/solid/pager.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/svgs/solid/paint-roller.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/svgs/solid/paper-plane.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/svgs/solid/pastafarianism.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/svgs/solid/pen-fancy.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/svgs/solid/pencil-alt.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/svgs/solid/pencil-ruler.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/svgs/solid/person-booth.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/svgs/solid/phone-square.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/svgs/solid/photo-video.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/svgs/solid/plus.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/svgs/solid/podcast.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/svgs/solid/radiation-alt.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/svgs/solid/rocket.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/svgs/solid/rss.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/svgs/solid/search-dollar.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/svgs/solid/search.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/svgs/solid/seedling.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/svgs/solid/share-square.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/svgs/solid/shopping-cart.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/svgs/solid/shuttle-van.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/svgs/solid/skating.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/svgs/solid/space-shuttle.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/svgs/solid/stamp.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/svgs/solid/stop.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/svgs/solid/subway.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/svgs/solid/suitcase-rolling.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/svgs/solid/thermometer-half.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/svgs/solid/torah.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/svgs/solid/transgender-alt.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/svgs/solid/user-graduate.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/svgs/solid/user-minus.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/svgs/solid/user-times.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/svgs/solid/utensil-spoon.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/svgs/solid/volume-down.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/svgs/solid/wifi.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/svgs/solid/wrench.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dashboard-admin/vendor/jquery/jquery.min.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/Admin/InvoiceCrudController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/estimate/estimate_waiting.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/estimate/estimate_waiting.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/..browserslistrc.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/..gitignore.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/..travis.yml.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/.404.html.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/.LICENSE.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/.PRO_UPGRADE.txt.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/.README.md.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/.blank.html.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/.buttons.html.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/.cards.html.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/.charts.html.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/.forgot-password.html.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/.gulpfile.js.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/.index.html.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/.login.html.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/.package-lock.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/.package.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/.register.html.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/.tables.html.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/.utilities-animation.html.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/.utilities-border.html.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/.utilities-color.html.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/.utilities-other.html.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/css/.sb-admin-2.css.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/css/.sb-admin-2.min.css.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/img/.undraw_posting_photo.svg.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/img/.undraw_profile.svg.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/img/.undraw_profile_1.svg.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/img/.undraw_profile_2.svg.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/img/.undraw_profile_3.svg.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/img/.undraw_rocket.svg.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/js/.sb-admin-2.js.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/js/.sb-admin-2.min.js.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/js/demo/.chart-area-demo.js.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/js/demo/.chart-bar-demo.js.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/js/demo/.chart-pie-demo.js.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/js/demo/.datatables-demo.js.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/scss/.._buttons.scss.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/scss/.._cards.scss.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/scss/.._charts.scss.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/scss/.._dropdowns.scss.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/scss/.._error.scss.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/scss/.._footer.scss.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/scss/.._global.scss.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/scss/.._login.scss.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/scss/.._mixins.scss.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/scss/.._navs.scss.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/scss/.._utilities.scss.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/scss/.._variables.scss.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/scss/.sb-admin-2.scss.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/scss/navs/.._global.scss.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/scss/navs/.._sidebar.scss.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/scss/navs/.._topbar.scss.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/scss/utilities/.._animation.scss.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/scss/utilities/.._background.scss.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/scss/utilities/.._border.scss.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/scss/utilities/.._display.scss.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/scss/utilities/.._progress.scss.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/scss/utilities/.._rotate.scss.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/scss/utilities/.._text.scss.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/bootstrap/js/.bootstrap.bundle.js.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/bootstrap/js/.bootstrap.bundle.js.map.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/bootstrap/js/.bootstrap.bundle.min.js.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/bootstrap/js/.bootstrap.bundle.min.js.map.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/bootstrap/js/.bootstrap.js.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/bootstrap/js/.bootstrap.js.map.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/bootstrap/js/.bootstrap.min.js.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/bootstrap/js/.bootstrap.min.js.map.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/bootstrap/scss/.._alert.scss.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/bootstrap/scss/.._badge.scss.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/bootstrap/scss/.._breadcrumb.scss.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/bootstrap/scss/.._button-group.scss.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/bootstrap/scss/.._buttons.scss.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/bootstrap/scss/.._card.scss.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/bootstrap/scss/.._carousel.scss.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/bootstrap/scss/.._close.scss.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/bootstrap/scss/.._code.scss.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/bootstrap/scss/.._custom-forms.scss.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/bootstrap/scss/.._dropdown.scss.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/bootstrap/scss/.._forms.scss.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/bootstrap/scss/.._functions.scss.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/bootstrap/scss/.._grid.scss.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/bootstrap/scss/.._images.scss.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/bootstrap/scss/.._input-group.scss.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/bootstrap/scss/.._jumbotron.scss.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/bootstrap/scss/.._list-group.scss.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/bootstrap/scss/.._media.scss.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/bootstrap/scss/.._mixins.scss.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/bootstrap/scss/.._modal.scss.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/bootstrap/scss/.._nav.scss.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/bootstrap/scss/.._navbar.scss.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/bootstrap/scss/.._pagination.scss.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/bootstrap/scss/.._popover.scss.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/bootstrap/scss/.._print.scss.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/bootstrap/scss/.._progress.scss.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/bootstrap/scss/.._reboot.scss.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/bootstrap/scss/.._root.scss.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/bootstrap/scss/.._spinners.scss.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/bootstrap/scss/.._tables.scss.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/bootstrap/scss/.._toasts.scss.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/bootstrap/scss/.._tooltip.scss.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/bootstrap/scss/.._transitions.scss.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/bootstrap/scss/.._type.scss.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/bootstrap/scss/.._utilities.scss.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/bootstrap/scss/.._variables.scss.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/bootstrap/scss/.bootstrap-grid.scss.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/bootstrap/scss/.bootstrap-reboot.scss.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/bootstrap/scss/.bootstrap.scss.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/chart.js/.Chart.bundle.js.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/chart.js/.Chart.bundle.min.js.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/chart.js/.Chart.js.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/chart.js/.Chart.min.js.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/datatables/.dataTables.bootstrap4.css.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/datatables/.dataTables.bootstrap4.js.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/datatables/.dataTables.bootstrap4.min.css.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/datatables/.dataTables.bootstrap4.min.js.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/datatables/.jquery.dataTables.js.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/datatables/.jquery.dataTables.min.js.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/.LICENSE.txt.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/.attribution.js.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/.package.json.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/css/.all.css.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/css/.all.min.css.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/css/.brands.css.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/css/.brands.min.css.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/css/.fontawesome.css.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/css/.fontawesome.min.css.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/css/.regular.css.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/css/.regular.min.css.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/css/.solid.css.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/css/.solid.min.css.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/css/.svg-with-js.css.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/css/.svg-with-js.min.css.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/css/.v4-shims.css.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/css/.v4-shims.min.css.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/js/.all.js.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/js/.all.min.js.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/js/.brands.js.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/js/.brands.min.js.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/js/.conflict-detection.js.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/js/.conflict-detection.min.js.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/js/.fontawesome.js.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/js/.fontawesome.min.js.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/js/.regular.js.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/js/.regular.min.js.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/js/.solid.js.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/js/.solid.min.js.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/js/.v4-shims.js.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/js/.v4-shims.min.js.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/less/.._animated.less.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/less/.._bordered-pulled.less.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/less/.._core.less.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/less/.._fixed-width.less.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/less/.._icons.less.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/less/.._larger.less.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/less/.._list.less.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/less/.._mixins.less.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/less/.._rotated-flipped.less.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/less/.._screen-reader.less.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/less/.._shims.less.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/less/.._stacked.less.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/less/.._variables.less.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/less/.brands.less.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/less/.fontawesome.less.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/less/.regular.less.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/less/.solid.less.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/less/.v4-shims.less.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/metadata/.categories.yml.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/metadata/.icons.yml.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/metadata/.shims.yml.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/metadata/.sponsors.yml.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/scss/.._animated.scss.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/scss/.._bordered-pulled.scss.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/scss/.._core.scss.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/scss/.._fixed-width.scss.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/scss/.._icons.scss.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/scss/.._larger.scss.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/scss/.._list.scss.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/scss/.._mixins.scss.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/scss/.._rotated-flipped.scss.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/scss/.._screen-reader.scss.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/scss/.._shims.scss.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/scss/.._stacked.scss.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/scss/.._variables.scss.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/scss/.brands.scss.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/scss/.fontawesome.scss.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/scss/.regular.scss.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/scss/.solid.scss.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/scss/.v4-shims.scss.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/sprites/.brands.svg.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/sprites/.regular.svg.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/sprites/.solid.svg.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/webfonts/.fa-brands-400.eot.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/webfonts/.fa-brands-400.svg.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/webfonts/.fa-brands-400.ttf.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/webfonts/.fa-brands-400.woff.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/webfonts/.fa-brands-400.woff2.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/webfonts/.fa-regular-400.eot.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/webfonts/.fa-regular-400.svg.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/webfonts/.fa-regular-400.ttf.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/webfonts/.fa-regular-400.woff.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/webfonts/.fa-regular-400.woff2.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/webfonts/.fa-solid-900.eot.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/webfonts/.fa-solid-900.svg.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/webfonts/.fa-solid-900.ttf.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/webfonts/.fa-solid-900.woff.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/fontawesome-free/webfonts/.fa-solid-900.woff2.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/jquery-easing/.jquery.easing.compatibility.js.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/jquery-easing/.jquery.easing.js.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/jquery-easing/.jquery.easing.min.js.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/jquery/.jquery.js.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/jquery/.jquery.min.js.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/jquery/.jquery.min.map.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/jquery/.jquery.slim.js.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/jquery/.jquery.slim.min.js.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dashboard-admin/vendor/jquery/.jquery.slim.min.map.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/.bg-estimate.jpg.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/CompanyCrudController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/CompanyCrudController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/CustomerCrudController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/CustomerCrudController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/DashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/DashboardController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/EstimateCrudController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/EstimateCrudController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Estimate.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Estimate.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,14 +413,14 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/templates/partials/admin" />
+      <recent name="$PROJECT_DIR$/templates/partials/invoice" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/public" />
       <recent name="$PROJECT_DIR$/Secret" />
       <recent name="$PROJECT_DIR$/templates/bundles/EasyAdminBundle" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/templates/partials/admin" />
-      <recent name="$PROJECT_DIR$/templates/partials/invoice" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -158,7 +447,8 @@
       <workItem from="1606197594496" duration="12950000" />
       <workItem from="1606377701983" duration="10975000" />
       <workItem from="1606404231175" duration="29801000" />
-      <workItem from="1606467251931" duration="9181000" />
+      <workItem from="1606467251931" duration="9458000" />
+      <workItem from="1606495544698" duration="5695000" />
     </task>
     <servers />
   </component>
@@ -206,10 +496,10 @@
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
     <state x="521" y="102" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/-65.-1080.1920.1080/0.0.1792.1120@0.0.1792.1120" timestamp="1606031249767" />
-    <state x="634" y="319" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1606168667195">
+    <state x="634" y="319" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1606502336531">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state x="634" y="319" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/-65.-1080.1920.1080/0.0.1792.1120@0.0.1792.1120" timestamp="1606168667195" />
+    <state x="634" y="319" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/-65.-1080.1920.1080/0.0.1792.1120@0.0.1792.1120" timestamp="1606502336531" />
     <state x="485" y="331" key="IDE.errors.dialog" timestamp="1606210847480">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>

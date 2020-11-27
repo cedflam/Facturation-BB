@@ -90,6 +90,7 @@ class Estimate
         $this->descriptions = new ArrayCollection();
     }
 
+
     public function getTotalHt(): ?float
     {
         return $this->totalHt;

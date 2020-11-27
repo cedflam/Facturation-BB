@@ -2,7 +2,10 @@
 
 namespace App\Controller\Admin;
 
+use App\Entity\Company;
 use App\Entity\Customer;
+use App\Entity\Estimate;
+use App\Entity\Invoice;
 use App\Repository\InvoiceRepository;
 use Doctrine\DBAL\Driver\Exception;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
@@ -61,8 +64,10 @@ class DashboardController extends AbstractDashboardController
     public function configureMenuItems(): iterable
     {
         yield MenuItem::section('Menu');
+        yield MenuItem::linkToCrud('Company', 'fa fa-building', Company::class);
         yield MenuItem::linkToCrud('Clients', 'fa fa-users', Customer::class);
-        // yield MenuItem::linkToCrud('Devis', 'fa fa-file-alt', Estimate::class );
+        yield MenuItem::linkToCrud('Devis', 'fa fa-file-alt', Estimate::class );
+        yield MenuItem::linkToCrud('Factures', 'fa fa-file-invoice', Invoice::class);
     }
 
     /**
