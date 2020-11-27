@@ -56,8 +56,6 @@ class Estimate
 
     /**
      * @ORM\Column(type="datetime")
-     *
-     *
      */
     private $createdAt;
 

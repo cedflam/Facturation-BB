@@ -2,10 +2,7 @@
 
 namespace App\Controller\Admin;
 
-use App\Entity\Company;
 use App\Entity\Customer;
-use App\Entity\Estimate;
-use App\Repository\EstimateRepository;
 use App\Repository\InvoiceRepository;
 use Doctrine\DBAL\Driver\Exception;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;

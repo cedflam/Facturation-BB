@@ -214,6 +214,4 @@ class InvoiceController extends AbstractController
         return $this->redirectToRoute('invoice_list');
 
     }
-
-
 }

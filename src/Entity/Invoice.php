@@ -79,8 +79,6 @@ class Invoice
     /**
      * @ORM\OneToOne(targetEntity=Estimate::class, inversedBy="invoice", cascade={"persist", "remove"})
      * @ORM\JoinColumn(nullable=false)
-     *
-     *
      */
     private $estimate;
 

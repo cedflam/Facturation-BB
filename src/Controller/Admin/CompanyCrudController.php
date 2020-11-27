@@ -16,7 +16,6 @@ class CompanyCrudController extends AbstractCrudController
         return Company::class;
     }
 
-
   public function configureCrud(Crud $crud): Crud
   {
       return $crud
@@ -25,7 +24,4 @@ class CompanyCrudController extends AbstractCrudController
           ->setPageTitle('index', 'Liste des %entity_label_plural%')
           ;
   }
-
-
-
 }
