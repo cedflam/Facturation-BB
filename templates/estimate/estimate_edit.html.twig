@@ -16,8 +16,11 @@
 
 {# Je personnalise les champs du prototype #}
 {% block _estimate_descriptions_entry_widget %}
+
     <div class="form-group bg-secondary rounded p-3 pb-5 description" id="{{ id }}">
+
         <div class="row">
+
             <div class="col-md-12">
                 {{ form_widget(form.prestation, {'attr': {'class': 'prestation'}}) }}
             </div>
@@ -60,11 +63,13 @@
          style=" background: linear-gradient(to bottom, rgba(92, 77, 66, 0.8) 0%, rgba(92, 77, 66, 0.8) 100%), url({{ asset('img/bg.jpg') }});
                  background-attachment: fixed;"
     >
-        <div class="container">
-            <h2 class="text-white">Modifier un devis</h2>
+        <div class="container ">
+            <h2 class="text-white mb-3 mt-5">Modifier un devis</h2>
             <div class="text-white">
+                <hr class="border-light">
                 {{ form_start(form) }}
                 {{ form_widget(form) }}
+
                 <input type="submit" class="btn btn-sm btn-secondary" value="Enregistrer" style="margin-bottom: 300px;">
                 {{ form_end(form) }}
             </div>
