@@ -11,14 +11,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9f29e3dd-1aaf-468e-9a1c-10b205ea4b7f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/js/toast-alert.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/favicon.ico" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/estimate/estimate_archives.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/estimate/estimate_archives.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/estimate/estimate_waiting.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/estimate/estimate_waiting.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/invoice/invoice_archive.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/invoice/invoice_archive.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/invoice/invoice_list.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/invoice/invoice_list.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/partials/header.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/partials/header.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/partials/invoice/_invoice_advance_pdf_model.hml.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/partials/invoice/_invoice_advance_pdf_model.hml.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,20 +41,21 @@
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Secret" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
     <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public" />
+      <recent name="$PROJECT_DIR$/Secret" />
+      <recent name="$PROJECT_DIR$/templates/bundles/EasyAdminBundle" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/templates/partials/admin" />
       <recent name="$PROJECT_DIR$/templates/partials/invoice" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/Secret" />
-      <recent name="$PROJECT_DIR$/templates/bundles/EasyAdminBundle" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -86,7 +82,7 @@
       <workItem from="1606197594496" duration="12950000" />
       <workItem from="1606377701983" duration="10975000" />
       <workItem from="1606404231175" duration="29801000" />
-      <workItem from="1606467251931" duration="2589000" />
+      <workItem from="1606467251931" duration="4467000" />
     </task>
     <servers />
   </component>
