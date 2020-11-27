@@ -5,6 +5,7 @@ namespace App\Controller\Admin;
 use App\Entity\Invoice;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Action;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Actions;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\DateField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\NumberField;
@@ -28,6 +29,16 @@ class InvoiceCrudController extends AbstractCrudController
             NumberField::new('remainingCapital', 'Restant dû'),
             TextField::new('typeInvoice', 'Etat de la facture'),
         ];
+    }
+
+    public function configureCrud(Crud $crud): Crud
+    {
+        return $crud
+            ->setEntityLabelInSingular('Facture')
+            ->setEntityLabelInPlural('Factures')
+            ->setPageTitle('index', 'Liste des %entity_label_plural%')
+
+            ;
     }
 
     /**

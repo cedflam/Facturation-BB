@@ -5,6 +5,7 @@ namespace App\Controller\Admin;
 use App\Entity\Estimate;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Action;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Actions;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\BooleanField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\DateField;
@@ -21,6 +22,15 @@ class EstimateCrudController extends AbstractCrudController
         return Estimate::class;
     }
 
+    public function configureCrud(Crud $crud): Crud
+    {
+        return $crud
+            ->setEntityLabelInSingular('Devis')
+            ->setEntityLabelInPlural('Devis')
+            ->setPageTitle('index', 'Liste des %entity_label_plural%')
+
+            ;
+    }
 
     public function configureFields(string $pageName): iterable
     {
