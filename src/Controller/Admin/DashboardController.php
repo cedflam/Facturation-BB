@@ -46,15 +46,12 @@ class DashboardController extends AbstractDashboardController
         $dateFinPrevious = date('Y-12-31', strtotime(' -1 years '));
 
         return $this->render('@EasyAdmin/welcome.html.twig', [
-
             'dashboard_controller_filepath' => (new \ReflectionClass(static::class))->getFileName(),
             'dashboard_controller_class' => (new \ReflectionClass(static::class))->getShortName(),
             'totalAdvances' => $this->invoiceRepository->findAdvanceByPeriode($dateDebut, $dateFin),
             'totalFacturedRemaining' => $this->invoiceRepository->findTotalRemainingFacturedByPeriode($dateDebut, $dateFin),
             'totalRemaining' => $this->invoiceRepository->findTotalRemainingByPeriode($dateDebut, $dateFin),
             'totalRemainingPreviousYear' => $this->invoiceRepository->findTotalRemainingByPreviousYear($dateDebutPrevious, $dateFinPrevious),
-
-
         ]);
     }
 
@@ -69,7 +66,7 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::section('Menu');
         yield MenuItem::linkToCrud('Entreprise', 'fa fa-building', Company::class);
         yield MenuItem::linkToCrud('Clients', 'fa fa-users', Customer::class);
-       // yield MenuItem::linkToCrud('Devis', 'fa fa-file-alt', Estimate::class );
+        // yield MenuItem::linkToCrud('Devis', 'fa fa-file-alt', Estimate::class );
     }
 
     /**
@@ -101,7 +98,7 @@ class DashboardController extends AbstractDashboardController
 
         return new PdfResponse(
             $pdf->getOutputFromHtml($html),
-            'CA-'.$year.'.pdf'
+            'CA-' . $year . '.pdf'
         );
     }
 }

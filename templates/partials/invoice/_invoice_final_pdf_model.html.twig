@@ -64,13 +64,11 @@
 
                 </small>
                 <hr class="border-secondary">
-                <h5 class="text-center">Règlement :</h5>
-                <p class="">
-                    <span class="text-left">{{ invoice.remainingCapital | number_format(2, '.', ',') }}€</span> /
+                <h5 class="">Règlement : {{ invoice.remainingCapital | number_format(2, '.', ',') }}€
                     <small class="text-left">
-                        <span>{{ invoice.meansPayment }} </span> <br>
+                        / <span> {{ invoice.meansPayment }} </span> <br>
                     </small>
-                </p>
+                </h5>
             </div>
 
             <p style="font-size: 12px;">
@@ -80,6 +78,19 @@
                 {{ company.mention4 }} <br>
                 {{ company.mention5 }} <br>
             </p>
+
+            <div class="row text-center" style=" margin-top:200px;  margin-bottom: 200px">
+                <div class="col-md-6">
+                    Signature de l'entreprise
+                </div>
+            </div>
         </div>
+    </div>
+    <div class="card text-center p-3 bg-light" style="font-size: 12px">
+        {{ company.name }} <br>
+        {{ company.address }} <br>
+        {{ company.postCode }} {{ company.city }} <br>
+        Email : {{ company.email }} Téléphone : {{ company.phone }} <br>
+        {{ company.rcs }}  SIRET : {{ company.siret }} <br>
     </div>
 </div>

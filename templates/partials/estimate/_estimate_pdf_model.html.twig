@@ -67,16 +67,22 @@
         </div>
 
         <div class="container" style=" margin-top:100px;  margin-bottom: 150px">
-            <div>
-
-                  <span style="margin-left: 150px;">  Signature Client</span>
-                <span style="margin-left: 200px;">Signature de l'entreprise</span>
-
-
-
-
-
+            <div class="row text-center">
+                <div class="col-md-6">
+                    Signature Client <br>
+                    <small>(Bon pour accord)</small>
+                </div>
+                <div class="col-md-6">
+                    Signature de l'entreprise
+                </div>
             </div>
+        </div>
+        <div class="card text-center p-3 bg-light" style="font-size: 12px">
+            {{ company.name }} <br>
+            {{ company.address }} <br>
+            {{ company.postCode }} {{ company.city }} <br>
+            Email : {{ company.email }} Téléphone : {{ company.phone }} <br>
+            {{ company.rcs }}  SIRET : {{ company.siret }} <br>
         </div>
     </div>
 </div>

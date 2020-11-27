@@ -39,9 +39,9 @@
         </table>
         <div class="container mb-5" style="">
             <div style="width:30%" class="float-right">
-                {#<small class="text-center"> Total Devis HT :
+                {# <small class="text-center"> Total Devis HT :
                     <span>{{ invoice.totalHt | number_format(2, '.', ',') }}€</span>
-                </small> <br>#}
+                </small> <br> #}
                 <small class="text-center"> Total Devis TTC :
                     <span>{{ invoice.totalTtc | number_format(2, '.', ',') }}€</span>
                 </small>
@@ -54,14 +54,13 @@
                     <span class="text-left">{{ invoice.remainingCapital | number_format(2, '.', ',') }}€</span> <br>
                 </small>
                 <hr class="border-secondary">
-                <h5 class="text-center">Règlement :</h5>
-                <p class="text-center">
-                    <span class="text-left">{{ invoice.advances | last.amount | number_format(2, '.', ',') }}€</span> /
+                <h5 class="">Règlement : {{ invoice.advances | last.amount | number_format(2, '.', ',') }}€
                     <small class="text-left">
-                        <span> {{ invoice.advances | last.meansPayment }} </span> <br>
+                       / <span> {{ invoice.advances | last.meansPayment }} </span> <br>
                     </small>
-                </p>
+                </h5>
             </div>
+
             <p style="font-size: 12px;">
                 {{ company.mention1 }} <br>
                 {{ company.mention2 }} <br>
@@ -69,15 +68,29 @@
                 {{ company.mention4 }} <br>
                 {{ company.mention5 }} <br>
             </p>
+
+            <div class="row text-center" style=" margin-top:200px;  margin-bottom: 400px">
+                <div class="col-md-6">
+                    Signature de l'entreprise
+                </div>
+            </div>
+
+            <div class="card text-center p-3 bg-light" style="font-size: 12px">
+                {{ company.name }} <br>
+                {{ company.address }} <br>
+                {{ company.postCode }} {{ company.city }} <br>
+                Email : {{ company.email }} Téléphone : {{ company.phone }} <br>
+                {{ company.rcs }}  SIRET : {{ company.siret }} <br>
+            </div>
         </div>
-    {% else %}
-    <div class="alert alert-danger" style="margin-top: 300px">
-        <h1>Une erreur s'est produite !</h1>
-        <p>
-            Il n'y a pas d'acompte enregistré ! Voulez-vous éditer une facture finale ? <br>
-            Pour cela, allez dans "Facturer client" et modifiez le champ "Etat de la facture"
-        </p>
-        <a href="{{ path('invoice_list') }}" class="btn btn-warning">Retour aux factures...</a>
+        {% else %}
+        <div class="alert alert-danger" style="margin-top: 300px">
+            <h1>Une erreur s'est produite !</h1>
+            <p>
+                Il n'y a pas d'acompte enregistré ! Voulez-vous éditer une facture finale ? <br>
+                Pour cela, allez dans "Facturer client" et modifiez le champ "Etat de la facture"
+            </p>
+            <a href="{{ path('invoice_list') }}" class="btn btn-warning">Retour aux factures...</a>
+        </div>
     </div>
-</div>
 {% endif %}
