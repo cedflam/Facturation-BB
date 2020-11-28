@@ -10,29 +10,39 @@
 
             <ul class="navbar-nav ml-auto my-2 my-lg-0">
                 {% if app.user %}
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{{ path('invoice_list') }}">Mes
-                            Factures</a></li> <span class="text-white">|</span>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger"
-                                            href="{{ path('estimate_waiting_list') }}">Mes
-                            Devis</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{{ path('estimate_new') }}">Nouveau
-                            Devis</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="{{ path('invoice_list') }}">
+                            Mes Factures
+                        </a>
+                    </li> <span class="text-white">|</span>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="{{ path('estimate_waiting_list') }}">
+                            Mes Devis
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="{{ path('estimate_new') }}">
+                            Nouveau Devis
+                        </a>
+                    </li>
                     <span class="text-white">|</span>
                     <li class="nav-item">
                         <a class="nav-link js-scroll-trigger"
-                           href="{{ path('estimate_archives_list') }}">Archives Devis
+                           href="{{ path('estimate_archives_list') }}">
+                            Archives Devis
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link js-scroll-trigger"
-                           href="{{ path('invoice_archives_list') }}">Archives Factures
+                           href="{{ path('invoice_archives_list') }}">
+                            Archives Factures
                         </a>
                     </li>
                     <span class="text-white">|</span>
 
                     <li class="nav-item">
                         <a class="nav-link js-scroll-trigger" href="{{ path('app_logout') }}">
-                            <h5><i class="fas fa-sign-out-alt"></i></h5>
+                           <i class="fas fa-sign-out-alt"></i> Déconnexion
                         </a>
                     </li>
                 {% else %}
