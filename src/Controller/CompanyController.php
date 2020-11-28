@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Repository\InvoiceRepository;
+use Doctrine\DBAL\Exception;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -27,7 +28,7 @@ class CompanyController extends AbstractController
      * @Route("/company/chiffre-d-affaire/imprimer", name="company_ca_print")
      * @return Response
      * @throws \Doctrine\DBAL\Driver\Exception
-     * @throws \Doctrine\DBAL\Exception
+     * @throws Exception
      */
     public function index(): Response
     {
@@ -38,7 +39,7 @@ class CompanyController extends AbstractController
         $dateDebutPrevious = date('Y-01-01', strtotime(' -1 years '));
         $dateFinPrevious = date('Y-12-31', strtotime(' -1 years '));
 
-        return $this->render('company/index.html.twig', [
+        return $this->render('company/company_ca_print.html.twig', [
             'totalAdvances' => $this->invoiceRepository->findAdvanceByPeriode($dateDebut, $dateFin),
             'totalFacturedRemaining' => $this->invoiceRepository->findTotalRemainingFacturedByPeriode($dateDebut, $dateFin),
             'totalRemaining' => $this->invoiceRepository->findTotalRemainingByPeriode($dateDebut, $dateFin),
