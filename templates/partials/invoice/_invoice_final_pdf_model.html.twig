@@ -2,7 +2,7 @@
     <h3 class="text-right mt-3">Facture n° {{ invoice.reference }}</h3>
     <p class="mt-5 ml-5">
         {# absolute url obligatoire pour generer un pdf #}
-        <img src="{{ absolute_url(asset('img/bb-logo.jpg')) }}" alt="logo"> <br>
+        <img onclick="window.print()" src="{{ absolute_url(asset('img/bb-logo.jpg')) }}" alt="logo"> <br>
         {{ company.name }} <br>
         {{ company.address }} <br>
         {{ company.postCode }} {{ company.city }} <br>
