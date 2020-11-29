@@ -75,14 +75,12 @@ class InvoiceType extends AbstractType
             ])
             ->add('totalHt', MoneyType::class, [
                 'label' => 'Total devis HT',
-                'disabled' => true,
                 'attr' => [
                     'class' => 'totalHT'
                 ]
             ])
             ->add('totalTtc', MoneyType::class, [
                 'label' => 'Total devis TTC',
-                'disabled' => true,
                 'attr' => [
                     'class' => "totalTTC "
                 ]
