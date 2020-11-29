@@ -140,8 +140,8 @@ class InvoiceController extends AbstractController
             if ($invoice->getTotalAdvance() != 0){
                 $invoice->setTypeInvoice(Invoice::FACTURE_ACOMPTE);
             }
+            // Si total advance == 0 le capital restant du est égal au total du devis ttc
             if ($invoice->getTotalAdvance() == 0){
-                // Sinon le capital restant du est égall au total du devis ttc
                 $invoice->setRemainingCapital($estimate->getTotalTtc())
                         ->setTotalTtc($estimate->getTotalTtc())
                         ->setTotalHt($estimate->getTotalHt())
