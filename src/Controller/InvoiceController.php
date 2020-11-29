@@ -136,8 +136,8 @@ class InvoiceController extends AbstractController
             $estimate = $invoice->getEstimate();
             $estimate->setState(Estimate::DEVIS_ACCEPTE);
 
-            // Je change le statut automatiquement si un acompte est versé
-            if ($invoice->getTotalAdvance() != 0){
+            /*// Je change le statut automatiquement si un acompte est versé
+            if ($invoice->getTotalAdvance() != 0 and $invoice->getTypeInvoice()){
                 $invoice->setTypeInvoice(Invoice::FACTURE_ACOMPTE);
             }
             // Si total advance == 0 le capital restant du est égal au total du devis ttc
@@ -146,7 +146,7 @@ class InvoiceController extends AbstractController
                         ->setTotalTtc($estimate->getTotalTtc())
                         ->setTotalHt($estimate->getTotalHt())
                 ;
-            }
+            }*/
 
             // J'enregistre
             $this->manager->persist($estimate);
