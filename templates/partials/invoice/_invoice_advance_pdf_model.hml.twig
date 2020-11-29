@@ -51,9 +51,9 @@
                     <span class="text-left">{{ invoice.remainingCapital | number_format(2, '.', ',') }}€</span> <br>
                 </small>
                 <hr class="border-secondary">
-                <h5 class="">Règlement : {{ invoice.advances | last.amount | number_format(2, '.', ',') }}€
+                <h5 class="">Règlement : {{ invoice.advances | last.amount | number_format(2, '.', ',') }}€ <br>
                     <small class="text-left">
-                        / <span> {{ invoice.advances | last.meansPayment }} </span> <br>
+                        <span> {{ invoice.advances | last.meansPayment }} </span> <br>
                     </small>
                 </h5>
             </div>

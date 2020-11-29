@@ -64,9 +64,9 @@
 
                 </small>
                 <hr class="border-secondary">
-                <h5 class="">Règlement : {{ invoice.remainingCapital | number_format(2, '.', ',') }}€
+                <h5 class="">Règlement : {{ invoice.remainingCapital | number_format(2, '.', ',') }}€ <br>
                     <small class="text-left">
-                        / <span> {{ invoice.meansPayment }} </span> <br>
+                         <span> {{ invoice.meansPayment }} </span> <br>
                     </small>
                 </h5>
             </div>

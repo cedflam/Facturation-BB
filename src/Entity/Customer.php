@@ -67,7 +67,6 @@ class Customer
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $phone;
-
     /**
      * @ORM\ManyToOne(targetEntity=Company::class, inversedBy="customers")
      */
