@@ -280,7 +280,7 @@ class EstimateController extends AbstractController
     {
         $this->manager->remove($estimate);
         $this->manager->flush();
-        $this->addFlash('Opération Terminée', 'Le devis arvhivé a bien été supprimé !');
+        $this->addFlash('Opération Terminée', 'Le devis archivé a bien été supprimé !');
         return $this->redirectToRoute('estimate_archives_list');
     }
 }

@@ -1,0 +1,99 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mes clients{% endblock %}
+
+{% block body %}
+    <div class="container-fluid estimate pl-5 pr-5 bg-dark masthead "
+         style=" background: linear-gradient(to bottom, rgba(92, 77, 66, 0.8) 0%, rgba(92, 77, 66, 0.8) 100%), url({{ asset('img/bg.jpg') }});
+                 background-attachment: fixed;">
+
+
+        <div class="container " style="padding-bottom: 300px;">
+            <div class="row mt-3">
+                <div class="form-group   col-md-8">
+                    <h3 class="text-white mt-2">Mes clients</h3>
+                    <a href="{{ path('customer_new') }}" class="btn btn-info ml-1 ">
+                        <i class="fas fa-plus"></i>
+                        Nouveau client
+                    </a>
+                    <hr class="border-light">
+                    <input name="search" type="text" class="form-control search mt-4" id="search"
+                           placeholder="Rechercher un client ...">
+                </div>
+            </div>
+
+            {% for label, messages in app.flashes %}
+                {% for message in messages %}
+                    <div aria-live="polite" aria-atomic="true" style=" "
+                         class="d-flex justify-content-start align-items-center"
+                    >
+                        <!-- Position it -->
+                        <div style="position: relative; top: 0; right: 0;">
+                            <div class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-delay="5000"
+                                 id="message">
+                                <div class="toast-header ">
+                                    <img src="{{ asset('img/bb-logo.jpg') }}" class="rounded mr-2" alt="logo"> <br>
+                                    <strong class="mr-auto">{{ label }}</strong>
+                                    <button type="button" class="ml-2 mb-1 close" data-dismiss="toast"
+                                            aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="toast-body text-center">
+                                    {{ message }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% endfor %}
+
+            <div class="row">
+                {% for customer in customers %}
+
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card mt-2">
+                            <div class="card-header" style="font-size: 12px">
+                                <h5>{{ customer.firstname }} {{ customer.lastname }}</h5>
+                                <div style="font-size: 12px">
+                                    Tel : {{ customer.phone }} <br>
+                                    <a href="mailto:{{ customer.email }}">Envoyer un email</a> <br>
+                                    Adresse : <br>
+                                    {{ customer.address }} <br>
+                                    {{ customer.postCode }} {{ customer.city }}
+                                </div>
+                            </div>
+
+                            <div class="card-footer">
+
+                                <a href="{{ path('customer_edit', {'id': customer.id}) }}"
+                                   class="btn btn-sm btn-info text-white mt-1" data-toggle="tooltip"
+                                   data-placement="top"
+                                   title="Modifer ce client">
+                                    <i class="fas fa-pen"></i>
+                                </a>
+                                |
+
+                                <a href="{{ path('customer_delete', {'id': customer.id}) }}"
+                                   class="btn btn-sm btn-danger text-white mt-1"
+                                   onclick="return confirm('Vous êtes sur le point de supprimer {{ customer.firstname }} {{ customer.lastname }} Confirmez-vous ?')"
+                                   data-toggle="tooltip" data-placement="top"
+                                   title="Supprimer ce client">
+                                    <i class="fas fa-trash"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+
+{% block javascripts %}
+    <script src="{{ asset('js/search.js') }}"></script>
+    <script src="{{ asset('js/toast-alert.js') }}"></script>
+{% endblock %}
+
+

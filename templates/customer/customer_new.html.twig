@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Nouveau client {% endblock %}
+
+{% block body %}
+    <div class="container-fluid estimate bg-dark"
+         style=" background: linear-gradient(to bottom, rgba(92, 77, 66, 0.8) 0%, rgba(92, 77, 66, 0.8) 100%), url({{ asset('img/bg.jpg') }});
+                 background-attachment: fixed;"
+    >
+        <div class="container mt-5">
+            <h2 class="text-white mt-5 mb-3">Ajouter / Modifier Client</h2>
+            <hr class="border-light">
+            {{ form_start(form) }}
+            <div class="row">
+                <div class="col-md-6 text-white">
+                    {{ form_row(form.lastname) }}
+                </div>
+                <div class="col-md-6 text-white">
+                    {{ form_row(form.firstname) }}
+                </div>
+                <div class="col-md-12 text-white">
+                    {{ form_row(form.address) }}
+                </div>
+                <div class="col-md-6 text-white">
+                    {{ form_row(form.postCode) }}
+                </div>
+                <div class="col-md-6 text-white">
+                    {{ form_row(form.city) }}
+                </div>
+                <div class="col-md-6 text-white">
+                    {{ form_row(form.email) }}
+                </div>
+                <div class="col-md-6 text-white">
+                    {{ form_row(form.phone) }}
+                </div>
+
+            </div>
+            <hr class="border-light">
+
+            <input type="submit" class="btn  btn-info   mb-5" value="Enregistrer" >
+            {{ form_end(form) }}
+        </div>
+    </div>
+{% endblock %}

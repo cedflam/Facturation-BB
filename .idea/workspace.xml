@@ -11,9 +11,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9f29e3dd-1aaf-468e-9a1c-10b205ea4b7f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Controller/CustomerController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Form/CustomerType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/customer/customer_new.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/customer/index.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/partials/estimate/_estimate_pdf_model.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/partials/estimate/_estimate_pdf_model.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/partials/invoice/_invoice_final_pdf_model.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/partials/invoice/_invoice_final_pdf_model.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/EstimateController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/EstimateController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/estimate/estimate_archives.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/estimate/estimate_archives.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/estimate/estimate_waiting.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/estimate/estimate_waiting.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/invoice/invoice_archive.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/invoice/invoice_archive.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/invoice/invoice_list.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/invoice/invoice_list.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/partials/header.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/partials/header.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,7 +95,7 @@
       <workItem from="1606495544698" duration="8237000" />
       <workItem from="1606515198700" duration="149000" />
       <workItem from="1606555072805" duration="3670000" />
-      <workItem from="1606640211169" duration="5944000" />
+      <workItem from="1606640211169" duration="11208000" />
     </task>
     <servers />
   </component>

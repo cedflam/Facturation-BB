@@ -43,6 +43,8 @@ security:
          - { path: ^/devis/mes-devis-en-cours, roles: ROLE_USER, requires_channel: https }
          - { path: ^/devis/nouveau-devis, roles: ROLE_USER, requires_channel: https }
          - { path: ^/devis/mes-devis-archives, roles: ROLE_USER, requires_channel: https }
+         - { path: ^/clients/mes-clients, roles: ROLE_USER, requires_channel: https }
+         - { path: ^/clients/nouveau, roles: ROLE_USER, requires_channel: https }
 
 
 
