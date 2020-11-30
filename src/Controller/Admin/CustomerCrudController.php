@@ -40,4 +40,16 @@ class CustomerCrudController extends AbstractCrudController
             
         ];
     }
+
+    /**
+     * Permet de désactiver les actions
+     *
+     * @param Actions $actions
+     * @return Actions
+     */
+    public function configureActions(Actions $actions): Actions
+    {
+        return $actions
+            ->disable(Action::NEW, Action::DELETE, Action::EDIT);
+    }
 }
