@@ -76,7 +76,7 @@
 
                                 <a href="{{ path('customer_delete', {'id': customer.id}) }}"
                                    class="btn btn-sm btn-danger text-white mt-1"
-                                   onclick="return confirm('Vous êtes sur le point de supprimer {{ customer.firstname }} {{ customer.lastname }} Confirmez-vous ?')"
+                                   onclick="return confirm('Vous êtes sur le point de supprimer {{ customer.firstname }} {{ customer.lastname }}.  Cette action supprimera tous ses devis et factures ! Confirmez-vous ?')"
                                    data-toggle="tooltip" data-placement="top"
                                    title="Supprimer ce client">
                                     <i class="fas fa-trash"></i>
