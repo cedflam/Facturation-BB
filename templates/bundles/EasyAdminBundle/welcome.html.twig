@@ -92,11 +92,11 @@
             <tbody>
             {% if totalRemainingPreviousYear[0].total is not null %}
                 <tr>
-                    <th class="text-center" scope="row"> {{ year | date_modify("-1 year") | date('Y') }} </th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th class="text-center"> {{ totalRemainingPreviousYear[0].total }}</th>
+                    <th class="text-center" scope="row"> {{ year - 1 }} </th>
+                    <th class="text-center">_____</th>
+                    <th class="text-center">_____</th>
+                    <th class="text-center">_____</th>
+                    <th class="text-center"><u>Restant année précédente :  {{ totalRemainingPreviousYear[0].total | number_format('2', ',', ' ') }} €</u> </th>
                 </tr>
             {% endif %}
             {% set totalInvoices = 0 %}
@@ -104,7 +104,7 @@
                 {% if invoice.state == true %}
                     {% set totalInvoices = totalInvoices + invoice.remainingCapital %}
                     <tr>
-                        <th class="text-center" scope="row">{{ invoice.createdAt | date('d-m-Y') }}</th>
+                        <th class="text-center" scope="row"> {{ invoice.createdAt | date('d-m-Y') }}</th>
                         <td class="text-center">{{ invoice.customer.firstname }} {{ invoice.customer.lastname }}</td>
                         <td class="text-center">{{ invoice.remainingCapital | number_format('2', ',', ' ') }} €</td>
                         <td class="text-center">{{ invoice.meansPayment }}</td>
