@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Repository\AdvanceRepository;
 use App\Repository\InvoiceRepository;
 use Doctrine\DBAL\Exception;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -12,14 +13,17 @@ class CompanyController extends AbstractController
 {
     //Propriétés
     private InvoiceRepository $invoiceRepository;
+    private AdvanceRepository $advanceRepository;
 
     /**
      * CompanyController constructor.
      * @param InvoiceRepository $invoiceRepository
+     * @param AdvanceRepository $advanceRepository
      */
-    public function __construct(InvoiceRepository $invoiceRepository)
+    public function __construct(InvoiceRepository $invoiceRepository, AdvanceRepository $advanceRepository)
     {
         $this->invoiceRepository = $invoiceRepository;
+        $this->advanceRepository = $advanceRepository;
     }
 
     /**
@@ -44,6 +48,9 @@ class CompanyController extends AbstractController
             'totalFacturedRemaining' => $this->invoiceRepository->findTotalRemainingFacturedByPeriode($dateDebut, $dateFin),
             'totalRemaining' => $this->invoiceRepository->findTotalRemainingByPeriode($dateDebut, $dateFin),
             'totalRemainingPreviousYear' => $this->invoiceRepository->findTotalRemainingByPreviousYear($dateDebutPrevious, $dateFinPrevious),
+            'advances_list' => $this->advanceRepository->findBy([], ['createdAt' => 'DESC']),
+            'invoices_list' => $this->invoiceRepository->findBy([], ['createdAt' => 'DESC']),
+            'year' => $year
         ]);
     }
 }

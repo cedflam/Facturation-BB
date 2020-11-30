@@ -6,6 +6,7 @@ use App\Entity\Company;
 use App\Entity\Customer;
 use App\Entity\Estimate;
 use App\Entity\Invoice;
+use App\Repository\AdvanceRepository;
 use App\Repository\InvoiceRepository;
 use Doctrine\DBAL\Driver\Exception;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
@@ -20,14 +21,17 @@ class DashboardController extends AbstractDashboardController
 {
     // Propriétés
     private InvoiceRepository $invoiceRepository;
+    private AdvanceRepository $advanceRepository;
 
     /**
      * DashboardController constructor.
      * @param InvoiceRepository $invoiceRepository
+     * @param AdvanceRepository $advanceRepository
      */
-    public function __construct(InvoiceRepository $invoiceRepository)
+    public function __construct(InvoiceRepository $invoiceRepository, AdvanceRepository $advanceRepository)
     {
         $this->invoiceRepository = $invoiceRepository;
+        $this->advanceRepository = $advanceRepository;
     }
 
     /**
@@ -52,6 +56,9 @@ class DashboardController extends AbstractDashboardController
             'totalFacturedRemaining' => $this->invoiceRepository->findTotalRemainingFacturedByPeriode($dateDebut, $dateFin),
             'totalRemaining' => $this->invoiceRepository->findTotalRemainingByPeriode($dateDebut, $dateFin),
             'totalRemainingPreviousYear' => $this->invoiceRepository->findTotalRemainingByPreviousYear($dateDebutPrevious, $dateFinPrevious),
+            'advances_list' => $this->advanceRepository->findBy([], ['createdAt' => 'DESC']),
+            'invoices_list' => $this->invoiceRepository->findBy([], ['createdAt' => 'DESC']),
+            'year' => $year
         ]);
     }
 
@@ -95,6 +102,7 @@ class DashboardController extends AbstractDashboardController
             'totalFacturedRemaining' => $invoiceRepository->findTotalRemainingFacturedByPeriode($dateDebut, $dateFin),
             'totalRemaining' => $invoiceRepository->findTotalRemainingByPeriode($dateDebut, $dateFin),
             'totalRemainingPreviousYear' => $invoiceRepository->findTotalRemainingByPreviousYear($dateDebutPrevious, $dateFinPrevious),
+            'advances-list' => $this->advanceRepository->findBy([], ['createdAt' => 'DESC'])
         ]);
 
         return new PdfResponse(

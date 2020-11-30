@@ -3,6 +3,7 @@
 namespace App\Repository;
 
 use App\Entity\Advance;
+use Doctrine\DBAL\Driver\Exception;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
@@ -19,16 +20,17 @@ class AdvanceRepository extends ServiceEntityRepository
         parent::__construct($registry, Advance::class);
     }
 
+
     // /**
-    //  * @return Advance[] Returns an array of Advance objects
+    //  * @return Customer[] Returns an array of Customer objects
     //  */
     /*
     public function findByExampleField($value)
     {
-        return $this->createQueryBuilder('a')
-            ->andWhere('a.exampleField = :val')
+        return $this->createQueryBuilder('c')
+            ->andWhere('c.exampleField = :val')
             ->setParameter('val', $value)
-            ->orderBy('a.id', 'ASC')
+            ->orderBy('c.id', 'ASC')
             ->setMaxResults(10)
             ->getQuery()
             ->getResult()
@@ -37,10 +39,10 @@ class AdvanceRepository extends ServiceEntityRepository
     */
 
     /*
-    public function findOneBySomeField($value): ?Advance
+    public function findOneBySomeField($value): ?Customer
     {
-        return $this->createQueryBuilder('a')
-            ->andWhere('a.exampleField = :val')
+        return $this->createQueryBuilder('c')
+            ->andWhere('c.exampleField = :val')
             ->setParameter('val', $value)
             ->getQuery()
             ->getOneOrNullResult()
