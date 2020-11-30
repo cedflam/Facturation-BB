@@ -25,7 +25,7 @@ class AdvanceCrudController extends AbstractCrudController
             TextField::new('invoice', 'Client'),
             DateField::new('createdAt', 'Date acompte'),
             NumberField::new('amount', 'Montant TTC'),
-            NumberField::new('meansPayment', 'Moyen de paiement'),
+            TextField::new('meansPayment', 'Moyen de paiement'),
         ];
     }
 
