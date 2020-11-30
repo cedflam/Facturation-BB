@@ -103,6 +103,14 @@ class Invoice
         $this->advances = new ArrayCollection();
     }
 
+    /**
+     * Permet de retourner le nom du client dans l'espace d'administration
+     * @return string
+     */
+    public function __toString()
+    {
+        return $this->getCustomer()->getFirstname().' '.$this->getCustomer()->getLastname();
+    }
 
     public function getId()
     {

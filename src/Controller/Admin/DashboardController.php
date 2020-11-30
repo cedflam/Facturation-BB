@@ -2,6 +2,7 @@
 
 namespace App\Controller\Admin;
 
+use App\Entity\Advance;
 use App\Entity\Company;
 use App\Entity\Customer;
 use App\Entity\Estimate;
@@ -75,6 +76,7 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('Clients', 'fa fa-users', Customer::class);
         yield MenuItem::linkToCrud('Devis', 'fa fa-file-alt', Estimate::class );
         yield MenuItem::linkToCrud('Factures', 'fa fa-file-invoice', Invoice::class);
+        yield MenuItem::linkToCrud('Acomptes', 'fa fa-file-alt', Advance::class);
     }
 
     /**
