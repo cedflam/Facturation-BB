@@ -11,8 +11,6 @@ use App\Repository\EstimateRepository;
 use App\Repository\InvoiceRepository;
 use App\Service\ReplaceAccentService;
 use Doctrine\ORM\EntityManagerInterface;
-use Knp\Bundle\SnappyBundle\Snappy\Response\PdfResponse;
-use Knp\Snappy\Pdf;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\RedirectResponse;
@@ -149,34 +147,6 @@ class InvoiceController extends AbstractController
         return $this->render('invoice/index.html.twig', [
             'form' => $form->createView()
         ]);
-    }
-
-    /**
-     * Permet de générer une facture d'acompte au format pdf
-     *
-     * @Route("/facture/generer/pdf/{id}", name="invoice_generate_pdf")
-     *
-     * @param Pdf $pdf
-     * @param Invoice $invoice
-     * @return PdfResponse
-     */
-    public function invoiceGenerateAdvancePdf(PDF $pdf, Invoice $invoice)
-    {
-        $customer = $this->customerRepository->findOneBy(['id' => $invoice->getCustomer()]);
-        $html = $this->renderView('invoice/invoice_show.html.twig', [
-            'invoice' => $this->invoiceRepository->findOneBy(['id' => $invoice]),
-            'customer' => $customer,
-            'company' => $this->companyRepository->findOneBy(['id' => $invoice->getCustomer()->getCompany()])
-        ]);
-
-        //Je remplace les accents eventuels car non pris en charge
-        $firstname = $this->accentService->replaceAccents($customer->getFirstname());
-        $lastname = $this->accentService->replaceAccents($customer->getLastname());
-
-        return new PdfResponse(
-            $pdf->getOutputFromHtml($html),
-            'facture-acompte-' . $lastname . '-' . $firstname . '.pdf'
-        );
     }
 
     /**

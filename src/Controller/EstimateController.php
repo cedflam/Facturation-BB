@@ -10,8 +10,6 @@ use App\Repository\CustomerRepository;
 use App\Repository\EstimateRepository;
 use App\Service\ReplaceAccentService;
 use Doctrine\ORM\EntityManagerInterface;
-use Knp\Bundle\SnappyBundle\Snappy\Response\PdfResponse;
-use Knp\Snappy\Pdf;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -198,35 +196,6 @@ class EstimateController extends AbstractController
             'customer' => $this->customerRepository->findOneBy(['id' => $estimate->getCustomer()]),
             'form' => $form->createView()
         ]);
-    }
-
-    /**
-     * Permet de générer le devis d'un client au format pdf
-     *
-     * @Route("/devis/generer/pdf/{id}", name="estimate_generate_pdf")
-     *
-     * @param Pdf $pdf
-     * @param Estimate $estimate
-     * @return PdfResponse
-     */
-    public function generatePdf(PDF $pdf, Estimate $estimate)
-    {
-        $customer = $this->customerRepository->findOneBy(['id' => $estimate->getCustomer()]);
-
-        $html = $this->renderView('estimate/estimate_show.html.twig', [
-            'estimate' => $this->estimateRepository->findOneBy(['id' => $estimate]),
-            'customer' => $customer,
-            'company' => $this->companyRepository->findOneBy(['id' => $estimate->getCustomer()->getCompany()])
-        ]);
-
-        //Je remplace les accents eventuels car non pris en charge
-        $firstname = $this->accentService->replaceAccents($customer->getFirstname());
-        $lastname = $this->accentService->replaceAccents( $customer->getLastname());
-
-        return new PdfResponse(
-            $pdf->getOutputFromHtml($html),
-            'devis-'.$lastname.'-'.$firstname.'.pdf'
-        );
     }
 
     /**
