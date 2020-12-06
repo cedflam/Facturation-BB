@@ -1,6 +1,6 @@
 <div class="container ">
      <h3  class="text-right ">Devis n° {{ estimate.reference }}</h3>
-    <p class="mt-5 ml-5">
+    <p class="ml-5">
         {# absolute url obligatoire pour generer un pdf #}
         <img onclick="window.print()" src="{{ absolute_url(asset('img/bb-logo.jpg')) }}" alt="logo"> <br>
         {{ company.name }} <br>
@@ -12,13 +12,13 @@
         {{ company.rcs }} <br>
     </p>
 
-    <p class="mr-5 mb-5 mt-5" style="margin-left: 650px;">
+    <p class="mr-5 mb-5" style="margin-left: 650px;">
         {{ customer.firstname }} {{ customer.lastname }} <br>
         {{ customer.address }} <br>
         {{ customer.postCode }} {{ customer.city }}
     </p>
 
-    <p class=" ml-5  mt-5"> {{ company.city }}, le {{ estimate.createdAt | date('d-m-Y') }}</p>
+    <p class=" ml-5  "> {{ company.city }}, le {{ estimate.createdAt | date('d-m-Y') }}</p>
 
     <div class="container">
         <table class="table table-striped ">
