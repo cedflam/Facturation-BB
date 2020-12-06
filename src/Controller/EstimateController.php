@@ -173,6 +173,9 @@ class EstimateController extends AbstractController
         $form = $this->createForm(EstimateType::class, $estimate);
         $form->handleRequest($request);
 
+
+
+
         if ($form->isSubmitted() && $form->isValid()) {
 
             // Je lie les descriptions au devis
@@ -184,7 +187,16 @@ class EstimateController extends AbstractController
 
                 $this->manager->persist($description);
             }
-
+            $date = new \DateTime();
+            $invoice = $estimate->getInvoice();
+            // Je change les totaux de la facture
+            $invoice
+                ->setTotalAdvance(0)
+                ->setTotalHt($estimate->getTotalHt())
+                ->setTotalTtc($estimate->getTotalTtc())
+                ->setRemainingCapital($estimate->getTotalTtc())
+            ;
+            $this->manager->persist($invoice);
             $this->manager->persist($estimate);
             $this->manager->flush();
 
