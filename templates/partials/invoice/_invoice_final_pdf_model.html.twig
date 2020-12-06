@@ -1,6 +1,6 @@
 <div class="container ">
-    <h3 class="text-right mt-3">Facture n° {{ invoice.reference }}</h3>
-    <p class="mt-5 ml-5">
+    <h3 class="text-right ">Facture n° {{ invoice.reference }}</h3>
+    <p class=" ml-5">
         {# absolute url obligatoire pour generer un pdf #}
         <img onclick="window.print()" src="{{ absolute_url(asset('img/bb-logo.jpg')) }}" alt="logo"> <br>
         {{ company.name }} <br>
@@ -12,13 +12,13 @@
         {{ company.rcs }} <br>
     </p>
 
-    <p class="mr-5 mb-5" style="margin-left: 650px;">
+    <p class="mr-5 " style="margin-left: 650px;">
         {{ customer.firstname }} {{ customer.lastname }} <br>
         {{ customer.address }} <br>
         {{ customer.postCode }} {{ customer.city }}
     </p>
 
-    <p class=" ml-5  mt-5"> {{ company.city }}, le {{ invoice.createdAt | date('d-m-Y') }}</p>
+    <p class=" ml-5 "> {{ company.city }}, le {{ invoice.createdAt | date('d-m-Y') }}</p>
 
     <div class="container">
         <table class="table table-striped ">
@@ -79,7 +79,7 @@
                 {{ company.mention5 }} <br>
             </p>
 
-            <div class="row text-center" style=" margin-top:200px;  margin-bottom: 200px">
+            <div class="row text-center" style=" margin-top:30px;  margin-bottom: 150px">
                 <div class="col-md-6">
                     Signature de l'entreprise
                 </div>
