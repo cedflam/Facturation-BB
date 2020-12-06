@@ -119,7 +119,7 @@ class InvoiceController extends AbstractController
                 $advance->setInvoice($invoice)
                         ->setContent("Facture d'acompte sur le devis n° ".$advance->getInvoice()->getEstimate()->getReference())
                 ;
-                // J'atribue une date au nouvel acompte
+                // J'atribue la date saisie dans le formulaire au nouvel acompte
                 if (!$advance->getCreatedAt()) {
                     $advance->setCreatedAt($invoice->getCreatedAt());
                 }

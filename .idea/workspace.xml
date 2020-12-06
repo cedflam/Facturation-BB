@@ -11,11 +11,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9f29e3dd-1aaf-468e-9a1c-10b205ea4b7f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/img/tampon.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/InvoiceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/InvoiceController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/partials/estimate/_estimate_pdf_model.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/partials/estimate/_estimate_pdf_model.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/partials/invoice/_invoice_advance_pdf_model.hml.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/partials/invoice/_invoice_advance_pdf_model.hml.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/partials/invoice/_invoice_final_pdf_model.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/partials/invoice/_invoice_final_pdf_model.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,7 +88,9 @@
       <workItem from="1606515198700" duration="149000" />
       <workItem from="1606555072805" duration="3670000" />
       <workItem from="1606640211169" duration="23535000" />
-      <workItem from="1606764006054" duration="920000" />
+      <workItem from="1606764006054" duration="1517000" />
+      <workItem from="1606809412695" duration="1298000" />
+      <workItem from="1607285781806" duration="549000" />
     </task>
     <servers />
   </component>
