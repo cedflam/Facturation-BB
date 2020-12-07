@@ -61,7 +61,7 @@
                         <div class="col-md-6 col-lg-4">
                             <div class="card mt-2">
                                 <div class="card-header" style="font-size: 12px">
-                                    {% if estimate.invoice.advances.length > 0 %}
+                                    {% if estimate.invoice.advances | length > 0 %}
                                         <span class="badge badge-sm badge-danger">
                                             Cette facture comporte des acomptes ! <br>
                                             Vous devez changer son status en "Facture d'acompte"
