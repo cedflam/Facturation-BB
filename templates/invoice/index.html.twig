@@ -71,7 +71,12 @@
                     {{ form_row(form.advances) }}
                     <hr class="border-light">
                 </div>
-
+                <div class="col-md-12">
+                    <small class="alert alert-danger text-center mx-auto d-block">
+                        <i class="fas fa-arrow-down"></i>
+                        Ne jamais modifier les champs de ci-dessous... Utilisez le bouton calculer des acomptes !
+                        <i class="fas fa-arrow-down"></i>
+                    </small></div>
                 <div class="col-md-3 ">
                     {{ form_row(form.totalAdvance) }}
                 </div>
@@ -84,7 +89,6 @@
                 <div class="col-md-3 ">
                     {{ form_row(form.remainingCapital) }}
                 </div>
-
             </div>
             <hr class="border-light">
 
