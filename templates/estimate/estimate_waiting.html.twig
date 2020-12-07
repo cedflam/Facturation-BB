@@ -61,8 +61,11 @@
                         <div class="col-md-6 col-lg-4">
                             <div class="card mt-2">
                                 <div class="card-header" style="font-size: 12px">
-                                    {% if estimate.invoice.typeInvoice == 'finale' %}
-                                        <span class="badge badge-sm badge-danger">Facture du solde émise le, {{ estimate.invoice.createdAt | date('d/m/Y') }}...</span>
+                                    {% if estimate.invoice.advances.length > 0 %}
+                                        <span class="badge badge-sm badge-danger">
+                                            Cette facture comporte des acomptes ! <br>
+                                            Vous devez changer son status en "Facture d'acompte"
+                                        </span>
                                         <br>
                                     {% endif %}
                                     <h5>{{ estimate.customer.firstname }} {{ estimate.customer.lastname }}</h5>
