@@ -173,11 +173,7 @@ class EstimateController extends AbstractController
         $form = $this->createForm(EstimateType::class, $estimate);
         $form->handleRequest($request);
 
-
-
-
         if ($form->isSubmitted() && $form->isValid()) {
-
             // Je lie les descriptions au devis
             foreach ($estimate->getDescriptions() as $description) {
                 // Je lie la description au devis

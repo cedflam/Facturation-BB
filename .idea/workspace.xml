@@ -13,6 +13,7 @@
     <list default="true" id="9f29e3dd-1aaf-468e-9a1c-10b205ea4b7f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/EstimateController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/EstimateController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/invoice/invoice_list.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/invoice/invoice_list.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,7 +89,8 @@
       <workItem from="1606640211169" duration="23535000" />
       <workItem from="1606764006054" duration="1517000" />
       <workItem from="1606809412695" duration="1298000" />
-      <workItem from="1607285781806" duration="3117000" />
+      <workItem from="1607285781806" duration="3542000" />
+      <workItem from="1607372768807" duration="256000" />
     </task>
     <servers />
   </component>

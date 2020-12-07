@@ -51,7 +51,9 @@
             <div class="row">
                 {% for estimate in estimates %}
                     {% if estimate.invoice.state == false and estimate.invoice.typeInvoice == "acompte"
-                        or estimate.invoice.state == false and estimate.invoice.typeInvoice == "finale" %}
+                        or estimate.invoice.state == false and estimate.invoice.typeInvoice == "finale"
+                        or estimate.invoice.state == false and estimate.invoice.typeInvoice == "attente"
+                    %}
                         <div class="col-md-6 col-lg-4">
                             <div class="card mt-2">
                                 <div class="card-header" style="font-size: 12px">
