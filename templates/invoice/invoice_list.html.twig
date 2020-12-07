@@ -50,7 +50,10 @@
 
             <div class="row">
                 {% for estimate in estimates %}
-                    {% if estimate.invoice.state == false %}
+                    {%
+                        if estimate.invoice.state == false and estimate.invoice.typeInvoice == 'finale' ||
+                        estimate.invoice.state == false and estimate.invoice.typeInvoice == 'acompte'
+                    %}
                         <div class="col-md-6 col-lg-4">
                             <div class="card mt-2">
                                 <div class="card-header" style="font-size: 12px">
@@ -60,12 +63,6 @@
                                     {% else %}
                                         <span class="badge badge-sm badge-warning mx-auto d-block">Facture d'acompte émise le, {{ estimate.invoice.createdAt | date('d/m/Y') }}.</span>
                                         <br>
-                                    {% endif %}
-                                    {% if estimate.invoice.typeInvoice == 'attente' %}
-                                        <span class="badge badge-danger mx-auto d-block">
-                                            Attention cette facture est toujours en attente ! <br>
-                                            Il faut la passer en "facture d'acompte" ;-)
-                                        </span>
                                     {% endif %}
                                     <h5>{{ estimate.customer.firstname }} {{ estimate.customer.lastname }}</h5>
                                     <div style="font-size: 12px">

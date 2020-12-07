@@ -55,7 +55,6 @@
             <div class="row">
                 {% for estimate in estimates %}
                     {% if estimate.invoice.state == false
-                        and estimate.invoice.advances | length <= 0
                         and estimate.invoice.typeInvoice == 'attente'
                         and estimate.archive == false
                     %}
