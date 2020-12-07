@@ -11,6 +11,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9f29e3dd-1aaf-468e-9a1c-10b205ea4b7f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/public/js/alert-invoice-form.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/invoice/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/invoice/index.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -90,7 +92,7 @@
       <workItem from="1607285781806" duration="3542000" />
       <workItem from="1607372768807" duration="852000" />
       <workItem from="1607374300110" duration="5074000" />
-      <workItem from="1607380152812" duration="1770000" />
+      <workItem from="1607380152812" duration="2767000" />
     </task>
     <servers />
   </component>

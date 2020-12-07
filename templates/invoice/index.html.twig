@@ -71,23 +71,17 @@
                     {{ form_row(form.advances) }}
                     <hr class="border-light">
                 </div>
-                <div class="col-md-12">
-                    <small class="alert alert-danger text-center mx-auto d-block">
-                        <i class="fas fa-arrow-down"></i>
-                        Ne jamais modifier les champs ci-dessous... Utilisez le bouton calculer des acomptes uniquement !
-                        <i class="fas fa-arrow-down"></i>
-                    </small></div>
-                <div class="col-md-3 ">
-                    {{ form_row(form.totalAdvance) }}
+                <div class="col-md-3">
+                    {{ form_row(form.totalAdvance, {'attr': {'class': 'total-advances'}}) }}
                 </div>
                 <div class="col-md-3 ">
-                    {{ form_row(form.totalHt) }}
+                    {{ form_row(form.totalHt, {'attr': {'class': 'total-ht'}}) }}
                 </div>
                 <div class="col-md-3 ">
-                    {{ form_row(form.totalTtc) }}
+                    {{ form_row(form.totalTtc,{'attr': {'class': 'total-ttc'}}) }}
                 </div>
                 <div class="col-md-3 ">
-                    {{ form_row(form.remainingCapital) }}
+                    {{ form_row(form.remainingCapital, {'attr': {'class': 'remaining-capital'}}) }}
                 </div>
             </div>
             <hr class="border-light">
@@ -100,4 +94,5 @@
 
 {% block javascripts %}
     <script src="{{ asset('js/invoice.js') }}"></script>
+    <script src="{{ asset('js/alert-invoice-form.js') }}"></script>
 {% endblock %}
