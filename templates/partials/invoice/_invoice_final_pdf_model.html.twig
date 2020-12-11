@@ -1,9 +1,8 @@
-<div class="container ">
+<div class="container edit-invoice-final">
     <h3 class="text-right ">Facture n° {{ invoice.reference }}</h3>
-    <p class=" ml-5">
+    <p class=" ml-5" >
         {# absolute url obligatoire pour generer un pdf #}
-        <img onclick="window.print()" src="{{ absolute_url(asset('img/bb-logo.jpg')) }}" alt="logo"> <br>
-        {{ company.name }} <br>
+        <img onclick="window.print()" src="{{ absolute_url(asset('img/bb.jpg')) }}" alt="logo" class="logo" style="width:20%" > <br>
         {{ company.address }} <br>
         {{ company.postCode }} {{ company.city }} <br>
         Email : {{ company.email }} <br>
@@ -12,13 +11,13 @@
         {{ company.rcs }} <br>
     </p>
 
-    <p class="mr-5 " style="margin-left: 650px;">
+    <p class="mr-5 " style="margin-left: 650px; font-size: 17px;">
         {{ customer.firstname }} {{ customer.lastname }} <br>
         {{ customer.address }} <br>
         {{ customer.postCode }} {{ customer.city }}
     </p>
 
-    <p class=" ml-5 "> {{ company.city }}, le {{ invoice.createdAt | date('d-m-Y') }}</p>
+    <p class=" ml-5 " style="font-size: 17px"> {{ company.city }}, le {{ invoice.createdAt | date('d-m-Y') }}</p>
 
     <div class="container">
         <table class="table table-striped ">
@@ -71,7 +70,7 @@
                 </h5>
             </div>
 
-            <p style="font-size: 12px;">
+            <p style="font-size: 14px;">
                 {{ company.mention1 }} <br>
                 {{ company.mention2 }} <br>
                 {{ company.mention3 }} <br>
@@ -79,12 +78,12 @@
                 {{ company.mention5 }} <br>
             </p>
 
-            <div class="row text-center" style=" margin-top:30px;  margin-bottom: 150px">
+            <div class="row text-center" style=" margin-top:30px;  margin-bottom: 150px; font-size: 17px">
                 <div class="col-md-6">
                     Signature de l'entreprise
                 </div>
                 <div class="col-md-10 text-left " style="margin-left: 140px">
-                    <img src="{{ asset('img/tampon.png') }}" alt="tampon" class="img-fluid" style="width: 20%;">
+                    <img src="{{ asset('img/tampon.png') }}" alt="tampon" class="img-fluid" style="width: 25%;">
                 </div>
             </div>
         </div>
