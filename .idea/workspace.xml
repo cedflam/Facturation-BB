@@ -11,6 +11,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9f29e3dd-1aaf-468e-9a1c-10b205ea4b7f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/partials/estimate/_estimate_pdf_model.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/partials/estimate/_estimate_pdf_model.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/partials/invoice/_invoice_advance_pdf_model.hml.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/partials/invoice/_invoice_advance_pdf_model.hml.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/partials/invoice/_invoice_final_pdf_model.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/partials/invoice/_invoice_final_pdf_model.html.twig" afterDir="false" />
@@ -94,7 +95,7 @@
       <workItem from="1607374300110" duration="5074000" />
       <workItem from="1607380152812" duration="3946000" />
       <workItem from="1607413168756" duration="390000" />
-      <workItem from="1607695162974" duration="3103000" />
+      <workItem from="1607695162974" duration="3275000" />
     </task>
     <servers />
   </component>
