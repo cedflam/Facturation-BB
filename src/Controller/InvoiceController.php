@@ -128,7 +128,7 @@ class InvoiceController extends AbstractController
 
             // J'atribue une nouvelle référence à la facture
             $date = new \DateTime();
-            $invoice->setReference($date->format('ymdHi'));
+            $invoice->setReference($date->format('ymdHis'));
 
             // Je passe le devis en accepté
             $estimate = $invoice->getEstimate();

@@ -125,7 +125,7 @@ class EstimateController extends AbstractController
 
             }
             // J'attribue une référence et un état au devis
-            $estimate->setReference($date->format('ymdHi'))
+            $estimate->setReference($date->format('ymdHis'))
                      ->setState(false)
                      ->setTotalAdvance(0)
                     ->setArchive(false)
@@ -138,7 +138,7 @@ class EstimateController extends AbstractController
                     ->setState(Invoice::FACTURE_A_REGLER)
                     ->setTypeInvoice(Invoice::FACTURE_ATTENTE)
                     ->setCreatedAt($estimate->getCreatedAt())
-                    ->setReference($date->format('ymdHi'))
+                    ->setReference($date->format('ymdHis'))
                     ->setTotalAdvance(0)
                     ->setTotalHt($estimate->getTotalHt())
                     ->setTotalTtc($estimate->getTotalTtc())
